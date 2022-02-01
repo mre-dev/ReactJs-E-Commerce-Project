@@ -1,0 +1,10 @@
+export { BasketPage } from "./Basket/Basket.page";
+export { CheckoutPage } from "./Checkout/Checkout.page";
+export { UserOrdersPage, UserProductPage, UserProfilePage, UserQuantityPage } from "./Dahsboard";
+export { HomePage } from "./Home/Home.page";
+export { LoginPage } from "./Login/Login.page";
+export { NotFoundPage } from "./NotFound/NotFound.page";
+export { PaymentPage, paymentResultFailPage, paymentResultSuccessPage } from "./Payment";
+export { ProductPage } from "./Product/Product.page";
+export { RegisterPage } from "./Register/Login.page";
+export { ProductsPage } from "./Products/Products.page";
