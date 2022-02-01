@@ -1,1 +1,96 @@
 @import url(Button-var.css);
+
+/* Public Button Style */
+.btn {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    filter: brightness(1);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+    transition: 0.3s;
+}
+
+.btn:active {
+  filter: saturate(1);
+  transition: 0.3s;
+}
+
+.btn__borderRadius {
+    border-radius: var(--border-radius);
+}
+
+
+/* Button Colors */
+.btn__color__primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn__color__secondary {
+  background-color: var(--secondary);
+  color: #000;
+}
+
+.btn__color__success {
+  background-color: var(--success);
+  color: #fff;
+}
+
+.btn__color__danger {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.btn__color__warning {
+  background-color: var(--warning);
+  color: #fff;
+}
+
+.btn__color__info {
+  background-color: var(--info);
+  color: #fff;
+}
+
+.btn__color__light {
+  background-color: var(--light);
+  color: #000;
+}
+
+.btn__color__dark {
+  background-color: var(--dark);
+  color: #fff;
+}
+
+
+/* Button Size */
+.btn__size__small {
+    font-size: 1.4rem;
+}
+
+.btn__size__normal {
+    font-size: 1.6rem;
+}
+
+.btn__size__large {
+    font-size: 1.9rem;
+}
+
+.btn__size__xlarge {
+    font-size: 2.1rem;
+}
+
+.btn__size__xxlarge {
+    font-size: 2.8rem;
+}
