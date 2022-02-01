@@ -1,1 +1,25 @@
-@import url(Navigation-var.css);
+.borderedLink {
+    border-radius: 5rem;
+    border: 0.25rem solid var(--danger);
+    color: var(--danger) !important;
+    padding: 0.7rem 3rem 1rem 3rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.borderedLink:hover {
+    background-color: var(--Blue-Violet);
+    border-color: var(--Blue-Violet) !important;
+    color: var(--Sunny) !important;
+    transition: 0.3s;
+}
+
+.active {
+    font-size: 1.7rem;
+    color: var(--secondary) !important;
+    background-color: var(--dark);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
