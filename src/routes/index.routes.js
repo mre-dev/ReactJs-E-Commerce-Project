@@ -6,6 +6,9 @@ import {
     HomePage,
     LoginPage,
     NotFoundPage,
+    PaymentPage,
+    PaymentResultFailPage,
+    PaymentResultSuccessPage,
     ProductPage,
     ProductsPage,
     RegisterPage,
@@ -23,6 +26,7 @@ export function AppRouting() {
     return(
         <BrowserRouter>
             <Routes>
+                {/* Public Routes */}
                 <Route path={PATHS.HOME} element={<PublicRoute component={<HomePage />} /> } />
 
                 <Route path={PATHS.PRODUCTS} element={<PublicRoute component={<ProductsPage />} /> } />
@@ -37,6 +41,7 @@ export function AppRouting() {
 
                 <Route path={PATHS.PAGE404} element={<PublicRoute component={<NotFoundPage />} /> } />
 
+                {/* Private And Protected Routes */}
                 <Route path={PATHS.LOGIN} element={<LoginPage />} />
                 <Route path={PATHS.REGISTER} element={<RegisterPage />} />
 
@@ -45,6 +50,10 @@ export function AppRouting() {
                 <Route path={PATHS.DASHBOARD_ORDERS} element={<UserOrdersPage />} />
                 <Route path={PATHS.DASHBOARD_PRODUCT} element={<UserProductPage />} />
                 <Route path={PATHS.DASHBOARD_QUANTITY} element={<UserQuantityPage />} />
+
+                <Route path={PATHS.PAYMENT} element={<PaymentPage />} />
+                <Route path={PATHS.PAYMENT_FAILURE} element={<PaymentResultFailPage />} />
+                <Route path={PATHS.PAYMENT_SUCCESS} element={<PaymentResultSuccessPage />} />
 
             </Routes>
         </BrowserRouter>

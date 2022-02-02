@@ -1,3 +1,3 @@
-export { paymentResultFailPage } from './PaymentResultFail/paymentResultFail.page';
-export { paymentResultSuccessPage } from './PaymentResultSuccess/paymentResultSuccess.page';
-export { PaymentPage } from './Payment/payment.page';
+export { PaymentResultFailPage } from './PaymentResultFail/PaymentResultFail.page';
+export { PaymentResultSuccessPage } from './PaymentResultSuccess/PaymentResultSuccess.page';
+export { PaymentPage } from './Payment/Payment.page';

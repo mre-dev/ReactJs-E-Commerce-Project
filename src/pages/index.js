@@ -4,7 +4,7 @@ export { UserOrdersPage, UserProductPage, UserProfilePage, UserQuantityPage } fr
 export { HomePage } from "./Home/Home.page";
 export { LoginPage } from "./Login/Login.page";
 export { NotFoundPage } from "./NotFound/NotFound.page";
-export { PaymentPage, paymentResultFailPage, paymentResultSuccessPage } from "./Payment";
+export { PaymentPage, PaymentResultFailPage, PaymentResultSuccessPage } from "./Payment";
 export { ProductPage } from "./Product/Product.page";
 export { RegisterPage } from "./Register/Login.page";
 export { ProductsPage } from "./Products/Products.page";

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const paymentResultFailPage = (props) => {
+export const PaymentResultFailPage = (props) => {
     return (
         <div>
             payment Result Fail Page

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const paymentResultSuccessPage = (props) => {
+export const PaymentResultSuccessPage = (props) => {
     return (
         <div>
             payment Result Success Page
