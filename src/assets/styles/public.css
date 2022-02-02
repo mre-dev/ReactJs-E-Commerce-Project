@@ -2,6 +2,10 @@
 @import url(fonts.css);
 @import url(variables.css);
 
+* {
+    font-family: IRANSans-web;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
