@@ -41,6 +41,7 @@
     "axios": "^0.25.0",
     "env-cmd": "^10.1.0",
     "prop-types": "^15.8.1",
+    "react-debounce-input": "^3.2.5",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-loading": "^2.0.3",
