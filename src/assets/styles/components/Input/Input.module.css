@@ -1,1 +1,25 @@
 @import url(Input-var.css);
+
+.input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    text-align: center;
+}
+
+.input:focus {
+    border: 1px solid var(--Orange-Yellow);
+}
+
+.input::placeholder {
+    color: #ccc;
+}
+
+.input:hover {
+    border: 1px solid #fdbc0b;
+}
