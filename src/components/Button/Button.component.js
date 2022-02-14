@@ -11,8 +11,8 @@ export const Button = (props) => {
             ${Styles[`btn__size__${props.size}`]}
             ${props.borderRadius ?  Styles.btn__borderRadius : ''}
         `}
+        disabled={props.disabled}
         onClick={props.click}>
-
         {props.leftIcon}
         {props.text}
         {props.righIcon}
@@ -28,5 +28,6 @@ Button.propTypes = {
     size: PropTypes.oneOf(['small', 'normal', 'large', 'xlarge', 'xxlarge' ]).isRequired,
     borderRadius: PropTypes.bool,
     leftIcon: PropTypes.element,
-    righIcon: PropTypes.element
+    righIcon: PropTypes.element,
+    disabled: PropTypes.bool
 };
