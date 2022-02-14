@@ -13,6 +13,7 @@ export const Input = (props) => {
             name={props.name}
             id={props.id}
             required={props.required}
+            disabled={props.disabled}
         />
     );
 };
@@ -24,5 +25,6 @@ Input.propTypes = {
     placeholder: PropTypes.string,
     name: PropTypes.string,
     id: PropTypes.string.isRequired,
-    required: PropTypes.bool
+    required: PropTypes.bool,
+    disabled: PropTypes.bool
 };
