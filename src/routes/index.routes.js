@@ -12,49 +12,62 @@ import {
     ProductPage,
     ProductsPage,
     RegisterPage,
+    UserExitPage,
     UserOrdersPage,
     UserProductPage,
     UserProfilePage,
-    UserQuantityPage
+    UserQuantityPage,
+    UserSettingPage,
+    UserWishListPage
 } from 'pages';
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PublicRoute } from './public.routes';
+import { PrivateRtoutes } from './private.routes';
+import { ProtectedRtoutes } from './protected.routes';
+import { PublicRtoutes } from './public.routes';
 
 export function AppRouting() {
     return(
         <BrowserRouter>
             <Routes>
-                {/* Public Routes */}
-                <Route path={PATHS.HOME} element={<PublicRoute component={<HomePage />} /> } />
+                
+                <Route element={<PublicRtoutes/>}>
+                    <Route path={PATHS.HOME} element={<HomePage/> } />
 
-                <Route path={PATHS.PRODUCTS} element={<PublicRoute component={<ProductsPage />} /> } />
-                <Route path={PATHS.PRODUCTS_CAT} element={<PublicRoute component={<ProductsPage />} /> } />
-                <Route path={PATHS.PRODUCTS_CAT_PAGINATION} element={<PublicRoute component={<ProductsPage />} /> } />
+                    <Route path={PATHS.PRODUCTS} element={<ProductsPage/> } />
+                    <Route path={PATHS.PRODUCTS_CAT} element={<ProductsPage /> } />
+                    <Route path={PATHS.PRODUCTS_CAT_PAGINATION} element={<ProductsPage /> } />
 
-                <Route path={PATHS.PRODUCT} element={<PublicRoute component={<ProductPage />} /> } />
-                <Route path={PATHS.PRODUCT_ID} element={<PublicRoute component={<ProductPage />} /> } />
+                    <Route path={PATHS.PRODUCT} element={<ProductPage /> } />
+                    <Route path={PATHS.PRODUCT_ID} element={<ProductPage /> } />
 
-                <Route path={PATHS.BASKET} element={<PublicRoute component={<BasketPage />} /> } />
-                <Route path={PATHS.CHECKOUT} element={<PublicRoute component={<CheckoutPage />} /> } />
+                    <Route path={PATHS.BASKET} element={<BasketPage /> } />
+                    <Route path={PATHS.CHECKOUT} element={<CheckoutPage /> } />
 
-                <Route path={PATHS.PAGE404} element={<PublicRoute component={<NotFoundPage />} /> } />
+                    <Route path={PATHS.PAGE404} element={<NotFoundPage /> } />
+                </Route>
 
-                {/* Private And Protected Routes */}
-                <Route path={PATHS.LOGIN} element={<LoginPage />} />
-                <Route path={PATHS.REGISTER} element={<RegisterPage />} />
+                <Route element={<ProtectedRtoutes/>}>
+                    <Route path={PATHS.DASHBOARD} element={<UserProfilePage />} />
+                    <Route path={PATHS.DASHBOARD_PROFILE} element={<UserProfilePage />} />
+                    <Route path={PATHS.DASHBOARD_ORDERS} element={<UserOrdersPage />} />
+                    <Route path={PATHS.DASHBOARD_PRODUCT} element={<UserProductPage />} />
+                    <Route path={PATHS.DASHBOARD_QUANTITY} element={<UserQuantityPage />} />
+                    <Route path={PATHS.DASHBOARD_WISHLIST} element={<UserWishListPage />} />
+                    <Route path={PATHS.DASHBOARD_SETTINGS} element={<UserSettingPage />} />
+                    <Route path={PATHS.DASHBOARD_EXIT} element={<UserExitPage />} />
 
-                <Route path={PATHS.DASHBOARD} element={<UserProfilePage />} />
-                <Route path={PATHS.DASHBOARD_PROFILE} element={<UserProfilePage />} />
-                <Route path={PATHS.DASHBOARD_ORDERS} element={<UserOrdersPage />} />
-                <Route path={PATHS.DASHBOARD_PRODUCT} element={<UserProductPage />} />
-                <Route path={PATHS.DASHBOARD_QUANTITY} element={<UserQuantityPage />} />
+                    <Route path={PATHS.PAYMENT} element={<PaymentPage />} />
+                    <Route path={PATHS.PAYMENT_FAILURE} element={<PaymentResultFailPage />} />
+                    <Route path={PATHS.PAYMENT_SUCCESS} element={<PaymentResultSuccessPage />} />
+                </Route>
 
-                <Route path={PATHS.PAYMENT} element={<PaymentPage />} />
-                <Route path={PATHS.PAYMENT_FAILURE} element={<PaymentResultFailPage />} />
-                <Route path={PATHS.PAYMENT_SUCCESS} element={<PaymentResultSuccessPage />} />
-
+                <Route element={<PrivateRtoutes/>}>
+                    <Route path={PATHS.LOGIN} element={<LoginPage />} />
+                    <Route path={PATHS.REGISTER} element={<RegisterPage />} />
+                </Route>
+                
             </Routes>
         </BrowserRouter>
     );

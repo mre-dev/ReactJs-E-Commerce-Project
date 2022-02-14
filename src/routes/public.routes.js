@@ -1,6 +1,5 @@
-import { Fragment } from "react";
-
-export const PublicRoute = (props) => {
-    const {component} = props;
-    return(<Fragment>{component}</Fragment>);
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+export const PublicRtoutes = () => {
+    return <Outlet/>;
 };
