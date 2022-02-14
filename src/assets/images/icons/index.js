@@ -23,3 +23,5 @@ const allIconsType = {
 }
 
 export { FcHome, FcAssistant } from "react-icons/fc";
+export { BsBasket2 } from "react-icons/bs";
+export { FaUserCircle } from "react-icons/fa";
