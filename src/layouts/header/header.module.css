@@ -203,6 +203,17 @@
     color: #fdbc0b;
 }
 
+.header .topHeader .userBox .userIconBox .userMenuBox .adminMenuItem {
+    gap: 1rem;
+    border-bottom: 0.1rem solid darkgray;
+    border-top: 0.1rem solid darkgray;
+    padding: 1rem 0rem;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
 /* Bottom Header */
 .header .bottomHeader ul {
     display: flex;

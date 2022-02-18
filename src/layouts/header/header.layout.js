@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Styles from './header.module.css';
 import Logo from 'assets/images/logos/logo.png';
 import { Input, Navigation } from 'components';
@@ -7,15 +7,16 @@ import { DebounceInput } from 'react-debounce-input';
 
 export const Header = (props) => {
 
-    const[isUserOpen, setIsUserOpen] = useState(false);
-    const[isUserLogin, setIsUserLogin] = useState(true);
+    const [isUserOpen, setIsUserOpen] = useState(false);
+    const [isUserLogin, setIsUserLogin] = useState(false);
+    const [userLoginInfo, setUserLoginInfo] = useState({});
 
-    const userInfo = {
-        userName: 'mre',
-        firstName: 'محمد رضا',
-        lastLame: 'ابراهیمی',
-        email: 'John@gmail.com'
-    }
+    useEffect(()=> {
+        if(localStorage.hasOwnProperty('userData') && JSON.parse(localStorage.getItem('userData')).loggedIn) {
+            setIsUserLogin(true);
+            setUserLoginInfo(JSON.parse(localStorage.getItem('userData')));
+        }
+    }, []);
 
     const basketItems = [
     ] 
@@ -44,16 +45,6 @@ export const Header = (props) => {
                             console.log(event.target.value);
                         }}
                     />
-                
-
-                    {/*
-                    <Input placeholder="جست و جو" type='text' id='searchInput' onChange={(e) => {
-                        e.preventDefault();
-                        setTimeout(() => {
-                            setSearch(e.target.value);
-                        }, 500);
-                    }}/>
-                    */}
 
                 </div>
 
@@ -78,11 +69,20 @@ export const Header = (props) => {
                                     <ul>
                                         {isUserLogin ?
                                         <Fragment>
-                                            <li className={Styles.userBoxFName}><Navigation link='#' text={`${userInfo.firstName} خوش آمدی`} internal/></li>
+                                            <li className={Styles.userBoxFName}><Navigation link='#' text={`${userLoginInfo.firstName} خوش آمدی`} internal/></li>
                                             <li><Navigation link="/dashboard/profile" text="پروفایل" internal/></li>
                                             <li><Navigation link="/dashboard/orders" text="سفارشات" internal/></li>
                                             <li><Navigation link="/dashboard/wishlist" text="لیست علاقه مندی" internal/></li>
                                             <li><Navigation link="/dashboard/settings" text="تنظیمات" internal/></li>
+                                            {userLoginInfo.role == "admin" &&
+                                                <div className={Styles.adminMenuItem}>
+                                                    <li><Navigation link="/dashboard/protected-orders" text="سفارشات مدیریتی" internal/></li>
+                                                    <li><Navigation link="/dashboard/product" text="محصولات" internal/></li>
+                                                    <li><Navigation link="/dashboard/quantity" text="مقادیر" internal/></li>
+                                                    <li><Navigation link="/dashboard/category" text="دسته بندی" internal/></li>
+                                                    <li><Navigation link="/dashboard/users" text="کاربران" internal/></li>
+                                                </div>
+                                            }
                                             <li><Navigation link="/dashboard/logout" text="خروج" internal/></li>
                                         </Fragment> :
                                         <Fragment>
