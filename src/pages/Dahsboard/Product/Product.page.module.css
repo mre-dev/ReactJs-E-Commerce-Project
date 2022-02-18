@@ -1,0 +1,44 @@
+.productTable .productImage {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+.productTable .productImage img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.productTable .productImage .roundedCircleItem {
+    border-radius: 50%;
+}
+
+.productTable thead th:nth-child(1), .productTable thead th:nth-child(2) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.productTable tbody td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.productTable tbody .productActions {
+    display: flex;
+    gap: 1rem;
+}
+
+.sweetAlertDeleteProduct div {
+    font-size: 1.6rem;
+    text-align: center;
+}
+.productPageHeader {
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
