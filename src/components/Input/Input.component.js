@@ -14,6 +14,9 @@ export const Input = (props) => {
             id={props.id}
             required={props.required}
             disabled={props.disabled}
+            min={props.min}
+            max={props.max}
+            defaultValue={props.defaultValue}
         />
     );
 };
@@ -26,5 +29,8 @@ Input.propTypes = {
     name: PropTypes.string,
     id: PropTypes.string.isRequired,
     required: PropTypes.bool,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    defaultValue: PropTypes.string
 };

@@ -2,18 +2,18 @@
 
 .input {
     width: 100%;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0 10px;
-    font-size: 14px;
+    height: 4rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    padding: 0 1rem;
+    font-size: 1.4rem;
     color: #333;
     outline: none;
     text-align: center;
 }
 
 .input:focus {
-    border: 1px solid var(--Orange-Yellow);
+    border: 0.1rem solid var(--Orange-Yellow);
 }
 
 .input::placeholder {
@@ -21,5 +21,5 @@
 }
 
 .input:hover {
-    border: 1px solid #fdbc0b;
+    border: 0.1rem solid #fdbc0b;
 }
