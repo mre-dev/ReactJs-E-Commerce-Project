@@ -22,9 +22,12 @@ export const PATHS = {
     DASHBOARD: '/dashboard',
     DASHBOARD_PROFILE: '/dashboard/profile',
     DASHBOARD_ORDERS: '/dashboard/orders',
+    DASHBOARD_ADMIN_ORDERS: '/dashboard/protected-orders',
     DASHBOARD_PRODUCT: '/dashboard/product',
     DASHBOARD_QUANTITY: '/dashboard/quantity',
+    DASHBOARD_CATEGORY: '/dashboard/category',
     DASHBOARD_WISHLIST: '/dashboard/wishlist',
+    DASHBOARD_USERS: '/dashboard/users',
     DASHBOARD_SETTINGS: '/dashboard/settings',
     DASHBOARD_EXIT: '/dashboard/logout',
 }
