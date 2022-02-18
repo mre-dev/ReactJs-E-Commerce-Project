@@ -1,7 +1,5 @@
 import { getAppDescription, getAppTitle } from "./utils/functions.util";
-import React from 'react';
-import {Provider} from 'react-redux'
-import { store } from './redux/store';
+import React, { Fragment } from 'react';
 import { Helmet } from "react-helmet";
 import { AppRouting } from "routes/index.routes";
 
@@ -11,7 +9,7 @@ export const App = (props) => {
     const appDescription = getAppDescription();
 
     return (
-        <Provider store={store}>
+        <Fragment>
             <Helmet>
                 <title>{appTitle}</title>
                 <meta name="description" content={appDescription} />
@@ -27,6 +25,6 @@ export const App = (props) => {
                 <meta name="twitter:site" content={appTitle} />
             </Helmet>
             <AppRouting/>
-        </Provider>
+        </Fragment>
     );
 }
