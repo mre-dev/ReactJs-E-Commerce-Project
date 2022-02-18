@@ -10,6 +10,7 @@ export const Button = (props) => {
             ${Styles[`btn__color__${props.type}`]}
             ${Styles[`btn__size__${props.size}`]}
             ${props.borderRadius ?  Styles.btn__borderRadius : ''}
+            ${props.shake ?  Styles.btn__shake : ''}
         `}
         disabled={props.disabled}
         onClick={props.click}>
@@ -29,5 +30,6 @@ Button.propTypes = {
     borderRadius: PropTypes.bool,
     leftIcon: PropTypes.element,
     righIcon: PropTypes.element,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    shake: PropTypes.bool,
 };

@@ -31,6 +31,13 @@
     border-radius: var(--border-radius);
 }
 
+.btn:disabled,
+.btn[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: inherit;
+}
 
 /* Button Colors */
 .btn__color__primary {
@@ -93,4 +100,31 @@
 
 .btn__size__xxlarge {
     font-size: 2.8rem;
+}
+
+.btn__shake {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    animation-name: shakeMe;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes shakeMe {
+    2%, 18% {
+        transform: translate3d(0, -0.25rem, 0);
+    }
+    4%, 16% {
+        transform: translate3d(0, 0.25rem, 0);
+    }
+    6%, 10%, 14% {
+        transform: translate3d(0, -0.25rem, 0);
+    }
+    8%, 12% {
+        transform: translate3d(0, 0.25rem, 0);
+    }
+    18.1% {
+        transform: translate3d(0, 0, 0);
+    }
 }
