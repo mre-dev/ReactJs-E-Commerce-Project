@@ -1,9 +1,19 @@
+import { Header } from 'layouts';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 export const UserWishListPage = (props) => {
     return (
         <div>
-            Wish List Page
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>لیست علاقه مندی ها | {process.env.REACT_APP_WEBSITE_NAME}</title>
+                <meta name="description" content="پروفایل کاربری %REACT_APP_WEBSITE_NAME%" />
+            </Helmet>
+
+            <Header/>
+
+            لیست علاقه مندی ها
         </div>
     );
 };
