@@ -6,6 +6,6 @@ import ReduxThunk from 'redux-thunk';
 const composeEnhancers = (APP_ENVIORMENT !== 'production' && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 export const store = createStore(
-    //allReducer,
+    allReducer,
     composeEnhancers(applyMiddleware(ReduxThunk))
 );
