@@ -1,0 +1,108 @@
+.registerPage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #1f3d59;
+}
+
+.registerPage .RegisterBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    padding: 3rem;
+}
+
+.registerPage .RegisterBox form {
+    width: 38rem;
+}
+
+.registerPage .RegisterBox form select, .registerPage .RegisterBox form textarea {
+    width: 100%;
+    height: 4rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    color: #333;
+    outline: none;
+    text-align: center;
+}
+
+.registerPage .RegisterBox form textarea {
+    height: 10rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.registerPage .RegisterBox form input {
+    margin: 1rem 0rem;
+}
+
+.registerPage .RegisterBox form button {
+    margin: 0 auto;
+    width: 100%;
+    height: 4rem;
+    margin-top: 2rem;
+}
+
+.registerPage .RegisterBox form button:hover {
+    background-color: #00a8ff;
+    color: #fff;
+}
+
+.registerPage .RegisterBox a {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: darkgoldenrod;
+}
+
+.registerPage .RegisterBox form p {
+    width: fit-content;
+}
+
+.errorMessage {
+    color: tomato;
+}
+
+.backToHomeBox {
+    position: absolute;
+    top: 1rem;
+    display: flex;
+    left: 1rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.twoColRow {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.twoColRow div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+}
