@@ -10,7 +10,7 @@ class HttpService {
         CheckUserExpired();
         axios.defaults.baseURL = BASE_URL;
         axios.interceptors.request.use((config) => {
-            let token = JSON.parse(localStorage.getItem(ACCESS_TOKEN));
+            let token = localStorage.getItem(ACCESS_TOKEN);
             if (config.url !== LOGIN && token) {
                 config.headers['token'] = `${token}`
             }

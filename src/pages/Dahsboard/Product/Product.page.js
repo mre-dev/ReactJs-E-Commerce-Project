@@ -1,21 +1,25 @@
 import { Button, Table } from 'components';
 import { DashboardLayout, Header } from 'layouts';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import swal from 'sweetalert';
 import Styles from "./Product.page.module.css";
+import { DeleteProducts, GetProducts } from 'api/Product.api';
+import { GetCategory } from 'api/getCategory.api';
 
 export const UserProductPage = (props) => {
 
+    const [tableData, setTableData] = useState([]);
+
     const tableColumns = [
         {
-            Header: 'ردیف',
+            Header: 'کد',
             accessor: 'id',
             Filter: true
         },
         {
             Header: "تصویر",
-            accessor: "Image",
+            accessor: "image",
             Cell: ({ cell: { value }}) => (
             <div className={Styles.productImage}>
                 <img src={value} alt="Product Image" className={Styles.roundedCircleItem} />
@@ -24,12 +28,17 @@ export const UserProductPage = (props) => {
         },
         {
             Header: 'نام کالا',
-            accessor: 'Title',
+            accessor: 'title',
+            Filter: true
+        },
+        {
+            Header: 'قیمت',
+            accessor: 'price',
             Filter: true
         },
         {
             Header: 'دسته بندی',
-            accessor: 'Category',
+            accessor: 'category',
             Filter: true
         },
         {
@@ -45,7 +54,7 @@ export const UserProductPage = (props) => {
                         e.preventDefault();
 
                         swal({
-                            title: `آیا از حذف محصول ${value.row.original.Title} با آی دی ${value.row.original.id} اطمینان دارید؟`,
+                            title: `آیا از حذف محصول ${value.row.original.title} با آی دی ${value.row.original.id} اطمینان دارید؟`,
                             text: "توجه داشته باشید که حذف این محصول به طور کامل از سیستم حذف خواهد شد.",
                             icon: "warning",
                             buttons: {
@@ -56,9 +65,29 @@ export const UserProductPage = (props) => {
                             className: Styles.sweetAlertDeleteProduct
                         }).then((willDelete) => {
                             if (willDelete) {
-                              swal("محصول مورد نظر با موفقیت حذف شد", {
-                                icon: "success",
-                              });
+                                /*
+                                const productId = value.row.original.id;
+                                DeleteProducts(productId).then( async res => {
+                                    if (res.status === 200) {
+                                        swal({
+                                            title: "محصول با موفقیت حذف شد",
+                                            text: `محصول شماره ${productId} با موفقیت حذف شد`,
+                                            icon: "success", 
+                                        });
+                                        const newTableData = tableData.filter(item => item.id !== productId);
+                                        updateTableData(newTableData);
+                                    } else {
+                                        swal({
+                                            title: "محصول حذف نشد",
+                                            text: `محصول شماره ${productId} حذف نشد`,
+                                            icon: "error", 
+                                        });
+                                    }
+                                });
+                                */
+                                swal("محصول مورد نظر با موفقیت حذف شد", {
+                                    icon: "success",
+                                });
                             } else {
                               swal("محصول مورد نظر حذف نشد");
                             }
@@ -70,85 +99,33 @@ export const UserProductPage = (props) => {
         }
     ];
 
-    const tableData = [
-        {
-            id: 1,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 2,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 3,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 4,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 5,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 6,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 7,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 7,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 9,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 10,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        },
-        {
-            id: 11,
-            Image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            Title: "کفش برقی",
-            Category: "کفش",
-            ActionButtons: "مشاهده و تغییر"
-        }
-    ];
+    useEffect(() => {
+        getAllData();
+    }, []);
+
+    function getAllData() {
+        GetProducts().then(async res => {
+            let newData = [];
+            for (let i = 0; i < res.data.length; i++) {
+                let tempObject = {};
+
+                await GetCategory(res.data[i]["category-id"]).then(catRes => {
+                    tempObject.category = catRes.data["name-fa"];
+                });
+
+                tempObject.id = res.data[i].id;
+                tempObject.title = res.data[i]["product-name-fa"];
+                tempObject.price = res.data[i].price.amount;
+                tempObject.image = process.env.REACT_APP_BASE_URL + "/files/" + res.data[i].thumbnail;
+                newData.push(tempObject);
+            }
+            setTableData(newData);
+        });
+    }
+
+    function updateTableData(newData) {
+        setTableData(newData);
+    }
 
     return (
         <div>
@@ -163,7 +140,7 @@ export const UserProductPage = (props) => {
             <DashboardLayout>
                 <div className={Styles.productPageHeader}>
                     <div className={Styles.productPageHeaderTitle}>
-                        <h1>لیست کالا ها</h1>
+                        <h1>لیست کالا ها ({tableData.length})</h1>
                     </div>
                     <div className={Styles.productPageHeaderAdd}>
                         <Button text='افزودن محصول' type='success' size='small' borderRadius click={(event) => {
@@ -173,8 +150,14 @@ export const UserProductPage = (props) => {
                     </div>
                 </div>
 
-
-                <Table columns={tableColumns} data={tableData} className={Styles.productTable} sorting pagination filtering />
+                {
+                    tableData && tableData.length > 0 ?
+                            <Table columns={tableColumns} data={tableData} className={Styles.productTable} sorting pagination filtering />
+                            :
+                            <div className={Styles.noProduct}>
+                                <h1>محصولی برای نمایش وجود ندارد</h1>
+                            </div>
+                }
             </DashboardLayout>
         </div>
     );

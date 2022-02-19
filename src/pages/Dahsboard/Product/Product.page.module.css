@@ -14,8 +14,15 @@
     border-radius: 50%;
 }
 
-.productTable thead th:nth-child(1), .productTable thead th:nth-child(2) {
+.productTable thead th:nth-child(1),
+.productTable thead th:nth-child(2),
+.productTable thead th:nth-child(5) {
     width: 1%;
+    white-space: nowrap;
+}
+
+.productTable thead th:nth-child(4) {
+    width: 15%;
     white-space: nowrap;
 }
 

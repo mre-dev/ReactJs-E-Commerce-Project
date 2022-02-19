@@ -6,8 +6,7 @@ import Styles from './dashboardLayout.module.css';
 export const DashboardLayout = (props) => {
 
   const userData = localStorage.hasOwnProperty('userData') ? JSON.parse(localStorage.getItem('userData')) : {};
-  console.log(userData);
-
+  
   return (
       <div className={Styles.DashboardLayout}>
         <div className={Styles.row}>
