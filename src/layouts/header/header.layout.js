@@ -1,9 +1,10 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useMemo, useState } from 'react';
 import Styles from './header.module.css';
 import Logo from 'assets/images/logos/logo.png';
 import { Input, Navigation } from 'components';
 import { BsBasket2, FaUserCircle } from 'assets/images/icons';
 import { DebounceInput } from 'react-debounce-input';
+import { GetCategories } from 'api/getCategory.api';
 
 export const Header = (props) => {
 
@@ -11,15 +12,22 @@ export const Header = (props) => {
     const [isUserLogin, setIsUserLogin] = useState(false);
     const [userLoginInfo, setUserLoginInfo] = useState({});
 
+    const [headerMenu, setHeaderMenu] = useState([]);
+
     useEffect(()=> {
         if(localStorage.hasOwnProperty('userData') && JSON.parse(localStorage.getItem('userData')).loggedIn) {
             setIsUserLogin(true);
             setUserLoginInfo(JSON.parse(localStorage.getItem('userData')));
         }
+
+        //TODO: Use UseMemo to avoid re-rendering
+        GetCategories().then(res => {
+            setHeaderMenu(res.data);
+        });
+
     }, []);
 
-    const basketItems = [
-    ] 
+    const basketItems = [];
 
     const[CountBasketItem, setCountBasketItem] = useState(basketItems.length);
     const[Search, setSearch] = useState('');
@@ -102,16 +110,16 @@ export const Header = (props) => {
 
             <div className={Styles.bottomHeader}>
                 <ul>
-                    <li><Navigation link="/products/apple" text="اپل" internal/></li>
-                    <li><Navigation link="/products/samsung" text="سامسونگ" internal/></li>
-                    <li><Navigation link="/products/xiaomi" text="شیائومی" internal/></li>
-                    <li><Navigation link="/products/nokia" text="نوکیا" internal/></li>
-                    <li><Navigation link="/products/huawei" text="هواوی" internal/></li>
-                    <li><Navigation link="/products/lg" text="ال جی" internal/></li>
-                    <li><Navigation link="/products/gplus" text="جی پلاس" internal/></li>
-                    <li><Navigation link="/products/caterpillar" text="کاترپیلار" internal/></li>
-                    <li><Navigation link="/products/glx" text="جی ال ایکس" internal/></li>
-                    <li><Navigation link="/products/blackberry" text="بلک بری" internal/></li>
+                    {
+                        headerMenu.map((item, index) => {
+                            return (
+                                <li key={index}>
+                                    <Navigation link={`/products/${item["name-en"]}`} text={item["name-fa"]} internal/>
+                                </li>
+                            );
+                        })
+                    }
+
                 </ul>
             </div>
 
