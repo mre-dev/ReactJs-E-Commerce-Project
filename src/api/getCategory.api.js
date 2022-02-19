@@ -9,3 +9,12 @@ export async function GetCategory(id) {
         return Promise.reject(e);
     }
 }
+
+export async function GetCategories() {
+    try {
+        const response = await http.get(GET_CATEGORIES);
+        return response;
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
