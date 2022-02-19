@@ -1,5 +1,5 @@
 import { Button, Table } from 'components';
-import { Header } from 'layouts';
+import { DashboardLayout, Header } from 'layouts';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import swal from 'sweetalert';
@@ -160,20 +160,22 @@ export const UserProductPage = (props) => {
 
             <Header/>
 
-            <div className={Styles.productPageHeader}>
-                <div className={Styles.productPageHeaderTitle}>
-                    <h1>لیست کالا ها</h1>
+            <DashboardLayout>
+                <div className={Styles.productPageHeader}>
+                    <div className={Styles.productPageHeaderTitle}>
+                        <h1>لیست کالا ها</h1>
+                    </div>
+                    <div className={Styles.productPageHeaderAdd}>
+                        <Button text='افزودن محصول' type='success' size='small' borderRadius click={(event) => {
+                            event.preventDefault();
+                            alert('افزودن محصول');
+                        }}/>
+                    </div>
                 </div>
-                <div className={Styles.productPageHeaderAdd}>
-                    <Button text='افزودن محصول' type='success' size='small' borderRadius click={(event) => {
-                        event.preventDefault();
-                        alert('افزودن محصول');
-                    }}/>
-                </div>
-            </div>
 
 
-            <Table columns={tableColumns} data={tableData} className={Styles.productTable} sorting pagination filtering />
+                <Table columns={tableColumns} data={tableData} className={Styles.productTable} sorting pagination filtering />
+            </DashboardLayout>
         </div>
     );
 };
