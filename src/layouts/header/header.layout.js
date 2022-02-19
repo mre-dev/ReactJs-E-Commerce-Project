@@ -77,10 +77,10 @@ export const Header = (props) => {
                                             {userLoginInfo.role == "admin" &&
                                                 <div className={Styles.adminMenuItem}>
                                                     <li><Navigation link="/dashboard/protected-orders" text="سفارشات مدیریتی" internal/></li>
-                                                    <li><Navigation link="/dashboard/product" text="محصولات" internal/></li>
-                                                    <li><Navigation link="/dashboard/quantity" text="مقادیر" internal/></li>
-                                                    <li><Navigation link="/dashboard/category" text="دسته بندی" internal/></li>
-                                                    <li><Navigation link="/dashboard/users" text="کاربران" internal/></li>
+                                                    <li><Navigation link="/dashboard/product" text="مدیریت محصولات" internal/></li>
+                                                    <li><Navigation link="/dashboard/category" text="مدیریت دسته بندی" internal/></li>
+                                                    <li><Navigation link="/dashboard/quantity" text="مدیریت موجودی" internal/></li>
+                                                    <li><Navigation link="/dashboard/users" text="مدیریت کاربران" internal/></li>
                                                 </div>
                                             }
                                             <li><Navigation link="/dashboard/logout" text="خروج" internal/></li>
