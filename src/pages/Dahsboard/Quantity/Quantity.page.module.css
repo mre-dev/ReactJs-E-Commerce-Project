@@ -1,0 +1,9 @@
+.contentHeader {
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
