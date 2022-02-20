@@ -12,7 +12,7 @@ export const Table = (props) => {
     const tableInstanse = useTable({
         columns,
         data,
-        initialState: { pageSize: 10 }
+        initialState: { pageSize: props.pageSize || 10 },
     }, props.filtering && useFilters, props.sorting && useSortBy, props.pagination && usePagination);
 
     const {
@@ -148,5 +148,8 @@ Table.propTypes = {
     className: PropTypes.string,
     columns: PropTypes.array.isRequired,
     data: PropTypes.array.isRequired,
-    sort: PropTypes.bool
+    sorting: PropTypes.bool,
+    filtering: PropTypes.bool,
+    pagination: PropTypes.bool,
+    pageSize: PropTypes.number
 };

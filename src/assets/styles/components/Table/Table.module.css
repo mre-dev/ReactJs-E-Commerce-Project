@@ -5,6 +5,7 @@
     overflow: hidden;
     box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     margin: 2.5rem;
+    width: -webkit-fill-available;
 }
 
 .table th, .table td {
