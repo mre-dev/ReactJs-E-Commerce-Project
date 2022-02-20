@@ -17,6 +17,10 @@ export const Input = (props) => {
             min={props.min}
             max={props.max}
             defaultValue={props.defaultValue}
+            onBlur={props.onBlur}
+            onDoubleClick={props.onDoubleClick}
+            readOnly={props.readOnly}
+            onFocus={props.onFocus}
         />
     );
 };
@@ -32,5 +36,9 @@ Input.propTypes = {
     disabled: PropTypes.bool,
     min: PropTypes.number,
     max: PropTypes.number,
-    defaultValue: PropTypes.string
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onBlur: PropTypes.func,
+    onDoubleClick: PropTypes.func,
+    readOnly: PropTypes.bool,
+    onFocus: PropTypes.func
 };
