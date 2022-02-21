@@ -7,3 +7,18 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.content table thead tr th:nth-child(1) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.content table thead tr th:nth-child(3) {
+    width: 25%;
+    white-space: nowrap;
+}
+
+.content table thead tr th:nth-child(4) {
+    width: 15%;
+    white-space: nowrap;
+}
