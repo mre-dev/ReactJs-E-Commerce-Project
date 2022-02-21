@@ -10,8 +10,9 @@ import swal from 'sweetalert';
 
 export const ProtectedOrdersPage = (props) => {
 
-    const [allData, setAllData] = useState([]);
-    const [tableData, setTableData] = useState([]);
+    const [orderStatus, setOrderStatus] = useState('pending');
+    const [pendingOrders, setPendingOrders] = useState([]);
+    const [shipedOrders, setShipedOrders] = useState([]);
 
     const tableColumns = [
         {
@@ -51,7 +52,9 @@ export const ProtectedOrdersPage = (props) => {
     function getAllData() {
         try {
             GetOrders().then(async res => {
-                let newData = [];
+                let newPendingData = [];
+                let newShipedData = [];
+
                 for (let i = 0; i < res.data.length; i++) {
                     let tempObject = {};
 
@@ -63,9 +66,14 @@ export const ProtectedOrdersPage = (props) => {
                     tempObject.ordertime = convertMiladiToShamsi(new Date(res.data[i].createdAt).getFullYear(), new Date(res.data[i].createdAt).getMonth() + 1, new Date(res.data[i].createdAt).getDate())[0];
                     tempObject.status = res.data[i].status;
 
-                    newData.push(tempObject);
+                    if(res.data[i].status === 'pending') {
+                        newPendingData.push(tempObject);
+                    } else {
+                        newShipedData.push(tempObject);
+                    }
                 }
-                setAllData(newData);
+                setPendingOrders(newPendingData);
+                setShipedOrders(newShipedData);
             });
         } catch(error) {
             swal({
@@ -76,20 +84,6 @@ export const ProtectedOrdersPage = (props) => {
             });
         }
     }
-
-    async function filterData(status) {
-        let newData = [];
-        for (let i = 0; i < allData.length; i++) {
-            if (allData[i].status == status) {
-                newData.push(allData[i]);
-            }
-        }
-        setTableData(newData);
-    }
-
-    useEffect(() => {
-        filterData("pending");
-    }, [allData]);
 
     return (
         <div>
@@ -104,18 +98,23 @@ export const ProtectedOrdersPage = (props) => {
             <DashboardLayout>
                 <div className={Styles.ordersPageHeader}>
                     <div className={Styles.ordersPageHeaderTitle}>
-                        <h1>مدیریت سفارشات کاربری ({tableData.length})</h1>
+                        {
+                            orderStatus == 'pending' ?
+                            <h1>مدیریت سفارشات کاربری ({pendingOrders.length})</h1> :
+                            <h1>مدیریت سفارشات کاربری ({shipedOrders.length})</h1>
+                        }
+                        
                     </div>
                     <div className={Styles.ordersPageHeaderButtonsChangeStatus}>
                         <div>
                             <Input type='radio' id='status_pending' value='شفارش های در انتظار ارسال' defaultChecked={true} name='status' click={(event) => {
-                                filterData("pending");
+                                setOrderStatus("pending");
                             }}/>
                             <label htmlFor='status_pending'>شفارش های در انتظار ارسال</label>
                         </div>
                         <div>
                             <Input type='radio' id='status_shipped' value='شفارش های تحویل شده' name='status' click={(event) => {
-                                filterData("shipped");
+                                setOrderStatus("shipped");
                             }}/>
                             <label htmlFor='status_shipped'>شفارش های تحویل شده</label>
                         </div>
@@ -123,20 +122,13 @@ export const ProtectedOrdersPage = (props) => {
                 </div>
 
                 {
-                    tableData && tableData.length > 0 ?
-
-                        <Table
-                            columns={tableColumns}
-                            data={tableData}
-                            className={Styles.ordersTable}
-                            sorting
-                            pagination
-                            filtering
-                        />
-                        :
-                        <div className={Styles.noProductMessage}>
-                            <h1>هیچ سفارشی ثبت نشده است</h1>
-                        </div>
+                    orderStatus == "pending" && pendingOrders.length > 0 ?
+                        <Table columns={tableColumns} data={pendingOrders} className={Styles.ordersTable} sorting pagination filtering />
+                    :
+                    orderStatus == "shipped" && shipedOrders.length > 0 ?
+                        <Table columns={tableColumns} data={shipedOrders} className={Styles.ordersTable} sorting pagination filtering />
+                    :
+                        <div className={Styles.ordersPageEmpty}> <h1>هیچ سفارشی برای نمایش وجود ندارد</h1> </div>
                 }
 
             </DashboardLayout>

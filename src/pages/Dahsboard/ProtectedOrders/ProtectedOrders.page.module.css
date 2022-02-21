@@ -1,0 +1,46 @@
+.ordersTable thead th:nth-child(1), .ordersTable tbody td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.ordersTable tbody .productActions {
+    display: flex;
+    gap: 1rem;
+}
+
+.sweetAlertDeleteProduct div {
+    font-size: 1.6rem;
+    text-align: center;
+}
+.ordersPageHeader {
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* new */
+
+.ordersPageHeaderButtonsChangeStatus {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    gap: 2.5rem;
+}
+
+.ordersPageHeaderButtonsChangeStatus div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ordersPageHeaderButtonsChangeStatus div input {
+    width: 1.6rem;
+}
