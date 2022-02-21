@@ -21,6 +21,9 @@ export const Input = (props) => {
             onDoubleClick={props.onDoubleClick}
             readOnly={props.readOnly}
             onFocus={props.onFocus}
+            checked={props.checked}
+            defaultChecked={props.defaultChecked}
+            onClick={props.click}
         />
     );
 };
@@ -40,5 +43,8 @@ Input.propTypes = {
     onBlur: PropTypes.func,
     onDoubleClick: PropTypes.func,
     readOnly: PropTypes.bool,
-    onFocus: PropTypes.func
+    onFocus: PropTypes.func,
+    checked: PropTypes.bool,
+    defaultChecked: PropTypes.bool,
+    click: PropTypes.func
 };
