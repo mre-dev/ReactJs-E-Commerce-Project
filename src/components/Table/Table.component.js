@@ -6,8 +6,11 @@ import { Button, Input } from 'components';
 
 export const Table = (props) => {
     
-    const columns = useMemo(() => props.columns, []);
-    const data = useMemo(() => props.data, []);
+    //const columns = useMemo(() => props.columns, []);
+    //const data = useMemo(() => props.data, []);
+
+    const columns =  props.columns;
+    const data = props.data;
 
     const tableInstanse = useTable({
         columns,
