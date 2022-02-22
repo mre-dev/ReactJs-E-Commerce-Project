@@ -12,7 +12,7 @@ export const PrivateRtoutes = () => {
 
     const location = useLocation();
     useEffect(() => {
-        CheckUserExpired();
+        CheckUserExpired("Private");
     },[location]);
 
     const isAuth = useAuth();

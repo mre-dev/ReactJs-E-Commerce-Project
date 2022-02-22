@@ -17,7 +17,7 @@ export const ProtectedRtoutes = () => {
 
     const location = useLocation();
     useEffect(() => {
-        CheckUserExpired();
+        CheckUserExpired("Protected");
     },[location]);
 
     const isAuth = useAuth();
@@ -39,7 +39,7 @@ export const ProtectedForAdminRtoutes = () => {
 
     const location = useLocation();
     useEffect(() => {
-        CheckUserExpired();
+        CheckUserExpired("ProtectedForAdmin");
     },[location]);
 
     const isAuth = useAuth();

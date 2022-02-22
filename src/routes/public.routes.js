@@ -5,7 +5,7 @@ export const PublicRtoutes = () => {
 
     const location = useLocation();
     useEffect(() => {
-        CheckUserExpired();
+        CheckUserExpired("public");
     },[location]);
 
     return <Outlet/>;

@@ -26,7 +26,7 @@ export const parseJwt  = (token) => {
     return JSON.parse(jsonPayload);
 };
 
-export const CheckUserExpired = () => {
+export const CheckUserExpired = (pageStatus) => {
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (!token) return;
     const { exp } = parseJwt(token);
@@ -37,10 +37,12 @@ export const CheckUserExpired = () => {
         localStorage.removeItem(REFRESH_TOKEN);
         localStorage.removeItem(IS_LOGGED_IN);
 
-        Navigate.push({
-            url: '/login?expired=true',
-            animated: true
-        });
+        if(pageStatus != "public") {
+            Navigate.push({
+                url: '/login?expired=true',
+                animated: true
+            });
+        }
     }
 }
 
