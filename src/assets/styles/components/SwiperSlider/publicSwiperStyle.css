@@ -1,0 +1,26 @@
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 10px;
+    left: auto;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    font-family: 'IRANSans-web' !important;
+    font-size: 3.2rem !important;
+    color: black !important;
+    display: inline-block;
+    transform: scale(.5, 1.3);
+}
+
+.swiper-button-next:after {
+    content: ">" !important;
+}
+
+.swiper-rtl .swiper-button-prev:after {
+    content: "<" !important;
+}
