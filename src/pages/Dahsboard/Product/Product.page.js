@@ -65,7 +65,7 @@ export const UserProductPage = (props) => {
                             className: Styles.sweetAlertDeleteProduct
                         }).then((willDelete) => {
                             if (willDelete) {
-                                /*
+                                
                                 const productId = value.row.original.id;
                                 DeleteProducts(productId).then( async res => {
                                     if (res.status === 200) {
@@ -75,7 +75,7 @@ export const UserProductPage = (props) => {
                                             icon: "success", 
                                         });
                                         const newTableData = tableData.filter(item => item.id !== productId);
-                                        updateTableData(newTableData);
+                                        setTableData(newTableData);
                                     } else {
                                         swal({
                                             title: "محصول حذف نشد",
@@ -84,7 +84,7 @@ export const UserProductPage = (props) => {
                                         });
                                     }
                                 });
-                                */
+                                
                                 swal("محصول مورد نظر با موفقیت حذف شد", {
                                     icon: "success",
                                 });
