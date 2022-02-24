@@ -24,6 +24,8 @@ export const Input = (props) => {
             checked={props.checked}
             defaultChecked={props.defaultChecked}
             onClick={props.click}
+            multiple={props.multiple}
+            accept={props.accept}
         />
     );
 };
@@ -46,5 +48,7 @@ Input.propTypes = {
     onFocus: PropTypes.func,
     checked: PropTypes.bool,
     defaultChecked: PropTypes.bool,
-    click: PropTypes.func
+    click: PropTypes.func,
+    multiple: PropTypes.bool,
+    accept: PropTypes.string
 };
