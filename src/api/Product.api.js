@@ -19,6 +19,15 @@ export async function GetProduct(id) {
     }
 }
 
+export async function AddProduct(data) {
+    try {
+        const response = await http.post(GET_PRODUCTS, data);
+        return response;
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
+
 export async function DeleteProducts(id) {
     try {
         const response = await http.delete(GET_PRODUCTS + '/' + id);
