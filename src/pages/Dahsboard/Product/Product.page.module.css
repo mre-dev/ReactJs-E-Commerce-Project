@@ -49,3 +49,145 @@
     justify-content: space-between;
     align-items: center;
 }
+
+/* Modal Style */
+
+.Modal {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    right: 5rem;
+    bottom: 5rem;
+    background-color: #55608f;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d3d3d3c2;
+}
+
+.Modal .ModalHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-bottom: 0.1rem solid white;
+    padding-bottom: 1rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2.5rem;
+    gap: 2.5rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow:not(.Modal .ModalContent .ModalForm .ModalFormRowDynamicly .ModalFormRow) {
+    border-bottom: 0.1rem solid white;
+    padding-bottom: 2.5rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow .inputBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: -webkit-fill-available;
+    color: white;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow .multiPreview {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    overflow-x: scroll;
+    padding-bottom: 0.5rem;
+    flex-grow: 1;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow .multiPreview img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 0.5rem;
+}
+
+.Modal .ModalContent .ModalForm .imageInputBox {
+    gap: 2.5rem;
+}
+
+.Modal .ModalContent .ModalForm .imageInputBox .inputBox:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    width: fit-content;
+}
+
+.Modal .ModalContent .ModalForm .imageInputBox input {
+    display: none;
+}
+
+
+.Modal .ModalContent .ModalForm .ModalFormRow:nth-child(3) .imageInputBox p,
+.Modal .ModalContent .ModalForm .ModalFormRow:nth-child(3) .imageInputBox button {
+    width: max-content;
+    text-align: center;
+}
+
+.ModalFormRowDynamicly {
+    margin-top: 2.5rem;
+    color: white;
+    border-bottom: 0.1rem solid white;
+    padding-bottom: 2.5rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRowDynamicly .ModalFormRow .inputBox {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRowDynamicly .ModalFormRow .inputBox input::placeholder {
+    color: rgb(90, 90, 90);
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRowDynamicly .ModalFormRow .inputBox label {
+    width: max-content;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRowDynamicly .ModalFormRow .btnBox {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRowDynamicly .ModalFormRow .inputBox div {
+    flex-grow: 1 !important;
+}
