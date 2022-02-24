@@ -40,6 +40,8 @@
   "devDependencies": {
     "axios": "^0.25.0",
     "env-cmd": "^10.1.0",
+    "jodit": "^3.14.3",
+    "jodit-react": "^1.2.6",
     "prop-types": "^15.8.1",
     "react-debounce-input": "^3.2.5",
     "react-helmet": "^6.1.0",
