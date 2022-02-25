@@ -8,9 +8,8 @@ import { AddProduct, DeleteProducts, GetProducts } from 'api/Product.api';
 import { GetCategories, GetCategory } from 'api/getCategory.api';
 import Modal from 'react-modal';
 import JoditEditor from "jodit-react";
-import http from 'services/http.service';
-import { GET_CATEGORIES } from 'configs/url.config';
 import { UploadImage } from 'api/UploadImage.api';
+import { ShowPrice } from 'utils/functions.util';
 
 export const UserProductPage = (props) => {
 
@@ -43,6 +42,9 @@ export const UserProductPage = (props) => {
         {
             Header: 'قیمت',
             accessor: 'price',
+            Cell: ({ cell: { value }}) => (
+                <span>{ShowPrice(value, true)} تومان</span>
+            ),
             Filter: true
         },
         {
@@ -434,6 +436,7 @@ export const UserProductPage = (props) => {
 
                             <div className={`${Styles.ModalFormRow} ${Styles.imageInputBox}`}>
                                 <div className={Styles.inputBox}>
+                                    <p> ( توجه : تصویر اول به عنوان thumbnail انتخاب می شود)</p>
                                     <Button text='انتخاب تصاویر' type='success' size='small' borderRadius click={(event) => {
                                         event.preventDefault();
                                         // simulate click on file input
@@ -446,7 +449,15 @@ export const UserProductPage = (props) => {
                                 </div>
                                 <div className={Styles.multiPreview}>
                                     {(fileArray || []).map(url => (
-                                        <img src={url}/>
+                                        <div className={Styles.newProductImageBox}>
+                                            {/*remove image from fileArray*/}
+                                            <p className={Styles.removeImage} onClick={() => {
+                                                const newFileArray = fileArray.filter(file => file !== url);
+                                                setFileArray(newFileArray);
+                                            }}>&times;</p>
+
+                                            <img src={url}/>
+                                        </div>
                                     ))}
                                 </div>
                             </div>

@@ -122,6 +122,28 @@
     flex-grow: 1;
 }
 
+.Modal .ModalContent .ModalForm .ModalFormRow .multiPreview .newProductImageBox {
+    position: relative;
+    min-width: 10rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow .multiPreview .newProductImageBox .removeImage {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    background-color: red;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.Modal .ModalContent .ModalForm .ModalFormRow .multiPreview .newProductImageBox .removeImage:hover {
+    cursor: pointer;
+}
+
 .Modal .ModalContent .ModalForm .ModalFormRow .multiPreview img {
     width: 10rem;
     height: 10rem;
@@ -142,6 +164,7 @@
     color: white;
     font-size: 1.2rem;
     width: fit-content;
+    text-align: center;
 }
 
 .Modal .ModalContent .ModalForm .imageInputBox input {
