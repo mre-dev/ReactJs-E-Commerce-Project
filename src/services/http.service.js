@@ -26,6 +26,7 @@ class HttpService {
   
             if (error.response.status === 401) {
                 localStorage.setItem(IS_LOGGED_IN, false.toString());
+                localStorage.removeItem(IS_LOGGED_IN);
                 history.push(PATHS.LOGIN);
             }
             return Promise.reject(error);

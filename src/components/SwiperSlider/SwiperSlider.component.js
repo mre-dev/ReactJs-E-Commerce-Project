@@ -3,13 +3,13 @@ import React, { Fragment } from 'react';
 import Styles from "assets/styles/components/SwiperSlider/SwiperSlider.module.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import 'swiper/css/effect-fade';
+import { Navigation } from 'components';
 
 export const SwiperSlider = (props) => {
 
@@ -26,19 +26,23 @@ export const SwiperSlider = (props) => {
                     height: props.height ?? '100%',
                     borderRadius: props.borderRadius ?? '0rem'
                 }}
-                grabCursor={true}
-                spaceBetween={30}
+                grabCursor={props.grabCursor ?? true}
+                spaceBetween={props.spaceBetween ?? 30}
                 centeredSlides={true}
                 autoplay={{
-                delay: 2500,
+                delay: props.autoplayDelay ?? 2500,
                 disableOnInteraction: false,
                 }}
                 pagination={{
                 clickable: true,
                 }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className={Styles.mySwiper}
+                navigation={props.navigationIcon ?? true}
+                modules={props.modules ?? []}
+                className={Styles.mySwiper + ' ' + props.className}
+                slidesPerView={props.slidesPerView ?? 1}
+                slidesPerGroup={props.slidesPerGroup ?? 1}
+                loop={props.loop ?? true}
+                loopFillGroupWithBlank={props.loopFillGroupWithBlank ?? true}                //stop autoplay on hover (for desktop)
             >
                 {
                     props.items.map((item, index) => {
@@ -46,7 +50,7 @@ export const SwiperSlider = (props) => {
                             <SwiperSlide key={index}>
                                 <div className={Styles.slide}>
                                     <div className={Styles.slideImage}>
-                                        <img src={item.image} alt={item.title} />
+                                        <img src={item.image} />
                                     </div>
                                     <div className={Styles.slideContent}>
                                         <div className={Styles.slideTitle}>
@@ -70,5 +74,15 @@ SwiperSlider.propTypes = {
     items: PropTypes.array.isRequired,
     width: PropTypes.string,
     height: PropTypes.string,
-    borderRadius: PropTypes.string
+    borderRadius: PropTypes.string,
+    spaceBetween: PropTypes.number,
+    slidesPerView: PropTypes.number,
+    slidesPerGroup: PropTypes.number,
+    loop: PropTypes.bool,
+    loopFillGroupWithBlank: PropTypes.bool,
+    modules: PropTypes.array,
+    grabCursor: PropTypes.bool,
+    navigationIcon: PropTypes.bool,
+    className: PropTypes.string,
+    autoplayDelay: PropTypes.number
 };

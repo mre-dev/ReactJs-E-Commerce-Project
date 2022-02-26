@@ -1,0 +1,68 @@
+.catContainer {
+    position: relative;
+    height: 25rem;
+    margin: 5rem;
+    padding-top: 2.5rem;
+    border: 0.1rem solid #6b6e8b;
+    border-radius: 0.5rem;
+}
+
+.catContainer h3 {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6b6e8b;
+    padding: 0.5rem 1rem;
+}
+
+.catContainer div:first-child {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.catContainer .catSlider img {
+    border-radius: 50%;
+    width: 12.5rem;
+    height: 12.5rem;
+    border: 0.2rem solid red;
+    padding: 0.2rem;
+    object-fit: fill;
+    background-color: white;
+    min-width: 12.5rem;
+    transform: scale(1);
+    animation: pulse-black 2s infinite;
+}
+
+@keyframes pulse-black {
+    0% {
+      box-shadow: 0 0 0 0 rgba(251, 0, 0, 0.7);
+    }
+    
+    70% {
+      box-shadow: 0 0 0 10px rgba(160, 55, 55, 0);
+    }
+    
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+.catContainer .catSlider h2 {
+    width: max-content;
+    font-size: 1.6rem;
+    margin-top: 18rem;
+    margin-bottom: 1rem;
+}
+
+.catContainer .catSlider h2 a {
+    color: black;
+    transition: 0.3s;
+}
+
+.catContainer .catSlider h2 a:hover {
+    color: red;
+    transition: 0.3s;
+}
