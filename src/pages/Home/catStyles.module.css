@@ -1,10 +1,9 @@
 .catContainer {
     position: relative;
-    height: 25rem;
-    margin: 5rem;
+    height: 30rem;
+    margin: 5rem 5rem 2.5rem 5rem;
     padding-top: 2.5rem;
-    border: 0.1rem solid #6b6e8b;
-    border-radius: 0.5rem;
+    border-top: 0.1rem solid #6b6e8b;
 }
 
 .catContainer h3 {
@@ -18,9 +17,15 @@
     padding: 0.5rem 1rem;
 }
 
-.catContainer div:first-child {
-    padding-top: 1rem;
-    text-align: center;
+.catContainer .catSlider {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0rem 2.5rem;
 }
 
 .catContainer .catSlider img {
@@ -34,6 +39,7 @@
     min-width: 12.5rem;
     transform: scale(1);
     animation: pulse-black 2s infinite;
+    margin-top: 1rem;
 }
 
 @keyframes pulse-black {
@@ -53,7 +59,6 @@
 .catContainer .catSlider h2 {
     width: max-content;
     font-size: 1.6rem;
-    margin-top: 18rem;
     margin-bottom: 1rem;
 }
 

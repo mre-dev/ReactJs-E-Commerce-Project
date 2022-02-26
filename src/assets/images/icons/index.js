@@ -25,3 +25,6 @@ const allIconsType = {
 export { FcHome, FcAssistant } from "react-icons/fc";
 export { BsBasket2 } from "react-icons/bs";
 export { FaUserCircle } from "react-icons/fa";
+export { MdOutlineDeliveryDining } from "react-icons/md";
+export { BsCreditCard2FrontFill } from "react-icons/bs";
+export { BiSupport } from "react-icons/bi";

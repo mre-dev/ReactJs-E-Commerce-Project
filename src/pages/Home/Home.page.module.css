@@ -3,3 +3,128 @@
     margin: 2.5rem 5rem;
     position: relative;
 }
+
+
+.catProductsBox {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+.catProductsBox .productContainer {
+    width: 25rem;
+    min-width: 25rem;
+    height: 35rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 0.1rem solid lightgray;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    transform: scale(1);
+    box-shadow: 0 0 0.5rem 0.1rem lightgrey;
+    transition: 0.3s;
+}
+
+.productContainer:hover {
+    background-color: #d0d3ff;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.catProductsBox .productContainer img {
+    width: 20rem;
+    height: 25rem;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.firstCatProduct, .secondCatProduct, .thirdCatProduct {
+    background-color: white;
+    margin-bottom: 5rem;
+    border-top: 0.1rem solid darkgray;
+    border-bottom: 0.1rem solid darkgray;
+    padding: 5rem 2rem 2.5rem 2rem;
+}
+
+.firstCatProduct .firstCatProductHeader, .secondCatProduct .secondCatProductHeader, .thirdCatProduct .thirdCatProductHeader {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productInfo h3 a {
+    color: black;
+    transition: 0.3s;
+}
+
+.productInfo h3 a:hover {
+    color: red;
+    transition: 0.3s;
+}
+
+.productInfo hr {
+    margin: 1rem 0rem;
+}
+
+.productInfo p {
+    font-size: 1.2rem;
+}
+
+.Services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.Services .ServicesBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    background-color: white;
+    border: 0.1rem solid darkgray;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+}
+
+.Services .ServicesBox:hover {
+    background-color: #d0d3ff;
+    box-shadow: 0 0 0.5rem 0.1rem lightgrey;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Services .ServicesBox svg {
+    font-size: 7rem;
+    color: cornflowerblue;
+}
+
+.Services .ServicesBox h3 {
+    font-size: 1.6rem;
+}
+
+.Services .ServicesBox p {
+    color: gray;
+    font-size: 1.1rem;
+}
