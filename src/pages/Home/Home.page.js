@@ -4,7 +4,7 @@ import { Header } from 'layouts';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Styles from "./Home.page.module.css";
-import { Button, Navigation as CatNavigation} from 'components';
+import { Button, Navigation as CatNavigation, ProductCard} from 'components';
 
 import CatStyles from "./catStyles.module.css";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -210,15 +210,11 @@ export const HomePage = (props) => {
                             firstCategoryProducts.length > 0 ?
                             firstCategoryProducts.map((product, index) => {
                                 return (
-                                    <div className={Styles.productContainer} key={index}>
-                                        <CatNavigation text={<img src={process.env.REACT_APP_BASE_URL + "/files/" + product.thumbnail} alt={product['product-name-fa']}/>} link={PATHS.PRODUCT + "/" + product.id} internal />
-                                        
-                                        <div className={Styles.productInfo}>
-                                            <h3><CatNavigation text={product['product-name-fa']} link={PATHS.PRODUCT + "/" + product.id} internal /></h3>
-                                            <hr/>
-                                            <p>{ShowPrice(product.price.amount, true)} تومان</p>
-                                        </div>
-                                    </div>
+                                    <ProductCard key={index} id={product.id}
+                                        image={product.thumbnail}
+                                        title={product['product-name-fa']}
+                                        price={product.price.amount}
+                                    />
                                 )
                             }) : null
                         }
@@ -276,14 +272,11 @@ export const HomePage = (props) => {
                             secondCategoryProducts.length > 0 ?
                             secondCategoryProducts.map((product, index) => {
                                 return (
-                                    <div className={Styles.productContainer} key={index}>
-                                        <CatNavigation text={<img src={process.env.REACT_APP_BASE_URL + "/files/" + product.thumbnail} alt={product['product-name-fa']}/>} link={PATHS.PRODUCT + "/" + product.id} internal />
-                                        <div className={Styles.productInfo}>
-                                            <h3><CatNavigation text={product['product-name-fa']} link={PATHS.PRODUCT + "/" + product.id} internal /></h3>
-                                            <hr/>
-                                            <p>{ShowPrice(product.price.amount, true)} تومان</p>
-                                        </div>
-                                    </div>
+                                    <ProductCard key={index} id={product.id}
+                                        image={product.thumbnail}
+                                        title={product['product-name-fa']}
+                                        price={product.price.amount}
+                                    />
                                 )
                             }) : null
                         }
@@ -320,14 +313,11 @@ export const HomePage = (props) => {
                             thirdCategoryProducts.length > 0 ?
                             thirdCategoryProducts.map((product, index) => {
                                 return (
-                                    <div className={Styles.productContainer} key={index}>
-                                        <CatNavigation text={<img src={process.env.REACT_APP_BASE_URL + "/files/" + product.thumbnail} alt={product['product-name-fa']}/>} link={PATHS.PRODUCT + "/" + product.id} internal />
-                                        <div className={Styles.productInfo}>
-                                            <h3><CatNavigation text={product['product-name-fa']} link={PATHS.PRODUCT + "/" + product.id} internal /></h3>
-                                            <hr/>
-                                            <p>{ShowPrice(product.price.amount, true)} تومان</p>
-                                        </div>
-                                    </div>
+                                    <ProductCard key={index} id={product.id}
+                                        image={product.thumbnail}
+                                        title={product['product-name-fa']}
+                                        price={product.price.amount}
+                                    />
                                 )
                             }) : null
                         }
