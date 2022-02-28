@@ -1,1 +1,48 @@
 @import url(ProductCard-var.css);
+
+.productContainer {
+    width: 25rem;
+    min-width: 25rem;
+    height: 35rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 0.1rem solid lightgray;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    transform: scale(1);
+    box-shadow: 0 0 0.5rem 0.1rem lightgrey;
+    transition: 0.3s;
+}
+
+.productContainer:hover {
+    background-color: #d0d3ff;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.productContainer img {
+    width: 20rem;
+    height: 25rem;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.productInfo h3 a {
+    color: black;
+    transition: 0.3s;
+}
+
+.productInfo h3 a:hover {
+    color: red;
+    transition: 0.3s;
+}
+
+.productInfo hr {
+    margin: 1rem 0rem;
+}
+
+.productInfo p {
+    font-size: 1.2rem;
+}
