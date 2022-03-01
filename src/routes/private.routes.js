@@ -5,7 +5,12 @@ import { CheckUserExpired } from 'utils/functions.util';
 
 const useAuth = () => 
 {
-    return localStorage.getItem('IS_LOGGED_IN');
+    if(localStorage.hasOwnProperty('IS_LOGGED_IN') && localStorage.getItem('IS_LOGGED_IN') != "false")
+    {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 export const PrivateRtoutes = () => {
