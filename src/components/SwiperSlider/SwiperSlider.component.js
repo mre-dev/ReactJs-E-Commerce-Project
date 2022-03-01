@@ -8,7 +8,15 @@ import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/zoom";
+
 import 'swiper/css/effect-fade';
+import 'swiper/css/effect-cube';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/effect-flip';
+import 'swiper/css/effect-creative';
+import 'swiper/css/effect-cards';
+
 import { Navigation } from 'components';
 
 export const SwiperSlider = (props) => {
@@ -20,21 +28,25 @@ export const SwiperSlider = (props) => {
     return (
         <Fragment>
             <Swiper
-                dir="rtl"
+                dir={props.dir || "rtl"}
+                effect={props.effect || "fade"}
                 style={{
                     width: props.width ?? '100%',
                     height: props.height ?? '100%',
-                    borderRadius: props.borderRadius ?? '0rem'
+                    borderRadius: props.borderRadius ?? '0rem',
+                    "--swiper-navigation-color": props.navigationColor ? '#fff' : '#fff',
+                    "--swiper-pagination-color": props.paginationColor ? '#fff' : '#fff',
                 }}
                 grabCursor={props.grabCursor ?? true}
                 spaceBetween={props.spaceBetween ?? 30}
                 centeredSlides={true}
+                zoom={props.zoom ?? false}
                 autoplay={{
                 delay: props.autoplayDelay ?? 2500,
                 disableOnInteraction: false,
                 }}
                 pagination={{
-                clickable: true,
+                    clickable: true,
                 }}
                 navigation={props.navigationIcon ?? true}
                 modules={props.modules ?? []}
@@ -84,5 +96,10 @@ SwiperSlider.propTypes = {
     grabCursor: PropTypes.bool,
     navigationIcon: PropTypes.bool,
     className: PropTypes.string,
-    autoplayDelay: PropTypes.number
+    autoplayDelay: PropTypes.number,
+    effect: PropTypes.string,
+    dir: PropTypes.string,
+    paginationColor: PropTypes.string,
+    navigationColor: PropTypes.string,
+    zoom: PropTypes.bool
 };
