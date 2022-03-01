@@ -32,6 +32,10 @@
 .productInfo h3 a {
     color: black;
     transition: 0.3s;
+    width: -webkit-fill-available;
+    max-width: fit-content;
+    display: inline-block;
+    white-space: pre-line;
 }
 
 .productInfo h3 a:hover {

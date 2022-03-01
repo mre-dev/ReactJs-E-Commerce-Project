@@ -7,7 +7,7 @@ import { PATHS } from 'configs/routes.config';
 
 export const ProductCard = (props) => {
     return (
-        <div className={Styles.productContainer} key={props.key}>
+        <div className={Styles.productContainer}>
             <Navigation text={<img src={process.env.REACT_APP_BASE_URL + "/files/" + props.image} alt={props.title}/>} link={PATHS.PRODUCT + "/" + props.id} internal />
             
             <div className={Styles.productInfo}>
@@ -23,5 +23,5 @@ ProductCard.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired
+    price: PropTypes.string.isRequired
 };
