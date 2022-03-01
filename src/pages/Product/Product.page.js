@@ -168,7 +168,8 @@ export const ProductPage = (props) => {
                 id: comments.length + 1,
                 "user-id": JSON.parse(localStorage.getItem('userData')).id,
                 comment: e.target.comment.value,
-                "createdAt": newTime
+                "createdAt": newTime,
+                "user-name": JSON.parse(localStorage.getItem('userData')).firstName + " " + JSON.parse(localStorage.getItem('userData')).lastName
             }
         ]);
     }
@@ -194,8 +195,8 @@ export const ProductPage = (props) => {
 
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>{productName} | {process.env.REACT_APP_WEBSITE_NAME}</title>
-                <meta name="description" content={`${productName} %REACT_APP_WEBSITE_NAME%`} />
+                <title>{`${productInformation['product-name-fa']} | ${process.env.REACT_APP_WEBSITE_NAME}`}</title>
+                <meta name="description" content={`${productInformation['product-name-fa']} %REACT_APP_WEBSITE_NAME%`} />
             </Helmet>
 
             <Header/>
