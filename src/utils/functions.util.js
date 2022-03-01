@@ -93,3 +93,11 @@ export function ShowPrice(price, FA_Number = false) {
         return price;
     }
 }
+
+
+export function removeAllUserData() {
+    localStorage.removeItem('userData');
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(REFRESH_TOKEN);
+    localStorage.removeItem(IS_LOGGED_IN);
+}
