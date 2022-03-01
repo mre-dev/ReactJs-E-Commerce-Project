@@ -40,6 +40,7 @@
   "devDependencies": {
     "axios": "^0.25.0",
     "env-cmd": "^10.1.0",
+    "html-to-react": "^1.4.8",
     "jodit": "^3.14.3",
     "jodit-react": "^1.2.6",
     "prop-types": "^15.8.1",
@@ -52,7 +53,9 @@
     "react-modal": "^3.14.4",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
+    "react-select": "^5.2.2",
     "react-table": "^7.7.0",
+    "react-tabs": "^3.2.3",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "sweetalert": "^2.1.2",
