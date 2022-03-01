@@ -16,8 +16,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+
     "custom-start": "env-cmd -f ./src/environment/.env.development env-cmd -f ./src/environment/.env.local react-scripts start",
-    "custom-build": "env-cmd -f ./src/environment/.env.production env-cmd -f ./src/environment/.env.local react-scripts build"
+    "custom-build": "env-cmd -f ./src/environment/.env.production env-cmd -f ./src/environment/.env.local react-scripts build",
+
+    "backend": "node server",
+    "backend:dev": "nodemon server",
+    "backend:prod": "nodemon server",
+
+    "concurrently": "concurrently \"npm run custom-start\" \"npm run backend\" "
   },
   "eslintConfig": {
     "extends": [
@@ -39,10 +46,16 @@
   },
   "devDependencies": {
     "axios": "^0.25.0",
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "html-to-react": "^1.4.8",
     "jodit": "^3.14.3",
     "jodit-react": "^1.2.6",
+    "json-server": "^0.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15",
     "prop-types": "^15.8.1",
     "react-debounce-input": "^3.2.5",
     "react-easy-marquee": "^1.2.3",
