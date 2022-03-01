@@ -36,3 +36,12 @@ export async function DeleteProducts(id) {
         return Promise.reject(e);
     }
 }
+
+export async function UpdateProduct(id, data) {
+    try {
+        const response = await http.put(GET_PRODUCTS + '/' + id, data);
+        return response;
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
