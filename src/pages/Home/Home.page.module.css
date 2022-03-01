@@ -91,3 +91,24 @@
         gap: 2.5rem;
     }
 }
+
+.secondBanner {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0rem 2.5rem 2.5rem 2.5rem;
+}
+
+.secondBanner img:nth-child(1) {
+    border-radius: 1rem;
+    width: 65rem;
+}
+
+.secondBanner img:nth-child(2) {
+    border-radius: 1rem;
+    width: 20.5rem;
+}

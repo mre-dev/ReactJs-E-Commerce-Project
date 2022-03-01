@@ -13,10 +13,16 @@ import { GetProducts } from 'api/Product.api';
 
 import Marquee from "react-easy-marquee";
 import { useNavigate } from 'react-router-dom';
-import { ShowPrice } from 'utils/functions.util';
 import { MdOutlineDeliveryDining } from 'assets/images/icons';
 import { BiSupport } from 'assets/images/icons';
 import { BsCreditCard2FrontFill } from 'assets/images/icons';
+
+import sliderBanner_1 from 'assets/images/home-slider/huawei p40 banner.jpg';
+import sliderBanner_2 from 'assets/images/home-slider/samsung s21 ultra banner.jpg';
+import sliderBanner_3 from 'assets/images/home-slider/xiaomi mi 11 ultra banner.jpg';
+
+import secondBanner_0 from 'assets/images/second-banner-0.jpg';
+import secondBanner_1 from 'assets/images/second-banner-1.jpg';
 
 export const HomePage = (props) => {
 
@@ -24,19 +30,19 @@ export const HomePage = (props) => {
 
     const sliderItems = [
         {
-            image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-            title: "First slide",
-            description: "Nulla vitae elit libero, a pharetra augue mollis interdum."
+            image: sliderBanner_1,
+            title: "",
+            description: ""
         },
         {
-            image: "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=939&q=80",
-            title: "Second slide",
-            description: "Nulla vitae elit libero, a pharetra augue mollis interdum."
+            image: sliderBanner_2,
+            title: "",
+            description: ""
         },
         {
-            image: "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-            title: "Third slide",
-            description: "Nulla vitae elit libero, a pharetra augue mollis interdum."
+            image: sliderBanner_3,
+            title: "",
+            description: ""
         }
     ];
     
@@ -103,16 +109,28 @@ export const HomePage = (props) => {
     useEffect(() => {
         if(Object.keys(TheMostFrequentCategories).length > 0) {
 
+            let counter1 = 0;
             setFirstCategoryProducts(products.filter(product => {
-                return product['category-id'] == Object.keys(TheMostFrequentCategories)[0];
+                if(counter1 < 10 && String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[0])) {
+                    counter1++;
+                    return String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[0]);
+                }
             }));
 
+            let counter2 = 0;
             setSecondCategoryProducts(products.filter(product => {
-                return product['category-id'] == Object.keys(TheMostFrequentCategories)[1];
+                if(counter2 < 10 && String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[1])) {
+                    counter2++;
+                    return String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[1]);
+                }
             }));
 
+            let counter3 = 0;
             setThirdCategoryProducts(products.filter(product => {
-                return product['category-id'] == Object.keys(TheMostFrequentCategories)[2];
+                if(counter3 < 10 && String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[2])) {
+                    counter3++;
+                    return String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[2]);
+                }
             }));
         }
     }, [TheMostFrequentCategories]);
@@ -284,6 +302,13 @@ export const HomePage = (props) => {
                 </div>
             </div>
             : null }
+
+
+            <div className={Styles.secondBanner}>
+                <img src={secondBanner_0} />
+                <img src={secondBanner_1} />
+            </div>
+
 
             {thirdCategoryProducts.length > 0 ?
             <div className={Styles.thirdCatProduct}>
