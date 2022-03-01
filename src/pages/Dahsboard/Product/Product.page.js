@@ -286,8 +286,8 @@ export const UserProductPage = (props) => {
                 "guarantees": inputGuaranteeList,
                 "properties": inputPropertyList,
                 "description": {
-                    "en": contentFa,
-                    "fa": contentEn
+                    "en": contentEn,
+                    "fa": contentFa
                 },
                 "count": e.target.quantity.value,
                 "createdAt": new Date().getTime(),
