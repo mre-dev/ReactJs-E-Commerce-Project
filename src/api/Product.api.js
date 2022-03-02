@@ -45,3 +45,26 @@ export async function UpdateProduct(id, data) {
         return Promise.reject(e);
     }
 }
+
+export async function FilterProductByCategories(categorieId) {
+    try {
+        const response = await http.get(GET_PRODUCTS + '?category-id=' + categorieId);
+        return response;
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
+
+export async function ProductsPagination(categorieId, page, pageSize) {
+    try {
+        if(categorieId == "all") {
+            const response = await http.get(GET_PRODUCTS + '?_page=' + page + '&_limit=' + pageSize);
+            return response;
+        } else {
+            const response = await http.get(GET_PRODUCTS + '?category-id=' + categorieId + '&_page=' + page + '&_limit=' + pageSize);
+            return response;
+        }
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
