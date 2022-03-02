@@ -34,7 +34,7 @@ export const ProductsPage = (props) => {
 
             <Header/>
 
-            <ProductCategory category={currentCategory} perPage={1} currentPage={pageNumber}/>
+            <ProductCategory category={currentCategory} perPage={12} currentPage={pageNumber}/>
         </div>
     );
 };

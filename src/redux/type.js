@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, USER_DATA } from "./actions";
+import { ASC, DESC, LOGIN_SUCCESS, USER_DATA } from "./actions";
 
 export const setUserDataWhenLogin = (userData) => {
     return {
@@ -10,5 +10,17 @@ export const setUserDataWhenLogin = (userData) => {
 export const getUserDataWhenLogin = () => {
     return {
       type: USER_DATA,
+    };
+};
+
+export const sortByDesc = () => {
+    return {
+      type: DESC,
+    };
+};
+
+export const sortByAsc = () => {
+    return {
+      type: ASC,
     };
 };

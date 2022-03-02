@@ -6,3 +6,8 @@ export {
     USER_DATA,
     LOGOUT
 } from "./userConstants";
+
+export {
+    DESC,
+    ASC
+} from "./productSortActions";

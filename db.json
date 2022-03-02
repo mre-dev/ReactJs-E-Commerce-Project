@@ -1351,13 +1351,6 @@
   ],
   "category": [
     {
-      "name-en": "NoCategory",
-      "name-fa": "بدون دسته بندی",
-      "createdAt": 1645019634099,
-      "icon": null,
-      "id": 0
-    },
-    {
       "name-en": "apple",
       "name-fa": "اپل",
       "createdAt": 1645019634099,

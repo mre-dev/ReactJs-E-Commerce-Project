@@ -4,13 +4,17 @@ import { Button, Navigation, ProductCard } from 'components';
 import { PATHS } from 'configs/routes.config';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
 import Styles from './productCategory.module.css';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { sortByAsc, sortByDesc } from 'redux/type';
 
 export const ProductCategory = (props) => {
 
     const Nav = useNavigate();
+
+    const sortStatus = useSelector((state) => state.productSort);
+    const customDispatch = useDispatch();
 
     const [categories, setCategories] = useState([]);
     useEffect(() => {
@@ -55,17 +59,17 @@ export const ProductCategory = (props) => {
             }
 
             if(props.category == 'all') {
-                ProductsPagination("all", props.currentPage, props.perPage).then(res => {
+                ProductsPagination("all", props.currentPage, props.perPage, sortStatus).then(res => {
                     setProducts(res.data);
                 });
             } else {
-                ProductsPagination(categoryId, props.currentPage, props.perPage).then(res => {
+                ProductsPagination(categoryId, props.currentPage, props.perPage, sortStatus).then(res => {
                     setProducts(res.data);
                 });
             }
 
         }
-    }, [categoryId, props.currentPage]);
+    }, [categoryId, props.currentPage, sortStatus]);
 
     const [pagination, setPagination] = useState([1]);
     const [currentPage, setCurrentPage] = useState(props.currentPage || 1);
@@ -85,6 +89,14 @@ export const ProductCategory = (props) => {
             setCurrentPage(props.currentPage);
         }
     }, [props.currentPage]);
+
+    const changeProductSort = (event) => {
+        if(event.target.value == "desc") {
+            customDispatch(sortByDesc());
+        } else {
+            customDispatch(sortByAsc());
+        }
+    };
 
     return (
         <div className={Styles.productCategory}>
@@ -108,6 +120,22 @@ export const ProductCategory = (props) => {
             </div>
             
             <div className={Styles.productContent}>
+
+                <div className={Styles.productContent__sort}>
+
+                    <div>
+                        <p> مرتب سازی بر اساس زمان انتشار : </p>
+                    </div>
+
+                    <div>
+                        <div className={Styles.productContent__sort__form} onChange={changeProductSort}>
+                            <input type="radio" value="desc" name="sortDate" /> نزولی
+                            <input type="radio" value="asc" name="sortDate" /> صعودی
+                        </div>
+                    </div>
+
+                </div>
+                
                 <div className={Styles.productCategory__products}>
                     {categoryId ? (
                         <Fragment>

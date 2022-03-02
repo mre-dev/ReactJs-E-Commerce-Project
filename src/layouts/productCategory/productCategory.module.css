@@ -141,3 +141,28 @@
 .productCategory__pagination__item__selected a {
     color: white;
 }
+
+.productContent__sort {
+    width: 90%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid lightgray;
+    box-shadow: 0 0 0.5rem 0.1rem lightgrey;
+    margin-top: 1rem;
+}
+
+.productContent__sort div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+}
