@@ -121,6 +121,7 @@ export const ProductCategory = (props) => {
             
             <div className={Styles.productContent}>
 
+                {products.length > 0 ? 
                 <div className={Styles.productContent__sort}>
 
                     <div>
@@ -135,7 +136,7 @@ export const ProductCategory = (props) => {
                     </div>
 
                 </div>
-                
+                : null}
                 <div className={Styles.productCategory__products}>
                     {categoryId ? (
                         <Fragment>
