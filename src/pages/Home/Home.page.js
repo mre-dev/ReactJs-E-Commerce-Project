@@ -63,11 +63,6 @@ export const HomePage = (props) => {
         }
     });
 
-    //filter the first category from the array
-    const filteredCategoryArray = categoryArray.filter((category, index) => {
-        return index !== 0;
-    });
-
     //get All Products from api and set in state for use in component
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -108,7 +103,6 @@ export const HomePage = (props) => {
 
     useEffect(() => {
         if(Object.keys(TheMostFrequentCategories).length > 0) {
-
             let counter1 = 0;
             setFirstCategoryProducts(products.filter(product => {
                 if(counter1 < 10 && String(product['category-id']) == String(Object.keys(TheMostFrequentCategories)[0])) {
@@ -137,27 +131,35 @@ export const HomePage = (props) => {
 
     useEffect(() => {
         if(categories.length > 0) {
-            if(categories[Object.keys(TheMostFrequentCategories)[0]]) {
-                const tempCatNames = {
-                    "fa": categories[Object.keys(TheMostFrequentCategories)[0]]['name-fa'],
-                    "en": categories[Object.keys(TheMostFrequentCategories)[0]]['name-en']
+            categories.map(category => {
+                if(String(category['id']) == String(Object.keys(TheMostFrequentCategories)[0])) {
+                    const tempCatNames = {
+                        "fa": category['name-fa'],
+                        "en": category['name-en']
+                    }
+                    setFirstCategoryName(tempCatNames);
                 }
-                setFirstCategoryName(tempCatNames);
-            }
-            if(categories[Object.keys(TheMostFrequentCategories)[1]]) {
-                const tempCatNames = {
-                    "fa": categories[Object.keys(TheMostFrequentCategories)[1]]['name-fa'],
-                    "en": categories[Object.keys(TheMostFrequentCategories)[1]]['name-en']
+            });
+
+            categories.map(category => {
+                if(String(category['id']) == String(Object.keys(TheMostFrequentCategories)[1])) {
+                    const tempCatNames = {
+                        "fa": category['name-fa'],
+                        "en": category['name-en']
+                    }
+                    setSecondCategoryName(tempCatNames);
                 }
-                setSecondCategoryName(tempCatNames);
-            }
-            if(categories[Object.keys(TheMostFrequentCategories)[2]]) {
-                const tempCatNames = {
-                    "fa": categories[Object.keys(TheMostFrequentCategories)[2]]['name-fa'],
-                    "en": categories[Object.keys(TheMostFrequentCategories)[2]]['name-en']
+            });
+
+            categories.map(category => {
+                if(String(category['id']) == String(Object.keys(TheMostFrequentCategories)[2])) {
+                    const tempCatNames = {
+                        "fa": category['name-fa'],
+                        "en": category['name-en']
+                    }
+                    setThirdCategoryName(tempCatNames);
                 }
-                setThirdCategoryName(tempCatNames);
-            }
+            });
         }
     }, [categories]);
 
@@ -187,7 +189,7 @@ export const HomePage = (props) => {
                     reverse={false}
                 >
                     {
-                        filteredCategoryArray.map((category, index) => {
+                        categoryArray.map((category, index) => {
                             return (
                                 <div className={CatStyles.catSlider} key={index}>
                                     <img src={category.image} alt=""/>
