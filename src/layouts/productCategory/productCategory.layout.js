@@ -1,6 +1,6 @@
 import { GetCategories } from 'api/getCategory.api';
 import { FilterProductByCategories, GetProducts, ProductsPagination } from 'api/Product.api';
-import { Button, Navigation, ProductCard } from 'components';
+import { Button, Input, Navigation, ProductCard } from 'components';
 import { PATHS } from 'configs/routes.config';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -130,8 +130,8 @@ export const ProductCategory = (props) => {
 
                     <div>
                         <div className={Styles.productContent__sort__form} onChange={changeProductSort}>
-                            <input type="radio" value="desc" name="sortDate" /> نزولی
-                            <input type="radio" value="asc" name="sortDate" /> صعودی
+                            <Input type="radio" value="desc" name="sortDate" id='sordDesc' defaultChecked={true}/> نزولی
+                            <Input type="radio" value="asc" name="sortDate" id='sordAsc' /> صعودی
                         </div>
                     </div>
 
