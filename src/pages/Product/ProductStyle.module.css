@@ -43,6 +43,7 @@
     flex-wrap: nowrap;
     gap: 1rem;
     height: -webkit-fill-available;
+    padding-top: 1rem;
 }
 
 .productContainer .productHeader .productInfo .productPrice {
