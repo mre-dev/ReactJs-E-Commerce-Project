@@ -1,6 +1,6 @@
 import { GetProducts } from 'api/Product.api';
 import { Button, Input, Table } from 'components';
-import { DashboardLayout, Header } from 'layouts';
+import { DashboardLayout, Footer, Header } from 'layouts';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import swal from 'sweetalert';
@@ -139,6 +139,8 @@ export const UserQuantityPage = (props) => {
                 }
                 </div>
             </DashboardLayout>
+
+            <Footer/>
         </div>
     );
 };

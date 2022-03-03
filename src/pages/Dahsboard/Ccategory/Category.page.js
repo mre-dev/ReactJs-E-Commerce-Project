@@ -1,10 +1,10 @@
-import { DashboardLayout, Header } from 'layouts';
+import { DashboardLayout, Footer, Header } from 'layouts';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
 export const UserCategoryPage = (props) => {
     return (
-        <div>
+        <div className="contentWithHeaderAndFooter">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>دسهت بندی ها | {process.env.REACT_APP_WEBSITE_NAME}</title>
@@ -16,6 +16,8 @@ export const UserCategoryPage = (props) => {
             <DashboardLayout>
                 دسته بندی محصولات
             </DashboardLayout>
+
+            <Footer/>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import { Header, ProductCategory } from 'layouts';
+import { Footer, Header, ProductCategory } from 'layouts';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams, useNavigate  } from 'react-router-dom';
@@ -25,7 +25,7 @@ export const ProductsPage = (props) => {
     });
 
     return (
-        <div>
+        <div className="contentWithHeaderAndFooter">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>{currentCategory} | {process.env.REACT_APP_WEBSITE_NAME}</title>
@@ -35,6 +35,8 @@ export const ProductsPage = (props) => {
             <Header/>
 
             <ProductCategory category={currentCategory} perPage={12} currentPage={pageNumber}/>
+
+            <Footer/>
         </div>
     );
 };

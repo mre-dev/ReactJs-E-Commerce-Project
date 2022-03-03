@@ -1,10 +1,10 @@
-import { DashboardLayout, Header } from 'layouts';
+import { DashboardLayout, Footer, Header } from 'layouts';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
 export const UserProfilePage = (props) => {
     return (
-        <div>
+        <div className="contentWithHeaderAndFooter">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>پروفایل کاربری | {process.env.REACT_APP_WEBSITE_NAME}</title>
@@ -15,6 +15,8 @@ export const UserProfilePage = (props) => {
             <DashboardLayout>
                 پروفایل کاربری
             </DashboardLayout>
+
+            <Footer/>
         </div>
     );
 };

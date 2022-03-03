@@ -1,4 +1,4 @@
-import { Header } from 'layouts';
+import { Footer, Header } from 'layouts';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -191,7 +191,7 @@ export const ProductPage = (props) => {
     }, [productRawInformation]);
 
     return (
-        <div>
+        <div className="contentWithHeaderAndFooter">
 
             <Helmet>
                 <meta charSet="utf-8" />
@@ -356,6 +356,8 @@ export const ProductPage = (props) => {
                     </div>
                 </Fragment>
             }
+
+        <Footer/>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import { DashboardLayout, Header } from 'layouts';
+import { DashboardLayout, Footer, Header } from 'layouts';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -16,6 +16,8 @@ export const UserSettingPage = (props) => {
             <DashboardLayout>
                 تنظیمات کاربری
             </DashboardLayout>
+
+            <Footer/>
         </div>
     );
 };

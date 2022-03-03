@@ -1,6 +1,6 @@
 import { GetCategories } from 'api/getCategory.api';
 import { SwiperSlider } from 'components/SwiperSlider/SwiperSlider.component';
-import { Header } from 'layouts';
+import { Footer, Header } from 'layouts';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Styles from "./Home.page.module.css";
@@ -164,7 +164,7 @@ export const HomePage = (props) => {
     }, [categories]);
 
     return (
-        <div>
+        <div className="contentWithHeaderAndFooter">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>خانه | {process.env.REACT_APP_WEBSITE_NAME}</title>
@@ -173,6 +173,7 @@ export const HomePage = (props) => {
 
             <Header/>
 
+            <div>
             <div className={Styles.caroselContainer}>
                 <SwiperSlider width={'100%'} height={'100%'} borderRadius={'1rem'} items={sliderItems} modules={[Autoplay, Pagination, Navigation]}/>
             </div>
@@ -352,6 +353,8 @@ export const HomePage = (props) => {
                 </div>
             </div>
             : null }
+        </div>
+        <Footer/>
 
         </div>
     );

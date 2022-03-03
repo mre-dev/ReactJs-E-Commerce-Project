@@ -1,5 +1,5 @@
 import { Button, Input, Table } from 'components';
-import { DashboardLayout, Header } from 'layouts';
+import { DashboardLayout, Footer, Header } from 'layouts';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Styles from "./ProtectedOrders.page.module.css";
@@ -140,6 +140,8 @@ export const ProtectedOrdersPage = (props) => {
                 }
 
             </DashboardLayout>
+
+            <Footer/>
         </div>
     );
 };
