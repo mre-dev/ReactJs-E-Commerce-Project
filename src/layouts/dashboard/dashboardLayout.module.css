@@ -1,6 +1,7 @@
 .DashboardLayout .row {
     display: flex;
     min-height: calc( 100vh - 11.6rem);
+    margin-bottom: 2.5rem;
 }
   
 .DashboardLayout .row .sideBar {

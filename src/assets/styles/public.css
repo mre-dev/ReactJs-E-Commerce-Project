@@ -25,3 +25,12 @@ code {
 .swal-text {
     text-align: center !important;
 }
+
+.contentWithHeaderAndFooter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    min-height: 100vh;
+    justify-content: space-between;
+}
