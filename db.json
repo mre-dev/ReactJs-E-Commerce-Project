@@ -1347,6 +1347,650 @@
         }
       ],
       "id": 14
+    },
+    {
+      "product-name-en": "Huawei nova 8i",
+      "product-name-fa": "هواوی مدل Nova 8i",
+      "images": [
+        "2aae41239380a6dfbc315a53293cf180",
+        "330a1bc19cd2f3db73e09230877d6762",
+        "fbc7b1727cfe3629149a1e6ceba91f0f",
+        "75f94af81bf2a3aa43b2279093161c2c"
+      ],
+      "thumbnail": "2aae41239380a6dfbc315a53293cf180",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "Black",
+          "color-name-fa": "سیاه",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "color-name-en": "White",
+          "color-name-fa": "سفید",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "6999000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.67 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1080 x 2376 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "4.5G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "4300 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei Nova 8i dual-SIM mobile phone - 128 GB capacity - 8 GB RAM",
+        "fa": "گوشی موبايل هواوی مدل Nova 8i دو سیم‌ کارت - ظرفیت 128 گیگابایت - رم 8 گیگابایت"
+      },
+      "count": 61,
+      "updatedAt": 1643373068134,
+      "category-id": "5",
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "سلام ، لطفا رم 8 رنگ نیلی رو موجود کنید",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": "بهترین گوشی",
+          "createdAt": 1643373068134
+        }
+      ],
+      "createdAt": 1646305867479,
+      "id": 15
+    },
+    {
+      "product-name-en": "Huawei nova 8",
+      "product-name-fa": "هواوی مدل Nova 8",
+      "images": [
+        "ea541ab24c3b29920f67a73b943f2a91",
+        "552c19c56fc61c5e3f9fff32f8eaaefd",
+        "ca470e570e2bff8bc5418827f910383f",
+        "fc7655c9c384b3b878387a3c1b62d53c",
+        "66388eac38e69af0a89e4f2488b3cd5c"
+      ],
+      "thumbnail": "ea541ab24c3b29920f67a73b943f2a91",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "Black",
+          "color-name-fa": "سیاه",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "color-name-en": "Green",
+          "color-name-fa": "سبز",
+          "hex": "#0FFF00"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "9785000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.57 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1080 x 2340 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "4.5G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "3800 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei Nova 8 dual-SIM mobile phone - 128 GB capacity - 8 GB RAM",
+        "fa": "گوشی موبايل هواوی مدل Nova 8 دو سیم‌ کارت - ظرفیت 128 گیگابایت- رم 8 گیگابایت"
+      },
+      "count": 69,
+      "createdAt": 1646306605780,
+      "updatedAt": 1643373068134,
+      "category-id": "5",
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "لطفا دوباره رنگ صورتی رو موجود کنید",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": "عالیه اصن رو دستش نیست",
+          "createdAt": 1643373068134
+        }
+      ],
+      "id": 16
+    },
+    {
+      "product-name-en": "Huawei Y7a",
+      "product-name-fa": "هواوی مدل Y7a",
+      "images": [
+        "34100d7ccd2e545609eacec1053d7f72",
+        "9fede749aac255faeca28ad7c44e1175",
+        "8d4c29e93f577f238ce26535ecb6d0dd",
+        "6d8fab68e29cfa5f2ffef424c00c58b8",
+        "78f435c51ca8b7e405d8b015d5b3597b"
+      ],
+      "thumbnail": "34100d7ccd2e545609eacec1053d7f72",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "Black",
+          "color-name-fa": "سیاه",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "color-name-en": "Dark Blue",
+          "color-name-fa": "آبی تیره",
+          "hex": "#050078"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "10712000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.67 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1080 x 2400 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "4.5G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "5000 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei Y7a dual SIM mobile phone - 128 GB capacity - 4 GB RAM",
+        "fa": "گوشی موبايل هواوی مدل Y7a دو سيم کارت - ظرفیت 128 گیگابایت - رم 4 گیگابایت"
+      },
+      "count": 39,
+      "createdAt": 1646307120263,
+      "updatedAt": 1643373068134,
+      "category-id": "5",
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "كاملا به دوستاني كه براي بازي و كارهاي سنگين به دنبال موبايلي با قيمت مناسب و راندمان بالا ميگردند توصيه مي شود.",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": "کاملا به نسبت قیمت میارزه",
+          "createdAt": 1643373068134
+        }
+      ],
+      "id": 17
+    },
+    {
+      "product-name-en": "Huawei P50 Pocket",
+      "product-name-fa": "هواوی مدل P50 Pocket",
+      "images": [
+        "1ede2b31e382bb4e60686021531b506a",
+        "50f7b67db335a5ed0b1cfa75dabdb607",
+        "2d2580bcf207b8a884cbc51498ae6410",
+        "dee85e7a1bdbf65e0f1e044ab384bf8b",
+        "37250c991af617cd52c121440f9e357b",
+        "41c6943633c129892fad90bf2a83c107"
+      ],
+      "thumbnail": "1ede2b31e382bb4e60686021531b506a",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "Black",
+          "color-name-fa": "سیاه",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "color-name-en": "Dark Blue",
+          "color-name-fa": "آبی تیره",
+          "hex": "#050078"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "6666000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.9 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1188 x 2790 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "40 MegaPixels + 32 MegaPixels + 13 MegaPixels"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "4G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "4000 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei P50 Pocket mobile phone with a capacity of 256 GB - 8 GB of RAM",
+        "fa": "گوشی موبایل هواوی مدل P50 Pocket با ظرفیت 256 گیگابایت - رم 8 گیگابایت"
+      },
+      "count": 39,
+      "createdAt": 1646307587964,
+      "updatedAt": 1643373068134,
+      "category-id": "5",
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "دوست دارم بخرم",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": "لطفا رنگ برنز موجود کنید",
+          "createdAt": 1643373068134
+        }
+      ],
+      "id": 18
+    },
+    {
+      "product-name-en": "Huawei nova 9 Pro",
+      "product-name-fa": "هواوی مدل Nova 9 Pro",
+      "images": [
+        "615f3266bdc3edd0a6ad4da87f49eceb",
+        "e25f8ca2064e5a5ce7e40b2d9959b463",
+        "2c69dfc4a9cf4232a66d13b55e0a83fc",
+        "49e668c14a6417365cfd945c03756c1f"
+      ],
+      "thumbnail": "615f3266bdc3edd0a6ad4da87f49eceb",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "Black",
+          "color-name-fa": "سیاه",
+          "hex": "#000000"
+        },
+        {
+          "id": 2,
+          "color-name-en": "Yellow",
+          "color-name-fa": "زرد",
+          "hex": "#FFFB00"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "8563000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.72 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1236 x 2676 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "40 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "5G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "4000 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei Nova 9 Pro dual SIM mobile phone - 256 GB capacity - 8 GB RAM",
+        "fa": "گوشی موبايل هواوی مدل Nova 9 Pro دو سیم‌ کارت - ظرفیت 256 گیگابایت- رم 8 گیگابایت"
+      },
+      "count": 9,
+      "createdAt": 1646308024156,
+      "updatedAt": 1643373068134,
+      "category-id": "5",
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "در مقایسه با رقیبانش بسیار خوب",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": "حیف تک سیمکارته فقط",
+          "createdAt": 1643373068134
+        }
+      ],
+      "id": 19
+    },
+    {
+      "product-name-en": "Huawei nova Y60",
+      "product-name-fa": "هواوی مدل Nova Y60",
+      "images": [
+        "44da6f93e044c2f739eff81a758edca9"
+      ],
+      "thumbnail": "44da6f93e044c2f739eff81a758edca9",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "White",
+          "color-name-fa": "سفید",
+          "hex": "#FFFFFF"
+        },
+        {
+          "id": 2,
+          "color-name-en": "Yellow",
+          "color-name-fa": "زرد",
+          "hex": "#FFFB00"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "5888000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.6 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1600 x 720 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "13 MegaPixels + 5 MegaPixels + 2"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "4G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "5000 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei Nova 9 Pro dual SIM mobile phone - 256 GB capacity - 8 GB RAM",
+        "fa": "گوشی موبايل هواوی مدل Nova 9 Pro دو سیم‌ کارت - ظرفیت 256 گیگابایت- رم 8 گیگابایت"
+      },
+      "count": 73,
+      "createdAt": 1646308457079,
+      "updatedAt": 1643373068134,
+      "category-id": "5",
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "اصلا ارزش خرید نداره",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": "گارانتی از جای دیگ ندارین؟",
+          "createdAt": 1643373068134
+        }
+      ],
+      "id": 20
+    },
+    {
+      "product-name-en": "Huawei P50 Pro",
+      "product-name-fa": "هواوی مدل P50 Pro ",
+      "images": [
+        "7f3388226a6de28039799904bb40572e",
+        "bdc824da39244708efa156842990eb85",
+        "e44ff6263a18e986ce08b04df8e15028"
+      ],
+      "thumbnail": "7f3388226a6de28039799904bb40572e",
+      "colors": [
+        {
+          "id": 1,
+          "color-name-en": "Blue",
+          "color-name-fa": "آبی",
+          "hex": "#00FFF3"
+        },
+        {
+          "id": 2,
+          "color-name-en": "Yellow",
+          "color-name-fa": "زرد",
+          "hex": "#FFFB00"
+        }
+      ],
+      "price": {
+        "currency": "IRR",
+        "amount": "9999000",
+        "amount-discount": "0"
+      },
+      "guarantees": [
+        {
+          "id": 1,
+          "guarantee-name-en": "18 months after-sales warranty of Awang CO",
+          "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
+        }
+      ],
+      "properties": [
+        {
+          "id": 1,
+          "name-en": "Screen Size",
+          "name-fa": "سایز صفحه نمایش",
+          "value": "6.6 inches"
+        },
+        {
+          "id": 2,
+          "name-en": "Screen Resolution",
+          "name-fa": "نسبت صفحه نمایش",
+          "value": "1228 x 2700 pixels"
+        },
+        {
+          "id": 3,
+          "name-en": "Camera Quality",
+          "name-fa": "کیفیت دوربین",
+          "value": "50 MegaPixels + 64 MegaPixels + 13 MegaPixels + 40 MegaPixels"
+        },
+        {
+          "id": 4,
+          "name-en": "Internet Network",
+          "name-fa": "شبکه اینترنت",
+          "value": "4.5G"
+        },
+        {
+          "id": 5,
+          "name-en": "Battery Capacity",
+          "name-fa": "ظرفیت باتری",
+          "value": "4360 mAh"
+        }
+      ],
+      "description": {
+        "en": "Huawei P50 Pro dual SIM mobile phone - 256 GB capacity - 8 GB RAM",
+        "fa": "گوشی موبايل هواوی مدل P50 Pro دو سیم کارت - ظرفیت 256 گیگابایت - رم 8 گیگابایت"
+      },
+      "count": 33,
+      "createdAt": 1646309260157,
+      "updatedAt": 1643373068134,
+      "category-id": 5,
+      "comments": [
+        {
+          "id": 1,
+          "user-id": 1,
+          "comment": "چه غولیه این گوشی! یعنی ممکنه دوباره پرچمدارای هوآوی رو در ایران ببینیم",
+          "createdAt": 1643373068134
+        },
+        {
+          "id": 2,
+          "user-id": 2,
+          "comment": " بهتری صفحه نمایش و دوربین را دارد",
+          "createdAt": 1643373068134
+        }
+      ],
+      "id": 21
     }
   ],
   "category": [
