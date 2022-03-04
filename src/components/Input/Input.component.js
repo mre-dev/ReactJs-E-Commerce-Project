@@ -26,6 +26,7 @@ export const Input = (props) => {
             onClick={props.click}
             multiple={props.multiple}
             accept={props.accept}
+            onKeyDown={props.onKeyDown}
         />
     );
 };
@@ -50,5 +51,6 @@ Input.propTypes = {
     defaultChecked: PropTypes.bool,
     click: PropTypes.func,
     multiple: PropTypes.bool,
-    accept: PropTypes.string
+    accept: PropTypes.string,
+    onKeyDown: PropTypes.func
 };
