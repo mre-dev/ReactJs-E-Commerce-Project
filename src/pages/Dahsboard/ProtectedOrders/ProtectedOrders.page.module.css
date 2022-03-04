@@ -44,3 +44,89 @@
 .ordersPageHeaderButtonsChangeStatus div input {
     width: 1.6rem;
 }
+
+.Modal {
+    position: absolute;
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rem;
+    height: 75vh;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #80808099;
+}
+
+.Modal .ModalHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem solid black;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Modal .ModalBody .bodyContent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.Modal .ModalBody .bodyContent span {
+    display: flex;
+    gap: 1rem;
+}
+
+.Modal .productBox p {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.Modal .ModalFooter button {
+    margin: 0 auto;
+}
+
+.productTable, .productTable td, .productTable th {  
+    border: 1px solid #ddd;
+    text-align: left;
+}
+  
+.productTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+  
+.productTable th {
+    padding: 15px;
+    text-align: center;
+}
+
+.productTable td {
+    padding: 15px;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+.ModalFooter {
+    text-align: center;
+    font-size: 1.6rem;
+    padding-top: 1rem;
+    border-top: 0.1rem solid black;
+}

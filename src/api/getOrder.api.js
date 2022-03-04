@@ -9,3 +9,12 @@ export async function GetOrders() {
         return Promise.reject(e);
     }
 }
+
+export async function GetOrder(id) {
+    try {
+        const response = await http.get(`${GET_ORDERS}/${id}`);
+        return response;
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
