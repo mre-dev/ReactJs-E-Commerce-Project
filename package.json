@@ -16,14 +16,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-
     "custom-start": "env-cmd -f ./src/environment/.env.development env-cmd -f ./src/environment/.env.local react-scripts start",
     "custom-build": "env-cmd -f ./src/environment/.env.production env-cmd -f ./src/environment/.env.local react-scripts build",
-
     "backend": "node server",
     "backend:dev": "nodemon server",
     "backend:prod": "nodemon server",
-
     "concurrently": "concurrently \"npm run custom-start\" \"npm run backend\" "
   },
   "eslintConfig": {

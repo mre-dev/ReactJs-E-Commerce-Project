@@ -1,10 +1,10 @@
 import { Button, Input, Table } from 'components';
 import { DashboardLayout, Footer, Header } from 'layouts';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import swal from 'sweetalert';
 import Styles from "./Product.page.module.css";
-import { AddProduct, DeleteProducts, GetProducts } from 'api/Product.api';
+import { AddProduct, DeleteProducts, GetProduct, GetProducts } from 'api/Product.api';
 import { GetCategories, GetCategory } from 'api/getCategory.api';
 import Modal from 'react-modal';
 import JoditEditor from "jodit-react";
@@ -16,8 +16,15 @@ export const UserProductPage = (props) => {
     //Modal
     const [showModal, setShowModal] = useState(false);
 
+    const [editMode, setEditMode] = useState(false);
+
+    const [getModalEditData, setGetModalEditData] = useState({});
+    const [editPrice, setEditPrice] = useState(0);
+    const [editDiscountPrice, setEditDiscountPrice] = useState(0);
+    const [editCount, setEditCount] = useState(1);
+
     // Table
-    const [tableData, setTableData] = useState([]);
+    const [tableData, setTableData] = useState({});
 
     const tableColumns = [
         {
@@ -59,7 +66,49 @@ export const UserProductPage = (props) => {
                 <div className={Styles.productActions}>
                     <Button className={Styles.btnEdit} text='ویرایش' type='info' size='small' borderRadius click={(e) => {
                         e.preventDefault();
-                        alert("Edit : " + value.row.original.id);
+                        setEditMode(true);
+                        setShowModal(true);
+
+                        GetProduct(value.row.original.id).then(res => {
+
+                            setEditPrice(res.data.price.amount);
+                            setEditDiscountPrice(res.data.price['amount-discount']);
+                            setEditCount(res.data.count);
+
+                            setContentFa(res.data.description.fa);
+                            setContentEn(res.data.description.en);
+                            setFileArray(res.data.images.map(item => {
+                                return process.env.REACT_APP_BASE_URL + "/files/" + item 
+                            }));
+
+                            setInputColorList(res.data.colors.map(item => {
+                                return {
+                                    'color-name-en': item['color-name-en'],
+                                    'color-name-fa': item['color-name-fa'],
+                                    hex: item.hex,
+                                    id: item.id
+                                }
+                            }));
+
+                            setInputGuaranteeList(res.data.guarantees.map(item => {
+                                return {
+                                    'guarantee-name-en': item['guarantee-name-en'],
+                                    'guarantee-name-fa': item['guarantee-name-fa'],
+                                    id: item.id
+                                }
+                            }));
+
+                            setInputPropertyList(res.data.properties.map(item => {
+                                return {
+                                    'name-en': item['name-en'],
+                                    'name-fa': item['name-fa'],
+                                    value: item.value,
+                                    id: item.id
+                                }
+                            }));
+
+                            setGetModalEditData(res.data);
+                        });
                     }}/>
                     <Button className={Styles.btnDelete} text='حذف' type='danger' size='small' borderRadius click={(e) => {
                         e.preventDefault();
@@ -252,31 +301,13 @@ export const UserProductPage = (props) => {
     const submitProductForm = async (e) => {
         e.preventDefault();
 
-        //Upload Photos to Server (with Header) One by One and get their response
-        const reqConfig = {
-            headers: {
-                'content-type': 'multipart/form-data',
-                'token': localStorage.getItem('ACCESS_TOKEN')
-            }
-        };
-
-        let uploadedPhotos = [];
-        for (let i = 0; i < fileArray.length; i++) {
-            let formData = new FormData();
-            formData.append("image", fileObj[i]);
+        if(editMode == true){
             
-            await UploadImage(formData, reqConfig).then(res => {
-                uploadedPhotos.push(res.data.filename);
-            });
-        }
-
-        Promise.all(uploadedPhotos).then(arrOfResults => {
-
             const allFormData = {
                 "product-name-en": e.target["product-name-en"].value,
                 "product-name-fa": e.target["product-name-fa"].value,
-                "images": arrOfResults,
-                "thumbnail": arrOfResults[0],
+                "images": fileArray,
+                "thumbnail": fileArray[0],
                 "colors": inputColorList,
                 "price": {
                     "currency": "IRR",
@@ -296,48 +327,96 @@ export const UserProductPage = (props) => {
                 "comments": []
             };
 
-            AddProduct(allFormData).then(async res => {
-                if (res.status === 201) {
-                    swal({
-                        title: "محصول با موفقیت اضافه شد",
-                        text: `محصول شماره ${res.data.id} با موفقیت اضافه شد`,
-                        icon: "success", 
-                    });
-                    setFileObj(null);
-                    setFileArray([]);
-                    setContentFa('');
-                    setContentEn('');
-                    setInputColorList([{id: 0}]);
-                    setInputGuaranteeList([{id: 0}]);
-                    setInputPropertyList([{id: 0}]);
-                    setShowModal(false);
-                    
-                    //Refresh Products List
-                    await GetProducts().then(async res => {
-                        let newProducts = [];
-                        for (let i = 0; i < res.data.length; i++) {
-                            await GetCategory(res.data[i]["category-id"]).then(catRes => {
-                                newProducts.push({
-                                    id: res.data[i].id,
-                                    title: res.data[i]["product-name-fa"],
-                                    price: res.data[i].price.amount,
-                                    category: catRes.data["name-fa"],
-                                    image: process.env.REACT_APP_BASE_URL + "/files/" + res.data[i].thumbnail
-                                });
-                            });
-                        }
-                        setTableData(newProducts);
-                    });
+            console.log(allFormData);
 
-                } else {
-                    swal({
-                        title: "خطایی رخ داده است",
-                        text: res.data.message,
-                        icon: "error",
-                    });
+        } else {
+            //Upload Photos to Server (with Header) One by One and get their response
+            const reqConfig = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    'token': localStorage.getItem('ACCESS_TOKEN')
                 }
+            };
+
+            let uploadedPhotos = [];
+            for (let i = 0; i < fileArray.length; i++) {
+                let formData = new FormData();
+                formData.append("image", fileObj[i]);
+                
+                await UploadImage(formData, reqConfig).then(res => {
+                    uploadedPhotos.push(res.data.filename);
+                });
+            }
+
+            Promise.all(uploadedPhotos).then(arrOfResults => {
+
+                const allFormData = {
+                    "product-name-en": e.target["product-name-en"].value,
+                    "product-name-fa": e.target["product-name-fa"].value,
+                    "images": arrOfResults,
+                    "thumbnail": arrOfResults[0],
+                    "colors": inputColorList,
+                    "price": {
+                        "currency": "IRR",
+                        "amount": e.target.price.value,
+                        "amount-discount": e.target.discount.value
+                    },
+                    "guarantees": inputGuaranteeList,
+                    "properties": inputPropertyList,
+                    "description": {
+                        "en": contentEn,
+                        "fa": contentFa
+                    },
+                    "count": e.target.quantity.value,
+                    "createdAt": new Date().getTime(),
+                    "updatedAt": new Date().getTime(),
+                    "category-id": e.target.category.value,
+                    "comments": []
+                };
+
+                AddProduct(allFormData).then(async res => {
+                    if (res.status === 201) {
+                        swal({
+                            title: "محصول با موفقیت اضافه شد",
+                            text: `محصول شماره ${res.data.id} با موفقیت اضافه شد`,
+                            icon: "success", 
+                        });
+                        setFileObj(null);
+                        setFileArray([]);
+                        setContentFa('');
+                        setContentEn('');
+                        setInputColorList([{id: 0}]);
+                        setInputGuaranteeList([{id: 0}]);
+                        setInputPropertyList([{id: 0}]);
+                        setShowModal(false);
+                        
+                        //Refresh Products List
+                        await GetProducts().then(async res => {
+                            let newProducts = [];
+                            for (let i = 0; i < res.data.length; i++) {
+                                await GetCategory(res.data[i]["category-id"]).then(catRes => {
+                                    newProducts.push({
+                                        id: res.data[i].id,
+                                        title: res.data[i]["product-name-fa"],
+                                        price: res.data[i].price.amount,
+                                        category: catRes.data["name-fa"],
+                                        image: process.env.REACT_APP_BASE_URL + "/files/" + res.data[i].thumbnail
+                                    });
+                                });
+                            }
+                            setTableData(newProducts);
+                        });
+
+                    } else {
+                        swal({
+                            title: "خطایی رخ داده است",
+                            text: res.data.message,
+                            icon: "error",
+                        });
+                    }
+                });
             });
-        });
+        }
     }
     return (
         <div>
@@ -357,7 +436,6 @@ export const UserProductPage = (props) => {
                     <div className={Styles.productPageHeaderAdd}>
                         <Button text='افزودن محصول' type='success' size='small' borderRadius click={(event) => {
                             event.preventDefault();
-                            //alert('افزودن محصول');
                             setShowModal(true);
                         }}/>
                     </div>
@@ -385,9 +463,15 @@ export const UserProductPage = (props) => {
             >
 
                 <div className={Styles.ModalHeader}>
-                    <h2>افزودن محصول</h2>
+                    {
+                        editMode ?
+                            <h1>ویرایش محصول</h1>
+                            :
+                            <h1>افزودن محصول</h1>
+                    }
                     <Button text='بستن' type='danger' size='small' borderRadius click={() => {
                         setShowModal(false);
+                        setEditMode(false);
                     }}/>
                 </div>
                 
@@ -400,11 +484,22 @@ export const UserProductPage = (props) => {
                             <div className={Styles.ModalFormRow}>
                                 <div className={Styles.inputBox}>
                                     <label htmlFor="product-name-fa">نام محصول (فارسی) : </label>
-                                    <Input type="text" name="product-name-fa" id="product-name-fa" required />
+                                    {
+                                        editMode ?
+                                        <Input type="text" name="product-name-fa" id="product-name-fa" required value={getModalEditData['product-name-fa']}/>
+                                        :
+                                        <Input type="text" name="product-name-fa" id="product-name-fa" required />
+                                    }
                                 </div>
                                 <div className={Styles.inputBox}>
                                     <label htmlFor="product-name-en">نام محصول (انگلیسی) : </label>
-                                    <Input type="text" name="product-name-en" id="product-name-en" required />
+                                    {
+                                        editMode ?
+                                        <Input type="text" name="product-name-en" id="product-name-en" required value={getModalEditData['product-name-en']}/>
+                                        :
+                                        <Input type="text" name="product-name-en" id="product-name-en" required />
+                                    }
+
                                 </div>
                             </div>
 
@@ -463,18 +558,38 @@ export const UserProductPage = (props) => {
                             </div>
 
                             <div className={Styles.ModalFormRow}>
-                                <div className={Styles.inputBox}>
-                                    <label htmlFor="price">قیمت : </label>
-                                    <Input type="number" name="price" id="price" required />
-                                </div>
-                                <div className={Styles.inputBox}>
-                                    <label htmlFor="discount">تخفیف : </label>
-                                    <Input type="number" name="discount" id="discount" required />
-                                </div>
-                                <div className={Styles.inputBox}>
-                                    <label htmlFor="quantity">موجودی : </label>
-                                    <Input type="number" name="quantity" id="quantity" required />
-                                </div>
+                                {
+                                    editMode ?
+                                    <Fragment>
+                                        <div className={Styles.inputBox}>
+                                            <label htmlFor="price" > قیمت : </label>
+                                            <Input type="number" name="price" id="price" required value={editPrice}/>
+                                        </div>
+                                        <div className={Styles.inputBox}>
+                                            <label htmlFor="discount">تخفیف : </label>
+                                            <Input type="number" name="discount" id="discount" required value={editDiscountPrice}/>
+                                        </div>
+                                        <div className={Styles.inputBox}>
+                                            <label htmlFor="quantity">موجودی : </label>
+                                            <Input type="number" name="quantity" id="quantity" required value={editCount} />
+                                        </div>
+                                    </Fragment>
+                                :
+                                    <Fragment>
+                                        <div className={Styles.inputBox}>
+                                            <label htmlFor="price" > قیمت : </label>
+                                            <Input type="number" name="price" id="price" required/>
+                                        </div>
+                                        <div className={Styles.inputBox}>
+                                            <label htmlFor="discount">تخفیف : </label>
+                                            <Input type="number" name="discount" id="discount" required />
+                                        </div>
+                                        <div className={Styles.inputBox}>
+                                            <label htmlFor="quantity">موجودی : </label>
+                                            <Input type="number" name="quantity" id="quantity" required  />
+                                        </div>
+                                    </Fragment>
+                                }
                             </div>
 
                             <div className={Styles.ModalFormRow}>
@@ -484,7 +599,7 @@ export const UserProductPage = (props) => {
                                     <select name="category" id="category" required>
                                         {
                                             categories.map(category => (
-                                                <option key={category.id} value={category.id}>{category.label}</option>
+                                                <option key={category.id} value={category.id} selected={getModalEditData['category-id'] == category.id}>{category.label}</option>
                                             ))
                                         }
                                     </select>
@@ -499,13 +614,13 @@ export const UserProductPage = (props) => {
                                         <div className={Styles.ModalFormRow}>
                                             <div className={Styles.inputBox} key={index}>
                                                 <div>
-                                                    <Input placeholder={`نام فارسی رنگ ${index + 1} : `} type="text" name={`color-name-fa`} id={`color-name-fa`} required onChange={e => handleInputColorChange(e, index)}/>
+                                                    <Input value={color['color-name-fa']} placeholder={`نام فارسی رنگ ${index + 1} : `} type="text" name={`color-name-fa`} id={`color-name-fa`} required onChange={e => handleInputColorChange(e, index)}/>
                                                 </div>
                                                 <div>
-                                                    <Input placeholder={`نام انگلیسی رنگ ${index + 1} : `} type="text" name={`color-name-en`} id={`color-name-en`} required onChange={e => handleInputColorChange(e, index)}/>
+                                                    <Input value={color['color-name-en']} placeholder={`نام انگلیسی رنگ ${index + 1} : `} type="text" name={`color-name-en`} id={`color-name-en`} required onChange={e => handleInputColorChange(e, index)}/>
                                                 </div>
                                                 <div>
-                                                    <Input placeholder={`کد رنگ ${index + 1} : `} type="text" name={`hex`} id={`hex`} required onChange={e => handleInputColorChange(e, index)}/>
+                                                    <Input value={color.hex} placeholder={`کد رنگ ${index + 1} : `} type="text" name={`hex`} id={`hex`} required onChange={e => handleInputColorChange(e, index)}/>
                                                 </div>
                                             </div>
 
@@ -535,10 +650,10 @@ export const UserProductPage = (props) => {
                                         <div className={Styles.ModalFormRow}>
                                             <div className={Styles.inputBox} key={index}>
                                                 <div>
-                                                    <Input placeholder={`نام فارسی گارانتی ${index + 1} : `} type="text" name={`guarantee-name-fa`} id={`guarantee-name-fa`} required onChange={e => handleInputGuaranteeChange(e, index)}/>
+                                                    <Input value={guarantee['guarantee-name-fa']} placeholder={`نام فارسی گارانتی ${index + 1} : `} type="text" name={`guarantee-name-fa`} id={`guarantee-name-fa`} required onChange={e => handleInputGuaranteeChange(e, index)}/>
                                                 </div>
                                                 <div>
-                                                    <Input placeholder={`نام انگلیسی گارانتی ${index + 1} : `} type="text" name={`guarantee-name-en`} id={`guarantee-name-en`} required onChange={e => handleInputGuaranteeChange(e, index)}/>
+                                                    <Input value={guarantee['guarantee-name-en']} placeholder={`نام انگلیسی گارانتی ${index + 1} : `} type="text" name={`guarantee-name-en`} id={`guarantee-name-en`} required onChange={e => handleInputGuaranteeChange(e, index)}/>
                                                 </div>
                                             </div>
 
@@ -568,13 +683,13 @@ export const UserProductPage = (props) => {
                                         <div className={Styles.ModalFormRow}>
                                             <div className={Styles.inputBox} key={index}>
                                                 <div>
-                                                    <Input placeholder={`نام فارسی ویژگی ${index + 1} : `} type="text" name={`name-fa`} id={`name-fa`} required onChange={e => handleInputPropertyChange(e, index)}/>
+                                                    <Input value={property['name-fa']} placeholder={`نام فارسی ویژگی ${index + 1} : `} type="text" name={`name-fa`} id={`name-fa`} required onChange={e => handleInputPropertyChange(e, index)}/>
                                                 </div>
                                                 <div>
-                                                    <Input placeholder={`نام انگلیسی ویژگی ${index + 1} : `} type="text" name={`name-en`} id={`name-en`} required onChange={e => handleInputPropertyChange(e, index)}/>
+                                                    <Input value={property['name-en']} placeholder={`نام انگلیسی ویژگی ${index + 1} : `} type="text" name={`name-en`} id={`name-en`} required onChange={e => handleInputPropertyChange(e, index)}/>
                                                 </div>
                                                 <div>
-                                                    <Input placeholder={`مقدار ویژگی ${index + 1} : `} type="text" name={`value`} id={`value`} required onChange={e => handleInputPropertyChange(e, index)}/>
+                                                    <Input value={property.value} placeholder={`مقدار ویژگی ${index + 1} : `} type="text" name={`value`} id={`value`} required onChange={e => handleInputPropertyChange(e, index)}/>
                                                 </div>
                                             </div>
 
@@ -597,7 +712,12 @@ export const UserProductPage = (props) => {
                             </div>
 
                             <div className={Styles.ModalFormRow}>
-                                <Button text='ثبت محصول' type='warning' size='small' borderRadius />
+                                {
+                                    editMode ?
+                                        <Button text='ویرایش محصول' type='warning' size='small' borderRadius />
+                                        :
+                                        <Button text='ثبت محصول' type='success' size='small' borderRadius />
+                                }
                             </div>
                         </div>
                     </form>
