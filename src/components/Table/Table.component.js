@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Fragment, useMemo } from 'react';
+import React, { Fragment, useEffect, useMemo } from 'react';
 import Styles from "assets/styles/components/Table/Table.module.css";
 import { useTable, useSortBy, usePagination, useFilters } from 'react-table';
 import { Button, Input } from 'components';
@@ -36,6 +36,38 @@ export const Table = (props) => {
     } = tableInstanse;
 
     const { pageIndex, pageSize } = state;
+
+    useEffect(() => {
+        changeInputPColor(props.editedData, props.tableData);
+    });
+
+    function changeInputPColor(editedData, tableData) {
+        if(editedData) {
+            if(editedData.length > 0) {
+                for (let i = 0; i < editedData.length; i++) {
+                    if(document.getElementById(`input_price_${editedData[i].id}`)) {
+                        if(editedData[i].price != tableData.filter(item => item.id == editedData[i].id)[0].price) {
+                            document.getElementById(`input_price_${editedData[i].id}`).style.borderColor = '#ff0000';
+                            document.getElementById(`input_price_${editedData[i].id}`).value = editedData[i].price;
+                        } else {
+                            document.getElementById(`input_price_${editedData[i].id}`).style.borderColor = '#ccc';
+                        }
+                        if(editedData[i].quantity != tableData.filter(item => item.id == editedData[i].id)[0].quantity) {
+                            document.getElementById(`input_quantity_${editedData[i].id}`).style.borderColor = '#ff0000';
+                            document.getElementById(`input_quantity_${editedData[i].id}`).value = editedData[i].quantity;
+                        } else {
+                            document.getElementById(`input_quantity_${editedData[i].id}`).style.borderColor = '#ccc';
+                        }
+
+                        if(editedData[i].price == tableData.filter(item => item.id == editedData[i].id)[0].price && editedData[i].quantity == tableData.filter(item => item.id == editedData[i].id)[0].quantity) {
+                            document.getElementById(`input_price_${editedData[i].id}`).style.borderColor = '#ccc';
+                            document.getElementById(`input_quantity_${editedData[i].id}`).style.borderColor = '#ccc';
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     return (
         <Fragment>
