@@ -42,6 +42,8 @@ export const ProductPage = (props) => {
             swal('خطا', 'محصول مورد نظر یافت نشد', 'error');
             return;
         });
+
+        window.scrollTo(0, 0);
     }, []);
 
     const [productSliderItems, setProductSliderItems] = useState([]);

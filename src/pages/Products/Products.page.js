@@ -12,6 +12,7 @@ export const ProductsPage = (props) => {
 
     useEffect(() => {
         window.history.replaceState(null, `دسته بندی محصولات ${categoryName}`, `/products/${categoryName}/${pageNumber}`);
+        window.scrollTo(0, 0);
     }, [])
 
     useEffect(() => {

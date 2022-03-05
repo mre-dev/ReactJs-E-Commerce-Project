@@ -4,6 +4,7 @@
 
 * {
     font-family: IRANSans-web;
+    scroll-behavior: smooth;
 }
 
 html {
