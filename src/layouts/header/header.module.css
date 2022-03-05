@@ -2,7 +2,7 @@
     width: 100%;
     height: 11.6rem;
     background: #fff;
-    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0.3rem 0.6rem 0 rgb(30 60 88 / 16%);
     display: flex;
     flex-direction: column;
     margin-top: 0;
@@ -120,7 +120,7 @@
 .header .topHeader .userBox .basketBox svg:hover {
     cursor: pointer;
     transition: 0.3s;
-    color: #fdbc0b;
+    color: #1e3c58;
     border-radius: 50%;
 }
 
@@ -147,7 +147,7 @@
 .header .topHeader .userBox .userIconBox svg:hover {
     cursor: pointer;
     transition: 0.3s;
-    color: #fdbc0b;
+    color: #1e3c58;
     border: 0.1rem solid black;
     border-radius: 50%;
 }
@@ -200,7 +200,8 @@
 }
 
 .header .topHeader .userBox .userIconBox .userMenuBox  ul li a:hover {
-    color: #fdbc0b;
+    color: #1e3c58;
+    font-weight: 900;
 }
 
 .header .topHeader .userBox .userIconBox .userMenuBox .adminMenuItem {
@@ -251,7 +252,7 @@
 
 .header .bottomHeader ul li a:hover {
     color: #000000;
-    border: 0.1rem solid var(--Orange-Yellow);
+    border: 0.1rem solid #1e3c58;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     transition: 0.3s;

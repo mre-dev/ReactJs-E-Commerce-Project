@@ -45,13 +45,13 @@
 }
 
 .productCategory .productCategory__sideBar .productCategory__sideBar__list .productCategory__sideBar__list__item__selected {
-    background-color: #e0e0e0;
+    background-color: #1e3c58;
     padding: 0.5rem;
     border-radius: 1rem;
 }
 
 .productCategory .productCategory__sideBar .productCategory__sideBar__list .productCategory__sideBar__list__item__selected a {
-    color: red;
+    color: white;
     padding-right: 1rem;
     font-weight: bold;
 }
@@ -64,7 +64,7 @@
 }
 
 .productCategory .productCategory__sideBar .productCategory__sideBar__list ul li a:hover {
-    color: red;
+    color: #1e3c58;
     font-weight: bold;
     padding-right: 1rem;
     transition: 0.3s;
@@ -131,7 +131,7 @@
 }
 
 .productCategory__pagination__item__selected {
-    background-color: #7d7d7d !important;
+    background-color: #1e3c58 !important;
 }
 
 .productCategory__pagination__item__selected:hover {
@@ -139,7 +139,7 @@
 }
 
 .productCategory__pagination__item__selected a {
-    color: white;
+    color: white !important;
 }
 
 .productContent__sort {

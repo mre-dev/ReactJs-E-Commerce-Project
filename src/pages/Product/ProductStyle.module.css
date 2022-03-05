@@ -18,9 +18,17 @@
     align-content: center;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 5rem 10rem;
+    margin: 5rem auto 0rem auto;
     gap: 10rem;
-    height: 40rem;
+    height: 47rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.1rem solid darkgray;
+    width: 92vw;
+    padding-right: 6rem;
+    padding-left: 2.5rem;
+    padding-top: 2.5rem;
 }
 
 .productContainer .productHeader .productImage {
@@ -104,7 +112,7 @@
 .productDescription {
     width: 92vw;
     margin: 0 auto;
-    margin-top: 9rem;
+    margin-top: 5rem;
     border-bottom: 0.1rem solid #aaa;
     margin-bottom: 5rem;
     background-color: white;

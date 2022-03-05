@@ -3,7 +3,7 @@
     height: 30rem;
     margin: 5rem 5rem 2.5rem 5rem;
     padding-top: 2.5rem;
-    border-top: 0.1rem solid #6b6e8b;
+    border-top: 0.1rem solid #1e3c58;
 }
 
 .catContainer h3 {
@@ -13,7 +13,7 @@
     transform: translateX(-50%);
     font-size: 1.5rem;
     color: white;
-    background-color: #6b6e8b;
+    background-color: #1e3c58;
     padding: 0.5rem 1rem;
 }
 

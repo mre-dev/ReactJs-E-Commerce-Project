@@ -2,6 +2,8 @@
     height: 50rem;
     margin: 2.5rem 5rem;
     position: relative;
+    border: 0.5rem solid #1e3c58;
+    border-radius: 1rem;
 }
 
 
@@ -15,7 +17,7 @@
 
 
 .firstCatProduct, .secondCatProduct, .thirdCatProduct {
-    background-color: white;
+    background-color: #1e3c58;
     margin-bottom: 5rem;
     border-top: 0.1rem solid darkgray;
     border-bottom: 0.1rem solid darkgray;
@@ -26,13 +28,14 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    gap: 2.5rem;
 }
 
 .Services {
@@ -56,24 +59,39 @@
     text-align: center;
     gap: 2rem;
     background-color: white;
-    border: 0.1rem solid darkgray;
+    border: 0.1rem solid #1e3c58;
     padding: 2.5rem;
     border-radius: 1rem;
     transition: 0.3s;
     width: 30rem;
+    transform: scale(1);
     max-width: 100%;
 }
 
 .Services .ServicesBox:hover {
-    background-color: #d0d3ff;
+    background-color: #1e3c58;
     box-shadow: 0 0 0.5rem 0.1rem lightgrey;
     cursor: pointer;
+    transform: scale(1.05);
     transition: 0.3s;
+}
+
+.Services .ServicesBox:hover svg, .Services .ServicesBox:hover h3 {
+    color: white;
+}
+
+.firstCatProduct .firstCatProductHeader hr, .secondCatProduct .secondCatProductHeader hr, .thirdCatProduct .thirdCatProductHeader hr {
+    flex-grow: 1;
+    border-radius: 50%;
+}
+
+.Services .ServicesBox:hover p {
+    color: #b1b1b1;
 }
 
 .Services .ServicesBox svg {
     font-size: 7rem;
-    color: cornflowerblue;
+    color: #1e3c58;
 }
 
 .Services .ServicesBox h3 {
@@ -111,4 +129,36 @@
 .secondBanner img:nth-child(2) {
     border-radius: 1rem;
     width: 20.5rem;
+}
+
+.subscribeEmail {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: -webkit-center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+}
+
+.subscribeEmail form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.subscribeEmail p {
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+    color: #1e3c58;
+}
+
+.subscribeEmail form input {
+    width: 25rem;
 }
