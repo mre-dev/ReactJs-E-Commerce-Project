@@ -73,6 +73,7 @@
         "en": "Samsung Galaxy Note 20 Ultra Dual SIM 256/8GB Mobile Phone",
         "fa": "گوشی موبايل سامسونگ مدل گلکسی نوت 20 Ultra دو سیم کارت - ظرفیت 256 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 4,
       "count": 50,
       "createdAt": 1645782087494,
       "updatedAt": 1643373068134,
@@ -172,6 +173,7 @@
         "en": "Samsung Galaxy A52 Dual SIM 128GB Mobile Phone",
         "fa": "گوشی موبايل سامسونگ مدل گلکسی A52 ظرفیت 128 گیگابایت رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 60,
       "createdAt": 1645783461453,
       "updatedAt": 1643373068134,
@@ -265,6 +267,7 @@
         "en": "Samsung Galaxy M32 Dual SIM 128GB Mobile Phone",
         "fa": "گوشی موبايل سامسونگ مدل گلکسی M32 دو سیم کارت - ظرفیت 128 گیگابایت - رم 6 گیگابایت"
       },
+      "likes": 1,
       "count": 80,
       "createdAt": 1645784089875,
       "updatedAt": 1643373068134,
@@ -358,6 +361,7 @@
         "en": "Samsung Galaxy A52s 5G with 256 ",
         "fa": "گوشی موبايل سامسونگ مدل Galaxy A52s 5G ظرفیت 256 گیگابایت رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 83,
       "createdAt": 1645784831126,
       "updatedAt": 1643373068134,
@@ -451,6 +455,7 @@
         "en": "Samsung Galaxy S20+ Dual SIM 128/8GB Mobile Phone",
         "fa": "گوشی موبايل سامسونگ مدل گلکسی S20 4G پلاس ظرفیت 128 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 1,
       "count": 83,
       "createdAt": 1645787683955,
       "updatedAt": 1643373068134,
@@ -544,6 +549,7 @@
         "en": "Samsung Galaxy M22 dual SIM mobile phone - 128 GB capacity - 6 GB RAM",
         "fa": "گوشی موبايل سامسونگ مدل گلکسی M22 دو سیم کارت - ظرفیت 128 گیگابایت - رم 6 گیگابایت"
       },
+      "likes": 0,
       "count": 83,
       "createdAt": 1645791032319,
       "updatedAt": 1643373068134,
@@ -637,6 +643,7 @@
         "en": "Samsung Galaxy A22 dual SIM mobile phone - 128 GB capacity - 4 GB RAM",
         "fa": "گوشی موبايل سامسونگ گلکسی A22 دو سیم کارت - ظرفیت 128 گیگابایت - رم 4 گیگابایت"
       },
+      "likes": 0,
       "count": 95,
       "createdAt": 1645791559423,
       "updatedAt": 1643373068134,
@@ -730,7 +737,8 @@
         "en": "<p>گوشی موبایل شیائومی مدل 11T Pro 5G - ظرفیت 256 گیگابایت - رم 12 گیگابایت</p>",
         "fa": "<p>Xiaomi 11T Pro 5G (256/12) - Dual SIM Mobile Phone</p>"
       },
-      "count": "20",
+      "likes": 0,
+      "count": 20,
       "createdAt": 1645819338662,
       "updatedAt": 1645819338655,
       "category-id": "3",
@@ -810,6 +818,7 @@
         "en": "Xiaomi Mi 11i 5G (256/8) - Dual SIM Mobile Phone",
         "fa": "گوشی موبایل شیائومی Mi 11i - 5G - ظرفیت 256 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 34,
       "createdAt": 1645819491873,
       "updatedAt": 1643373068134,
@@ -903,6 +912,7 @@
         "en": "Xioami Mi 11 Lite Dual SIM 128GB Mobile Phone",
         "fa": "گوشی موبایل شیائومی Mi 11 Lite - 4G - ظرفیت 128 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 2,
       "count": 78,
       "createdAt": 1645819722866,
       "updatedAt": 1643373068134,
@@ -996,6 +1006,7 @@
         "en": "Xiaomi Poco F3 5G Dual SIM 256GB Mobile Phone",
         "fa": "گوشی موبایل شیائومی مدل Poco F3 5G - ظرفیت 256 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 41,
       "createdAt": 1645819958593,
       "updatedAt": 1643373068134,
@@ -1089,6 +1100,7 @@
         "en": "Xiaomi Redmi Note 11 mobile phone with a capacity of 128 GB - 4 GB of RAM",
         "fa": "گوشی موبایل شیائومی مدل Poco F3 5G - ظرفیت 128 گیگابایت - رم 6 گیگابایت"
       },
+      "likes": 0,
       "count": 24,
       "createdAt": 1645820617654,
       "updatedAt": 1643373068134,
@@ -1187,7 +1199,8 @@
         "en": "<p>Xiaomi Redmi 9A is designed and manufactured in the dimensions of 9 x 74 x 164.9 mm and weighs 196 grams.<br><br>On the front panel is a 6.53-inch display with very narrow bezels, in which the selfie camera is placed in a U-shaped drop.<br><br>On the right edge is the power button and volume up / down, and on the left edge is the SIM card slot.<br><br>USB Mini port, speaker, microphone and 3.5mm audio jack take up space from the bottom edge.<br><br>The Redmi 9A is a nice phone to have with the right dimensions and weight, which is a pleasure to work with.</p>",
         "fa": "<p>گوشی شیائومی ردمی 9A در ابعاد 9×74×164.9 میلی‌متر و وزن 196 گرم طراحی و ساخته‌شده است.</p><p><br></p><p>در پنل جلویی یک نمایشگر 6.53 اینچی با حاشیه‌های بسیار باریک دیده می‌شود که دوربین سلفی به‌صورت قطره‌ای (U) شکل در آن قرارگرفته است.</p><p><br></p><p>در لبه سمت راست کلید پاور و کم/زیاد کردن صدا قرارگرفته و در لبه سمت چپ خشاب سیم‌کارت را مشاهده می‌شود.</p><p><br></p><p>درگاه USB Mini، اسپیکر، میکروفون و جک 3.5 میلی‌متری صدا فضایی از لبه پایینی را به خود اختصاص داده‌اند.</p><p><br></p><p>ردمی 9A با داشتن ابعاد و وزن مناسب یک گوشی خوش‌دست به‌حساب می‌آید که کار کردن با آن لذت‌بخش است.</p>"
       },
-      "count": "12",
+      "likes": 0,
+      "count": 12,
       "createdAt": 1646063353792,
       "updatedAt": 1646063353785,
       "category-id": "3",
@@ -1334,7 +1347,8 @@
         "en": "<p>To date, Xiaomi's Poco series of mid-range smartphones have been able to perform well by taking advantage of appropriate and acceptable technical specifications.<br><br>One of the affordable phones of this company, which has tried to be equipped with appropriate technical specifications according to the considered price, Xiaomi Poco C31 is also one of the new mid-range smartphones of this company.<br><br>This phone is equipped with a 6.53-inch screen with a resolution of 720 x 1600 pixels IPS. A screen that can display 269 pixels per inch.<br><br> The design of the screen also uses WaterDrop notch, which has a notch drop at the top and center of the screen, a 5-megapixel selfie camera sensor.<br><br>On the back, there are three camera sensors for this mid-range phone. A 13-megapixel main camera sensor with f / 2.2 aperture, along with two 2-megapixel macro sensors and depth sensors, make up the Xiaomi Poco C31 triple camera sensors.<br><br>The presence of MediaTek MT6765G Helio G35 processor (MediaTek MT6765G Helio G35) has also caused you to see proper and acceptable performance of this handset in daily activities and games.<br><br>A suitable and of course powerful 5000 mAh battery will be able to provide a useful life (standby time) of two days for each 100% charge.</p>",
         "fa": "<p>سری <strong>poco </strong>گوشی‌های هوشمند میان‌رده شیائومی تا به امروز توانسته‌اند با بهره بردن از مشخصات فنی مناسب و قابل قبول، عملکرد خوبی داشته باشند.</p><p><br></p><p>یکی از گوشی‌های مقرون به‌صرفه این شرکت که سعی شده است با توجه به قیمت در نظر گرفته شده به مشخصات فنی مناسبی مجهز شده باشد، شیائومی <strong>Poco C31</strong> هم یکی از گوشی‌های هوشمند میان‌رده جدید این شرکت است.</p><p><br></p><p><em>این گوشی به صفحه‌نمایش با ابعاد 6.53 اینچ و رزولوشن 720×1600 پیکسل از نوع IPS مجهز شده است. صفحه‌نمایشی که در هر اینچ توانایی نمایش 269 پیکسل را دارد.</em></p><p><br></p><p><span style=\"font-family: Georgia, serif;\">برای طراحی صفحه‌نمایش هم از ناچ واتردراپ استفاده شده است که بریدگی قطره‌ای شکل ناچ در قسمت بالایی و مرکزی صفحه‌نمایش، سنسور دوربین سلفی با رزولوشن 5 مگاپیکسل را در خود جای داده است.</span></p><p><br></p><p><span style=\"background-color: rgb(76, 17, 48);\">در قسمت پشتی هم سه سنسور دوربین برای این گوشی میان‌رده در نظر گرفته شده است. یک سنسور دوربین اصلی با رزولوشن 13 مگاپیکسل و گشودگی دریچه دیافراگم f/2.2 در کنار دو سنسور با رزولوشن 2 مگاپیکسل از نوع ماکرو و سنجش عمق، سنسور‌های دوربین سه‌گانه شیائومی Poco C31 را تشکیل می‌دهند.</span></p><p><br></p><p>حضور پردازنده هلیو G35 شرکت مدیاتک (MediaTek MT6765G Helio G35 ) هم سبب شده تا اجرای مناسب و قابل قبولی را از این گوشی میان‌رده در فعالیت‌های روزمره و اجرای بازی‌ها شاهد باشید.</p><p><br></p><h2>باتری مناسب و البته قدرتمند 5000 میل‌آمپر‌ساعت هم توانایی ارائه طول عمر مفید (زمان آماده به‌کار) دو روز را به ازای هر بار شارژ 100 درصدی خواهد داشت.</h2>"
       },
-      "count": "12",
+      "likes": 0,
+      "count": 12,
       "createdAt": 1646123861524,
       "updatedAt": 1646123861518,
       "category-id": "3",
@@ -1420,6 +1434,7 @@
         "en": "Huawei Nova 8i dual-SIM mobile phone - 128 GB capacity - 8 GB RAM",
         "fa": "گوشی موبايل هواوی مدل Nova 8i دو سیم‌ کارت - ظرفیت 128 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 61,
       "updatedAt": 1643373068134,
       "category-id": "5",
@@ -1513,6 +1528,7 @@
         "en": "Huawei Nova 8 dual-SIM mobile phone - 128 GB capacity - 8 GB RAM",
         "fa": "گوشی موبايل هواوی مدل Nova 8 دو سیم‌ کارت - ظرفیت 128 گیگابایت- رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 69,
       "createdAt": 1646306605780,
       "updatedAt": 1643373068134,
@@ -1606,6 +1622,7 @@
         "en": "Huawei Y7a dual SIM mobile phone - 128 GB capacity - 4 GB RAM",
         "fa": "گوشی موبايل هواوی مدل Y7a دو سيم کارت - ظرفیت 128 گیگابایت - رم 4 گیگابایت"
       },
+      "likes": 0,
       "count": 39,
       "createdAt": 1646307120263,
       "updatedAt": 1643373068134,
@@ -1700,6 +1717,7 @@
         "en": "Huawei P50 Pocket mobile phone with a capacity of 256 GB - 8 GB of RAM",
         "fa": "گوشی موبایل هواوی مدل P50 Pocket با ظرفیت 256 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 39,
       "createdAt": 1646307587964,
       "updatedAt": 1643373068134,
@@ -1792,6 +1810,7 @@
         "en": "Huawei Nova 9 Pro dual SIM mobile phone - 256 GB capacity - 8 GB RAM",
         "fa": "گوشی موبايل هواوی مدل Nova 9 Pro دو سیم‌ کارت - ظرفیت 256 گیگابایت- رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 9,
       "createdAt": 1646308024156,
       "updatedAt": 1643373068134,
@@ -1881,6 +1900,7 @@
         "en": "Huawei Nova 9 Pro dual SIM mobile phone - 256 GB capacity - 8 GB RAM",
         "fa": "گوشی موبايل هواوی مدل Nova 9 Pro دو سیم‌ کارت - ظرفیت 256 گیگابایت- رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 73,
       "createdAt": 1646308457079,
       "updatedAt": 1643373068134,
@@ -1972,6 +1992,7 @@
         "en": "Huawei P50 Pro dual SIM mobile phone - 256 GB capacity - 8 GB RAM",
         "fa": "گوشی موبايل هواوی مدل P50 Pro دو سیم کارت - ظرفیت 256 گیگابایت - رم 8 گیگابایت"
       },
+      "likes": 0,
       "count": 33,
       "createdAt": 1646309260157,
       "updatedAt": 1643373068134,
@@ -2287,6 +2308,28 @@
       },
       "delivery-date": "1398/12/12",
       "delivered-at": null
+    }
+  ],
+  "newsletters": [
+    {
+      "id": 1,
+      "createdAt": 1643375019984,
+      "email": "test@gmail.com"
+    },
+    {
+      "createdAt": 1646446479751,
+      "email": "mre.pc01@gmail.com",
+      "id": 2
+    },
+    {
+      "createdAt": 1646446563101,
+      "email": "mre.dev01@gmail.com",
+      "id": 3
+    },
+    {
+      "createdAt": 1646446630933,
+      "email": "aloxiaomi01@gmail.com",
+      "id": 4
     }
   ],
   "whoami": {

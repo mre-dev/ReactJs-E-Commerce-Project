@@ -5,3 +5,4 @@ export const GET_PRODUCTS = '/products';
 export const GET_CATEGORIES = '/category';
 export const GET_ORDERS = '/orders';
 export const UPLOAD_IMAGE = '/upload';
+export const ADD_NEWSLETTER = '/newsletters';
