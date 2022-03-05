@@ -27,6 +27,8 @@ import { AddNewsletter } from 'api/newsletters.api';
 
 import { useToasts } from 'react-toast-notifications';
 
+import ReactLoading from 'react-loading';
+
 export const HomePage = (props) => {
 
     const Nav = useNavigate();
@@ -165,10 +167,13 @@ export const HomePage = (props) => {
                 }
             });
         }
-    }, [categories]);
+    }, [firstCategoryProducts, secondCategoryProducts, thirdCategoryProducts, categories]);
 
     return (
         <div className="contentWithHeaderAndFooter">
+
+            <ReactLoading type={"spinningBubbles"} color={"#1e3c58"} className="loadingSpinner" height={50} width={50} />
+
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>خانه | {process.env.REACT_APP_WEBSITE_NAME}</title>
