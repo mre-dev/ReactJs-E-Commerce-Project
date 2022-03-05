@@ -12,8 +12,9 @@
     text-align: center;
     background-color: white;
     transform: scale(1);
-    box-shadow: 0 0 0.5rem 0.1rem lightgrey;
+    /*box-shadow: 0 0 0.5rem 0.1rem lightgrey;*/
     transition: 0.3s;
+    position: relative;
 }
 
 .productContainer:hover {
@@ -49,4 +50,130 @@
 
 .productInfo p {
     font-size: 1.2rem;
+}
+
+.productButtons {
+    position: absolute;
+    background-color: #1e3c58;
+    color: white;
+    top: 3.5rem;
+    left: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: none;
+    flex-direction: column;
+    height: 20rem;
+    width: 5rem;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    gap: 1.5rem;  
+}
+
+.productContainer:hover .productButtons {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        top: 0rem;
+        opacity: 0;
+        max-height: 0rem;
+        max-width: 5rem;
+    }
+    100% {
+        top: 3.5rem;
+        opacity: 1;
+        max-height: 20rem;
+        max-width: 5rem;
+    }
+}
+
+.productContainer img {
+    transition: 0.3s;
+}
+
+.productContainer:hover img {
+    margin-right: -6rem;
+    width: 18rem;
+    transition: 0.3s;
+    filter: blur(0.2rem);
+}
+
+.productButtons svg {
+    font-size: 3.2rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: white;
+    border: 0.1rem solid white;
+    transition: 0.3s;
+}
+
+.productButtons svg:hover {
+    cursor: pointer;
+    font-size: 3.2rem;
+    background-color: white;
+    border-radius: 50%;
+    color: #1e3c58;
+    transition: 0.3s;
+}
+
+.productButtons span {
+    position: absolute;
+    top: 1rem;
+    left: 6rem;
+    background-color: #1e3c58;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: none;
+    left: 6rem;
+    width: max-content;
+}
+
+.productButtons span.GiTechnoHeart {
+    top: 1.6rem;
+}
+
+.productButtons svg:nth-child(1):hover ~ .GiTechnoHeart {
+    display: block !important;
+    animation: TextAnimation 0.5s ease-in-out;
+}
+
+.productButtons span.BsBookmarkPlus {
+    top: 6.4rem;
+}
+
+.productButtons svg:nth-child(3):hover ~ .BsBookmarkPlus {
+    display: block !important;
+    animation: TextAnimation 0.5s ease-in-out;
+}
+
+.productButtons span.MdAddShoppingCart {
+    top: 11.1rem;
+}
+
+.productButtons svg:nth-child(5):hover ~ .MdAddShoppingCart {
+    display: block !important;
+    animation: TextAnimation 0.5s ease-in-out;
+}
+
+.productButtons span.CgDetailsMore {
+    top: 15.8rem;
+}
+
+.productButtons svg:nth-child(7):hover ~ .CgDetailsMore {
+    display: block !important;
+    animation: TextAnimation 0.5s ease-in-out;
+}
+
+@keyframes TextAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
