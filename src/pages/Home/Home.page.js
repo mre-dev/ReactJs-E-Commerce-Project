@@ -4,7 +4,7 @@ import { Footer, Header } from 'layouts';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Styles from "./Home.page.module.css";
-import { Button, Navigation as CatNavigation, ProductCard} from 'components';
+import { Button, Input, Navigation as CatNavigation, ProductCard} from 'components';
 
 import CatStyles from "./catStyles.module.css";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -23,10 +23,14 @@ import sliderBanner_3 from 'assets/images/home-slider/xiaomi mi 11 ultra banner.
 
 import secondBanner_0 from 'assets/images/second-banner-0.jpg';
 import secondBanner_1 from 'assets/images/second-banner-1.jpg';
+import { AddNewsletter } from 'api/newsletters.api';
+
+import { useToasts } from 'react-toast-notifications';
 
 export const HomePage = (props) => {
 
     const Nav = useNavigate();
+    const { addToast } = useToasts();
 
     const sliderItems = [
         {
@@ -210,6 +214,7 @@ export const HomePage = (props) => {
                         firstCategoryProducts.length > 0 ?
                         <Fragment>
                             <h3>محصولات {firstCategoryName['fa']}</h3>
+                            <hr/>
                             <Button text='مشاهده تمام محصولات' type='info' size='small' borderRadius click={() => {
                                 Nav(PATHS.PRODUCTS + "/" + firstCategoryName['en']);
                             }}/>
@@ -272,6 +277,7 @@ export const HomePage = (props) => {
                         secondCategoryProducts.length > 0 ?
                         <Fragment>
                             <h3>محصولات {secondCategoryName['fa']}</h3>
+                            <hr/>
                             <Button text='مشاهده تمام محصولات' type='info' size='small' borderRadius click={() => {
                                 Nav(PATHS.PRODUCTS + "/" + secondCategoryName['en']);
                             }}/>
@@ -320,6 +326,7 @@ export const HomePage = (props) => {
                         thirdCategoryProducts.length > 0 ?
                         <Fragment>
                             <h3>محصولات {thirdCategoryName['fa']}</h3>
+                            <hr/>
                             <Button text='مشاهده تمام محصولات' type='info' size='small' borderRadius click={() => {
                                 Nav(PATHS.PRODUCTS + "/" + thirdCategoryName['en']);
                             }}/>
@@ -354,6 +361,43 @@ export const HomePage = (props) => {
             </div>
             : null }
         </div>
+
+        <div className={Styles.subscribeEmail}>
+            <p className={Styles.subscribeText}> با عضویت در خبرنامه از اخبار و محصولات جدید ما باخبر شوید</p>
+            <form className={Styles.subscribeForm} onSubmit={(e) => {
+                const email = e.target.email.value;
+                e.preventDefault();
+                if(!email.trim()) {
+                    addToast("لطفا ایمیل خود را وارد کنید", {
+                        appearance: 'error',
+                        autoDismiss: true,
+                        autoDismissTimeout: 5000 
+                    });                    
+                } else if(!email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i)) {
+                    addToast("لطفا ایمیل خود را به درستی وارد کنید", {
+                        appearance: 'error',
+                        autoDismiss: true,
+                        autoDismissTimeout: 5000 
+                    });
+                } else {
+                    
+                    AddNewsletter({
+                        "createdAt": new Date().getTime(),
+                        "email": email
+                    }).then(res => {
+                        if(res.status == 201) {
+                            addToast("ایمیل شما با موفقیت ثبت شد .  از این پس تمامی اخبار مربوط به سایت را به صورت هفتگی دریافت خواهید کرد .", { appearance: 'success', autoDismiss: true, autoDismissTimeout: 10000 });
+                        } else {
+                            addToast("خطایی رخ داده است", { appearance: 'error', autoDismiss: true, autoDismissTimeout: 5000 });
+                        }
+                    })
+                }
+            }}>
+                <Input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید" className={Styles.subscribeInput}/>
+                <Button text='عضویت' type='info' size='small' borderRadius />
+            </form>
+        </div>
+
         <Footer/>
 
         </div>
