@@ -24,7 +24,7 @@
     transition: 0.3s;
     color: black;
     font-size: 1.2rem;
-    border: 0.1rem solid lightgray;
+    border: 0.1rem solid #1e3c58;
 }
 
 .DashboardLayout .row .sideBar hr {
