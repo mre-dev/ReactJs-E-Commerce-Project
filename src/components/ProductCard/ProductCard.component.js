@@ -1,19 +1,22 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Styles from "assets/styles/components/ProductCard/ProductCard.module.css";
-import { Navigation } from 'components';
-import { ShowPrice } from 'utils/functions.util';
-import { PATHS } from 'configs/routes.config';
-import { MdAddShoppingCart, CgDetailsMore, GiTechnoHeart, BsBookmarkPlus } from 'assets/images/icons';
-import { useNavigate } from 'react-router-dom';
-
 import { GetProduct, UpdateProduct } from 'api/Product.api';
-
+import { MdAddShoppingCart, CgDetailsMore, GiTechnoHeart, BsBookmarkPlus } from 'assets/images/icons';
+import { Navigation } from 'components';
+import { PATHS } from 'configs/routes.config';
+import { ShowPrice } from 'utils/functions.util';
+import { addToCart } from 'redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
 export const ProductCard = (props) => {
     const Nav = useNavigate();
     const { addToast } = useToasts();
+
+    const customDispatch = useDispatch();
+    const ShoppingReducer = useSelector(state => state.shoppingReducer);
 
     return (
         <div className={Styles.productContainer}>
@@ -63,8 +66,59 @@ export const ProductCard = (props) => {
                     }
                 }}/>
                 <span className={Styles.BsBookmarkPlus}>افزودن به بوک مارک</span>
-                <MdAddShoppingCart />
+
+                <MdAddShoppingCart onClick={() => {
+
+                    GetProduct(props.id).then(res => {
+                        if(res.status === 200) {
+                            // check if count equal to zero, toast message
+                            if(res.data.count === 0) {
+                                addToast("محصول مورد نطر موجود نیست", {
+                                    appearance: 'warning',
+                                    autoDismiss: true,
+                                    autoDismissTimeout: 5000,
+                                });
+                                return;
+                            }
+
+                            const isItemInCart = ShoppingReducer.card.find(item => item.productId === res.data.id);
+
+                            if(isItemInCart) {
+                                if(isItemInCart.quantity < res.data.count) {
+                                    customDispatch(addToCart(res.data.id));
+                                    addToast("محصول به سبد خرید اضافه شد", {
+                                        appearance: 'success',
+                                        autoDismiss: true,
+                                        autoDismissTimeout: 5000,
+                                    });
+                                } else {
+                                    addToast("تمام موجودی محصول انتخاب شده است", {
+                                        appearance: 'error',
+                                        autoDismiss: true,
+                                        autoDismissTimeout: 5000,
+                                    });
+                                }
+                            } else {
+                                customDispatch(addToCart(res.data.id));
+                                addToast("محصول به سبد خرید اضافه شد", {
+                                    appearance: 'success',
+                                    autoDismiss: true,
+                                    autoDismissTimeout: 5000,
+                                });
+                            }
+
+                        } else {
+                            addToast("محصول در دسترس نیست", {
+                                appearance: 'error',
+                                autoDismiss: true,
+                                autoDismissTimeout: 5000,
+                            });
+                        }
+                    });
+
+                }}/>
                 <span className={Styles.MdAddShoppingCart}>افزودن به سبد خرید</span>
+
                 <CgDetailsMore onClick={() => {
                     Nav(PATHS.PRODUCT + "/" + props.id);
                 }}/>
