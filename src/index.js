@@ -8,11 +8,11 @@ import { ToastProvider } from 'react-toast-notifications';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <ToastProvider>
+        <ToastProvider>
+            <Provider store={store}>
                 <App/>
-            </ToastProvider>
-        </Provider>
+            </Provider>
+        </ToastProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
