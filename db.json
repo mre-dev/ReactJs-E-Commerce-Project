@@ -13,13 +13,13 @@
       "thumbnail": "8dc0edad1fdb2b9339a701a7ccb8217d",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Yellow",
           "color-name-fa": "زرد",
           "hex": "#FFFB00"
@@ -32,38 +32,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.9 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1440 x 3088 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "108 MegaPixels + 12 MegaPixels + 12 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4500 mAh"
@@ -113,13 +113,13 @@
       "thumbnail": "70281f7c187a159e0d7ae3e8070ef722",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Blue",
           "color-name-fa": "آبی",
           "hex": "#00FFF3"
@@ -132,38 +132,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.5 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 12 MegaPixels + 5 MegaPixels + 5 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4500 mAh"
@@ -207,13 +207,13 @@
       "thumbnail": "a31593b37d6dfff51b1c12e06610ca6a",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "White",
           "color-name-fa": "سفید",
           "hex": "#FFFFFF"
@@ -226,38 +226,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.4 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "5000 mAh"
@@ -301,13 +301,13 @@
       "thumbnail": "8460d998f1b06e68720816f6453d0d27",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Green",
           "color-name-fa": "سبز",
           "hex": "#0FFF00"
@@ -320,38 +320,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.5 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 12 MegaPixels + 5 MegaPixels + 5 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4500 mAh"
@@ -395,13 +395,13 @@
       "thumbnail": "f6b66d854e00531268cbfc8403cbfac1",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Dark Blue",
           "color-name-fa": "آبی تیره",
           "hex": "#050078"
@@ -414,38 +414,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.7 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1440 x 3200 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "Quadruple 12-megapixel + 64-megapixel + 12-megapixel + TOF 3D"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4500 mAh"
@@ -489,13 +489,13 @@
       "thumbnail": "5a4994e6f87ec570088b62789d43a395",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Green",
           "color-name-fa": "سبز",
           "hex": "#0FFF00"
@@ -508,38 +508,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.4 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "720 x 1600 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "48 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "5000 mAh"
@@ -583,13 +583,13 @@
       "thumbnail": "27f84c2b40f9885e2d798960f4ce361b",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "White",
           "color-name-fa": "سفید",
           "hex": "#FFFFFF"
@@ -602,38 +602,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.4 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "720 x 1600 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "48 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "5000 mAh"
@@ -758,13 +758,13 @@
       "thumbnail": "853edcf1ba1d1a0018fb9f4d4157ef64",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Blue",
           "color-name-fa": "آبی",
           "hex": "#00FFF3"
@@ -777,38 +777,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.67 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "108 MegaPixels + 8 MegaPixels + 5 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4520 mAh"
@@ -852,13 +852,13 @@
       "thumbnail": "22b7c3a624723ae57bfcea7e7de19dbf",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Dark Blue",
           "color-name-fa": "آبی تیره",
           "hex": "#050078"
@@ -871,38 +871,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.55 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 8 MegaPixels + 5 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4250 mAh"
@@ -946,13 +946,13 @@
       "thumbnail": "fe85309d6ba3a225997b81a5922bfd56",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Green",
           "color-name-fa": "سبز",
           "hex": "#0FFF00"
@@ -965,38 +965,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.67 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "48 MegaPixels + 8 MegaPixels + 5 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4520 mAh"
@@ -1040,13 +1040,13 @@
       "thumbnail": "0a1b0a4307a741ce0733a39bd1d00112",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Blue",
           "color-name-fa": "آبی",
           "hex": "#00FFF3"
@@ -1059,38 +1059,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.43 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "50 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "5000 mAh"
@@ -1374,13 +1374,13 @@
       "thumbnail": "2aae41239380a6dfbc315a53293cf180",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "White",
           "color-name-fa": "سفید",
           "hex": "#FFFFFF"
@@ -1393,38 +1393,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.67 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2376 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4300 mAh"
@@ -1468,13 +1468,13 @@
       "thumbnail": "ea541ab24c3b29920f67a73b943f2a91",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Green",
           "color-name-fa": "سبز",
           "hex": "#0FFF00"
@@ -1487,38 +1487,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.57 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2340 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "3800 mAh"
@@ -1562,13 +1562,13 @@
       "thumbnail": "34100d7ccd2e545609eacec1053d7f72",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Dark Blue",
           "color-name-fa": "آبی تیره",
           "hex": "#050078"
@@ -1581,38 +1581,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.67 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1080 x 2400 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "64 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "5000 mAh"
@@ -1657,13 +1657,13 @@
       "thumbnail": "1ede2b31e382bb4e60686021531b506a",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Dark Blue",
           "color-name-fa": "آبی تیره",
           "hex": "#050078"
@@ -1676,38 +1676,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.9 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1188 x 2790 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "40 MegaPixels + 32 MegaPixels + 13 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4000 mAh"
@@ -1750,13 +1750,13 @@
       "thumbnail": "615f3266bdc3edd0a6ad4da87f49eceb",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Black",
           "color-name-fa": "سیاه",
           "hex": "#000000"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Yellow",
           "color-name-fa": "زرد",
           "hex": "#FFFB00"
@@ -1769,38 +1769,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.72 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1236 x 2676 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "40 MegaPixels + 8 MegaPixels + 2 MegaPixels + 2 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4000 mAh"
@@ -1840,13 +1840,13 @@
       "thumbnail": "44da6f93e044c2f739eff81a758edca9",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "White",
           "color-name-fa": "سفید",
           "hex": "#FFFFFF"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Yellow",
           "color-name-fa": "زرد",
           "hex": "#FFFB00"
@@ -1859,38 +1859,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.6 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1600 x 720 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "13 MegaPixels + 5 MegaPixels + 2"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "5000 mAh"
@@ -1901,7 +1901,7 @@
         "fa": "گوشی موبايل هواوی مدل Nova 9 Pro دو سیم‌ کارت - ظرفیت 256 گیگابایت- رم 8 گیگابایت"
       },
       "likes": 0,
-      "count": 73,
+      "count": 5,
       "createdAt": 1646308457079,
       "updatedAt": 1643373068134,
       "category-id": "5",
@@ -1932,13 +1932,13 @@
       "thumbnail": "7f3388226a6de28039799904bb40572e",
       "colors": [
         {
-          "id": 1,
+          "id": 0,
           "color-name-en": "Blue",
           "color-name-fa": "آبی",
           "hex": "#00FFF3"
         },
         {
-          "id": 2,
+          "id": 1,
           "color-name-en": "Yellow",
           "color-name-fa": "زرد",
           "hex": "#FFFB00"
@@ -1951,38 +1951,38 @@
       },
       "guarantees": [
         {
-          "id": 1,
+          "id": 0,
           "guarantee-name-en": "18 months after-sales warranty of Awang CO",
           "guarantee-name-fa": "18 ماه گارانتی پس از فروش شرکت آونگ"
         }
       ],
       "properties": [
         {
-          "id": 1,
+          "id": 0,
           "name-en": "Screen Size",
           "name-fa": "سایز صفحه نمایش",
           "value": "6.6 inches"
         },
         {
-          "id": 2,
+          "id": 1,
           "name-en": "Screen Resolution",
           "name-fa": "نسبت صفحه نمایش",
           "value": "1228 x 2700 pixels"
         },
         {
-          "id": 3,
+          "id": 2,
           "name-en": "Camera Quality",
           "name-fa": "کیفیت دوربین",
           "value": "50 MegaPixels + 64 MegaPixels + 13 MegaPixels + 40 MegaPixels"
         },
         {
-          "id": 4,
+          "id": 3,
           "name-en": "Internet Network",
           "name-fa": "شبکه اینترنت",
           "value": "4.5G"
         },
         {
-          "id": 5,
+          "id": 4,
           "name-en": "Battery Capacity",
           "name-fa": "ظرفیت باتری",
           "value": "4360 mAh"
