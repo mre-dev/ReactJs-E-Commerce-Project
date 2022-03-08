@@ -1,10 +1,11 @@
-import React, { Fragment, useEffect, useMemo, useState } from 'react';
-import Styles from './header.module.css';
 import Logo from 'assets/images/logos/logo.png';
-import { Input, Navigation } from 'components';
+import React, { Fragment, useEffect, useState } from 'react';
+import Styles from './header.module.css';
 import { BsBasket2, FaUserCircle } from 'assets/images/icons';
 import { DebounceInput } from 'react-debounce-input';
 import { GetCategories } from 'api/getCategory.api';
+import { Navigation } from 'components';
+import { useSelector } from 'react-redux';
 
 export const Header = (props) => {
 
@@ -14,22 +15,20 @@ export const Header = (props) => {
 
     const [headerMenu, setHeaderMenu] = useState([]);
 
+    const shoppingReducer = useSelector(state => state.shoppingReducer);
+
     useEffect(()=> {
         if(localStorage.hasOwnProperty('userData') && JSON.parse(localStorage.getItem('userData')).loggedIn) {
             setIsUserLogin(true);
             setUserLoginInfo(JSON.parse(localStorage.getItem('userData')));
         }
 
-        //TODO: Use UseMemo to avoid re-rendering
         GetCategories().then(res => {
             setHeaderMenu(res.data);
         });
 
     }, []);
 
-    const basketItems = [];
-
-    const[CountBasketItem, setCountBasketItem] = useState(basketItems.length);
     const[Search, setSearch] = useState('');
 
     return (
@@ -60,7 +59,7 @@ export const Header = (props) => {
                     <ul>
 
                         <li className={Styles.basketBox} >
-                            <p id='basketCounter'>{CountBasketItem}</p>
+                            <p id='basketCounter'>{shoppingReducer.card.length}</p>
                             <Navigation link="/basket" text={<BsBasket2/>} internal/>
                         </li>
 
