@@ -1,4 +1,4 @@
-import { ASC, DESC } from "redux/actions";
+import { ASC, DESC } from "redux/types";
 
 export function productSort(state = "desc", action) {
     switch (action.type) {

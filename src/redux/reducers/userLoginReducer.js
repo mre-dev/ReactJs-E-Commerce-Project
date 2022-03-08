@@ -1,6 +1,6 @@
-import { LOGIN_SUCCESS, USER_DATA } from "redux/actions";
+import { LOGIN_SUCCESS, USER_DATA, LOGOUT } from "redux/types";
 
-const userInofo = {
+const userInfo = {
     id: null,
     role: "",
     username: "",
@@ -19,24 +19,24 @@ const userInofo = {
     createdAt: null,
     exp: null,
     iat: null,
+    loggedIn: false,
+    token: "",
 };
 
-export function userLogin(userInofoState = userInofo, action) {
+export function userLogin(userInofoState = userInfo, action) {
     switch (action.type) {
-        case LOGIN_SUCCESS: {
-            if(action.payload){
-                userInofoState = action.payload;
-            } else {
-                userInofoState = userInofo;
-            }
-            return userInofoState;
-        }
+        case LOGIN_SUCCESS: 
+            return userInofoState = action.payload;
         break;
 
         case USER_DATA:
             return userInofoState;
         break;
 
+        case LOGOUT:
+            return userInofoState = userInfo;
+        break;
+        
         default:
             return userInofoState;
         break;
