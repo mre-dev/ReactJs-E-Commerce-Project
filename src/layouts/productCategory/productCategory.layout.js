@@ -1,13 +1,13 @@
-import { GetCategories } from 'api/getCategory.api';
-import { FilterProductByCategories, GetProducts, ProductsPagination } from 'api/Product.api';
-import { Button, Input, Navigation, ProductCard } from 'components';
-import { PATHS } from 'configs/routes.config';
-import React, { Fragment, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Styles from './productCategory.module.css';
 import PropTypes from 'prop-types';
+import React, { Fragment, useEffect, useState } from 'react';
+import Styles from './productCategory.module.css';
+import { Button, Input, Navigation, ProductCard } from 'components';
+import { FilterProductByCategories, GetProducts, ProductsPagination } from 'api/Product.api';
+import { GetCategories } from 'api/getCategory.api';
+import { PATHS } from 'configs/routes.config';
+import { sortByAsc, sortByDesc } from 'redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { sortByAsc, sortByDesc } from 'redux/type';
+import { useNavigate } from 'react-router-dom';
 
 export const ProductCategory = (props) => {
 

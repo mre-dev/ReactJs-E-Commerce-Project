@@ -1,18 +1,20 @@
-import { Footer, Header } from 'layouts';
+import 'react-tabs/style/react-tabs.css';
 import React, { Fragment, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { useParams, useNavigate } from 'react-router-dom';
-import swal from 'sweetalert';
-import { GetProduct, GetProducts, UpdateProduct } from 'api/Product.api.js';
+import Select from 'react-select'
 import Styles from './ProductStyle.module.css';
 import animationStyle from './animationStyle.module.css';
-import { Button, Input, Navigation, SwiperSlider } from 'components';
+import swal from 'sweetalert';
 import { Autoplay, Pagination, EffectCards } from 'swiper';
-import { convertMiladiToShamsi, ShowPrice } from 'utils/functions.util';
-import Select from 'react-select'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Button, Input, Navigation, SwiperSlider } from 'components';
+import { Footer, Header } from 'layouts';
+import { GetProduct, GetProducts, UpdateProduct } from 'api/Product.api.js';
 import { GetUserFullName } from 'api/getUserData.api';
+import { Helmet } from 'react-helmet';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { addToCart } from 'redux/actions';
+import { convertMiladiToShamsi, ShowPrice } from 'utils/functions.util';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export const ProductPage = (props) => {
 
@@ -69,7 +71,7 @@ export const ProductPage = (props) => {
         if(productInformation.colors) {
             const productColor = productInformation.colors.map(color => {
                 return {
-                    value: color['color-name-fa'],
+                    value: color.id,
                     label: <p style={{
                         backgroundColor: color['hex'],
                         padding: '0.5rem',
@@ -83,7 +85,7 @@ export const ProductPage = (props) => {
         if(productInformation.guarantees) {
             const productGaranty = productInformation.guarantees.map(garanty => {
                 return {
-                    value: garanty['guarantee-name-fa'],
+                    value: garanty.id,
                     label: garanty['guarantee-name-fa']
                 }
             });
@@ -97,6 +99,9 @@ export const ProductPage = (props) => {
         }
 
     }, [productInformation]);
+
+    const customDispatch = useDispatch();
+    const cardShopping = useSelector(state => state.shoppingReducer.card);
 
     const addToCard = (e) => {
         e.preventDefault();
@@ -129,7 +134,21 @@ export const ProductPage = (props) => {
         const form = new FormData(e.target);
         form.append('productId', productId);
         const data = Object.fromEntries(form);
-        console.log(data);
+
+        const isExist = cardShopping.find(item => item.productId == productId);
+
+        if(isExist) {
+            if(isExist.quantity < productInformation.count ) {
+                customDispatch(addToCart(+productId, +data.productCounter, +data.color, +data.garanty));
+            } else {
+                swal('خطا', 'تمام موجودی انتخاب شده است', 'error');
+                return;
+            }
+        } else {
+            customDispatch(addToCart(+productId, +data.productCounter, +data.color, +data.garanty));
+        }
+        
+        //customDispatch(addToCart(data));
     }
 
     const getCurrentCommentUser = async (allComments, id) => {
