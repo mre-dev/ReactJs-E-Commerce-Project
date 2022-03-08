@@ -1,14 +1,14 @@
-import { Button, Input, Navigation } from 'components';
 import React, { useEffect, useState } from 'react';
 import Styles from './Login.gage.module.css';
-import { Helmet } from 'react-helmet';
-import { userLoginValidationSchema } from 'validations';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import swal from 'sweetalert';
-import { Login } from 'api/userLogin.api';
-import { useDispatch } from 'react-redux';
-import { setUserDataWhenLogin } from 'redux/type';
 import history from 'services/history.service';
+import swal from 'sweetalert';
+import { Button, Input } from 'components';
+import { Helmet } from 'react-helmet';
+import { Login } from 'api/userLogin.api';
+import { setUserDataWhenLogin } from 'redux/actions';
+import { useDispatch } from 'react-redux';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { userLoginValidationSchema } from 'validations';
 
 export const LoginPage = (props) => {
 
