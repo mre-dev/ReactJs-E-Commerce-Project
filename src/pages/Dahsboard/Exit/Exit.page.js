@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setUserDataWhenLogin } from 'redux/type';
+import { userLogOut } from 'redux/actions';
 
 export const UserExitPage = (props) => {
 
@@ -13,7 +13,7 @@ export const UserExitPage = (props) => {
         localStorage.removeItem('ACCESS_TOKEN');
         localStorage.removeItem('REFRESH_TOKEN');
         localStorage.removeItem('IS_LOGGED_IN');
-        customDispatch(setUserDataWhenLogin());
+        customDispatch(userLogOut());
         Navigate('/');
     }, []);
 
