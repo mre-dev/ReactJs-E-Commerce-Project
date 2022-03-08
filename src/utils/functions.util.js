@@ -69,7 +69,6 @@ export function convertMiladiToShamsi(gy, gm, gd) {
     return [jy + '/' + jm + '/' + jd];
 }
 
-
 export function ShowPrice(price, FA_Number = false) {
     price = price.replace(/\,/g, '');
     const objRegex = new RegExp('(-?[0-9]+)([0-9]{3})');
@@ -94,10 +93,85 @@ export function ShowPrice(price, FA_Number = false) {
     }
 }
 
-
 export function removeAllUserData() {
     localStorage.removeItem('userData');
     localStorage.removeItem(ACCESS_TOKEN);
     localStorage.removeItem(REFRESH_TOKEN);
     localStorage.removeItem(IS_LOGGED_IN);
+}
+
+export const loadBasketState = () => {
+    try {
+        const basketState = localStorage.getItem('Basket');
+        if (basketState === null) {
+            return undefined;
+        }
+        return JSON.parse(basketState);
+    } catch (err) {
+        return undefined;
+    }
+}; 
+
+export const saveBasketState = (state) => {
+    try {
+        const basketState = JSON.stringify(state);
+        localStorage.setItem('Basket', basketState);
+    } catch {
+        // error
+    }
+};
+
+export const loadUserData = () => {
+    try {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        const userInfo = {
+            id: userData.id,
+            role: userData.role,
+            username: userData.username,
+            password: userData.password,
+            firstName: userData.firstName,
+            lastName: userData.lastName,
+            email: userData.email,
+            phone: userData.phone,
+            address: userData.address,
+            country: userData.country,
+            state: userData.state,
+            city: userData.city,
+            zip: userData.zip,
+            createdAt: userData.createdAt,
+            exp: userData.exp,
+            iat: userData.iat,
+            loggedIn: userData.loggedIn,
+            token: userData.token,
+        };
+
+        if (userData === null) {
+            return  userInfo = {
+                id: null,
+                role: "",
+                username: "",
+                password: "",
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
+            
+                address: "",
+                country: "",
+                state: "",
+                city: "",
+                zip: "",
+            
+                createdAt: null,
+                exp: null,
+                iat: null,
+                loggedIn: false,
+                token: "",
+            };
+        }
+        return userInfo;
+    } catch (err) {
+        return undefined;
+    }
 }
