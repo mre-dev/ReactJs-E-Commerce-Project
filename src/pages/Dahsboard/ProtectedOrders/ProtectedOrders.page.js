@@ -91,24 +91,6 @@ export const ProtectedOrdersPage = (props) => {
         }
     ];
 
-    const userOrderProductColumns = [
-        {
-            Header: 'نام محصول',
-            accessor: 'name',
-            Filter: true
-        },
-        {
-            Header: 'قیمت',
-            accessor: 'price',
-            Filter: true
-        },
-        {
-            Header: 'تعداد',
-            accessor: 'count',
-            Filter: true
-        }
-    ];
-
     useEffect(() => {
         getAllData();
     }, []);
