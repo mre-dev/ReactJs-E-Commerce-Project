@@ -1,4 +1,3 @@
-import { GetProduct } from 'api/Product.api';
 import {
     ADD_TO_CART,
     REMOVE_FROM_CART,
@@ -15,6 +14,7 @@ const initialShopState = {
 
  export const ShoppingReducer = (state = initialShopState, action) => {    
     switch (action.type) {
+
         case ADD_TO_CART:
             const productInCart = state.card.find(item => item.productId === action.payload.id);
             if(productInCart) {
@@ -43,6 +43,7 @@ const initialShopState = {
                     ]
                 }
             }
+        break;
 
 
         case GET_ITEM_FROM_CART:
@@ -58,8 +59,33 @@ const initialShopState = {
                     currentItem: {}
                 }
             }
+        break;
+        
+
+        case ADJUST_QUANTITY:
+            return {
+                ...state,
+                card: state.card.map(item => {
+                    if(item.productId === action.payload.id) {
+                        return {
+                            ...item,
+                            quantity: action.payload.qty
+                        }
+                    }
+                    return item;
+                })
+            }
+        break;
 
 
+        case REMOVE_FROM_CART:
+            return {
+                ...state,
+                card: state.card.filter(item => item.productId !== action.payload.id)
+            }
+        break;
+
+        
         default:
             return state
     }
