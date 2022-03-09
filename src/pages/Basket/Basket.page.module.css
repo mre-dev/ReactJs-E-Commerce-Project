@@ -1,0 +1,68 @@
+.basketPage {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.basketPage .noProductMessage h1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.basketPage .basketTable div:last-child {
+    display: none;
+}
+
+.basketPage table tbody div {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.basketPage table tbody input {
+    padding: 0;
+    width: 5rem;
+}
+
+.basketPage table thead tr:nth-child(2) {
+    display: none;
+}
+
+.basketPage table thead th:nth-child(1),
+.basketPage table thead th:nth-child(5),
+.basketPage table thead th:nth-child(4) {
+    width: 1%;
+}
+
+.basketPage table thead th:nth-child(2) {
+    width: 50%;
+}
+
+.basketPage table tr td button {
+    margin: 0 auto;
+}
+
+.basketPage .basketTotal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3rem 3rem 3rem;
+    font-size: 1.6rem;
+}
+
+.sweetAlertDeleteProduct div {
+    font-size: 1.6rem;
+    text-align: center;
+}
