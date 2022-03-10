@@ -1435,7 +1435,7 @@
         "fa": "گوشی موبايل هواوی مدل Nova 8i دو سیم‌ کارت - ظرفیت 128 گیگابایت - رم 8 گیگابایت"
       },
       "likes": 0,
-      "count": 61,
+      "count": 60,
       "updatedAt": 1643373068134,
       "category-id": "5",
       "comments": [
@@ -2175,14 +2175,14 @@
   ],
   "orders": [
     {
-      "user-id": 4,
-      "status": "pending",
-      "name": "محمدعلی",
-      "family": "رضایی",
-      "phone": "0921920056",
-      "address": "خیابان شهید برزخ",
+      "user-id": 1,
+      "status": "shipped",
+      "name": "محمد رضا",
+      "family": "ابراهیمی",
+      "phone": "09913440342",
+      "address": "خیابان شهید رودکی",
       "total-price": 11776000,
-      "date": "1400/12/25",
+      "delivery-date": "1400/12/19",
       "products": [
         {
           "productId": 20,
@@ -2191,18 +2191,23 @@
           "GarntyId": 0
         }
       ],
+      "map": {
+        "lat": "35.71528",
+        "lng": "51.41667"
+      },
+      "delivered-at": null,
       "createdAt": 1646876995101,
-      "id": 5
+      "id": 1
     },
     {
-      "user-id": 3,
-      "status": "pending",
-      "name": "محمدعلی",
-      "family": "رضایی",
-      "phone": "0921920056",
-      "address": "خیابان شهید برزخ",
+      "user-id": 1,
+      "status": "shipped",
+      "name": "محمد رضا",
+      "family": "ابراهیمی",
+      "phone": "09913440342",
+      "address": "خیابان شهید رودکی",
       "total-price": 11776000,
-      "date": "1400/12/25",
+      "delivery-date": "1400/12/19",
       "products": [
         {
           "productId": 20,
@@ -2211,18 +2216,23 @@
           "GarntyId": 0
         }
       ],
+      "map": {
+        "lat": "35.71528",
+        "lng": "51.41667"
+      },
+      "delivered-at": null,
       "createdAt": 1646876995101,
-      "id": 5
+      "id": 2
     },
     {
-      "user-id": 2,
-      "status": "pending",
-      "name": "محمدعلی",
-      "family": "رضایی",
-      "phone": "0921920056",
-      "address": "خیابان شهید برزخ",
+      "user-id": 1,
+      "status": "shipped",
+      "name": "محمد رضا",
+      "family": "ابراهیمی",
+      "phone": "09913440342",
+      "address": "خیابان شهید رودکی",
       "total-price": 11776000,
-      "date": "1400/12/25",
+      "delivery-date": "1400/12/19",
       "products": [
         {
           "productId": 20,
@@ -2231,6 +2241,61 @@
           "GarntyId": 0
         }
       ],
+      "map": {
+        "lat": "35.71528",
+        "lng": "51.41667"
+      },
+      "delivered-at": null,
+      "createdAt": 1646876995101,
+      "id": 3
+    },
+    {
+      "user-id": 1,
+      "status": "pending",
+      "name": "محمد رضا",
+      "family": "ابراهیمی",
+      "phone": "09913440342",
+      "address": "خیابان شهید رودکی",
+      "total-price": 11776000,
+      "delivery-date": "1400/12/19",
+      "products": [
+        {
+          "productId": 20,
+          "quantity": 2,
+          "colorId": 0,
+          "GarntyId": 0
+        }
+      ],
+      "map": {
+        "lat": "35.71528",
+        "lng": "51.41667"
+      },
+      "delivered-at": null,
+      "createdAt": 1646876995101,
+      "id": 4
+    },
+    {
+      "user-id": 1,
+      "status": "pending",
+      "name": "محمد رضا",
+      "family": "ابراهیمی",
+      "phone": "09913440342",
+      "address": "خیابان شهید رودکی",
+      "total-price": 11776000,
+      "delivery-date": "1400/12/19",
+      "products": [
+        {
+          "productId": 20,
+          "quantity": 2,
+          "colorId": 0,
+          "GarntyId": 0
+        }
+      ],
+      "map": {
+        "lat": "35.71528",
+        "lng": "51.41667"
+      },
+      "delivered-at": null,
       "createdAt": 1646876995101,
       "id": 5
     },
@@ -2241,18 +2306,23 @@
       "family": "ابراهیمی",
       "phone": "09913440342",
       "address": "خیابان شهید رودکی",
-      "total-price": 11776000,
-      "date": "1400/12/19",
+      "total-price": 6999000,
+      "delivery-date": "1400/12/19",
       "products": [
         {
-          "productId": 20,
-          "quantity": 2,
+          "productId": 15,
+          "quantity": 1,
           "colorId": 0,
           "GarntyId": 0
         }
       ],
-      "createdAt": 1646876995101,
-      "id": 5
+      "map": {
+        "lat": "0",
+        "lng": "0"
+      },
+      "delivered-at": null,
+      "createdAt": 1646900171395,
+      "id": 6
     }
   ],
   "newsletters": [
