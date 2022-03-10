@@ -13,8 +13,6 @@ export const PATHS = {
     CHECKOUT: '/checkout',
     
     PAYMENT: '/payment',
-    PAYMENT_SUCCESS: '/payment/payment-success',
-    PAYMENT_FAILURE: '/payment/payment-failure',
 
     LOGIN: '/login',
     REGISTER: '/register',

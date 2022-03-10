@@ -19,10 +19,8 @@ export { LoginPage } from "./Login/Login.page";
 export { NotFoundPage } from "./NotFound/NotFound.page";
 
 export {
-    PaymentPage,
-    PaymentResultFailPage,
-    PaymentResultSuccessPage
-} from "./Payment";
+    PaymentPage
+} from "./Payment/Payment.page";
 
 export { ProductPage } from "./Product/Product.page";
 export { RegisterPage } from "./Register/Register.page";

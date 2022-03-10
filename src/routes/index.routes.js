@@ -7,8 +7,6 @@ import {
     LoginPage,
     NotFoundPage,
     PaymentPage,
-    PaymentResultFailPage,
-    PaymentResultSuccessPage,
     ProductPage,
     ProductsPage,
     ProtectedOrdersPage,
@@ -50,6 +48,8 @@ export function AppRouting() {
                     <Route path={PATHS.CHECKOUT} element={<CheckoutPage /> } />
 
                     <Route path={PATHS.PAGE404} element={<NotFoundPage /> } />
+
+                    <Route path={PATHS.PAYMENT} element={<PaymentPage />} />
                 </Route>
 
                 <Route element={<ProtectedRtoutes/>}>
@@ -59,10 +59,6 @@ export function AppRouting() {
                     <Route path={PATHS.DASHBOARD_WISHLIST} element={<UserWishListPage />} />
                     <Route path={PATHS.DASHBOARD_SETTINGS} element={<UserSettingPage />} />
                     <Route path={PATHS.DASHBOARD_EXIT} element={<UserExitPage />} />
-
-                    <Route path={PATHS.PAYMENT} element={<PaymentPage />} />
-                    <Route path={PATHS.PAYMENT_FAILURE} element={<PaymentResultFailPage />} />
-                    <Route path={PATHS.PAYMENT_SUCCESS} element={<PaymentResultSuccessPage />} />
                 </Route>
 
                 <Route element={<ProtectedForAdminRtoutes/>}>
