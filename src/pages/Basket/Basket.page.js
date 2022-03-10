@@ -8,12 +8,14 @@ import { GET_PRODUCT } from 'configs/url.config';
 import { GetProduct } from 'api/Product.api';
 import { Helmet } from 'react-helmet';
 import { ShowPrice } from 'utils/functions.util';
-import { addToCart, adjustQuantity, removeFromCart } from 'redux/actions';
+import { adjustQuantity, removeFromCart } from 'redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
 export const BasketPage = (props) => {
 
+    const Nav = useNavigate();
     const { addToast } = useToasts();
     const customDispatch = useDispatch();
     const basketProducts = useSelector(state => state.shoppingReducer.card);
@@ -183,7 +185,7 @@ export const BasketPage = (props) => {
                                 </div>
                                 <Button type='success' size='large' text='تکمیل خرید' click={(e) => {
                                     e.preventDefault();
-                                    console.log(basketProducts);
+                                    Nav('/checkout');
                                 }}/>
                             </div>
 
