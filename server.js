@@ -113,19 +113,6 @@ server.use((req, res, next) => {
   next();
 });
 
-
-/* for use in vercel */
-server.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-  
-// Handles any requests that don't match the ones above
-server.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-/* ----------------- */
-
-
 // Add createdAt field with timestamp value when posting to any route
 server.use((req, res, next) => {
   if (req.method === 'POST') {
@@ -183,6 +170,12 @@ server.post([
     if (err) return next(error);
     res.json({token});
   });
+});
+
+
+/* for use in vercel */
+server.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 // Use default router (CRUDs of db.json)
