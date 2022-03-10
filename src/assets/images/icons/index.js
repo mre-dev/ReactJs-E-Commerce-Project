@@ -29,4 +29,6 @@ export { MdOutlineDeliveryDining, MdAddShoppingCart } from "react-icons/md";
 export { BsCreditCard2FrontFill, BsBookmarkPlus } from "react-icons/bs";
 export { BiSupport } from "react-icons/bi";
 export { CgDetailsMore } from "react-icons/cg";
-export { GiTechnoHeart } from "react-icons/gi";
+export { GiTechnoHeart, GiConfirmed } from "react-icons/gi";
+export { AiOutlineQuestionCircle } from "react-icons/ai";
+export { VscError } from "react-icons/vsc";
