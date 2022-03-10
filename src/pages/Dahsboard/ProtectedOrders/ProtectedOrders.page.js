@@ -1,15 +1,14 @@
+import Modal from 'react-modal';
+import React, { useEffect, useState } from 'react';
+import Styles from "./ProtectedOrders.page.module.css";
+import swal from 'sweetalert';
 import { Button, Input, Navigation, Table } from 'components';
 import { DashboardLayout, Footer, Header } from 'layouts';
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import Styles from "./ProtectedOrders.page.module.css";
 import { GetOrder, GetOrders } from 'api/getOrder.api';
-import { convertMiladiToShamsi, ShowPrice } from 'utils/functions.util';
-import { GetUserData, GetUserFullName } from 'api/getUserData.api';
-import swal from 'sweetalert';
-import Modal from 'react-modal';
-import { GetMapByLatLng } from 'api/getMap';
 import { GetProduct } from 'api/Product.api';
+import { GetUserData, GetUserFullName } from 'api/getUserData.api';
+import { Helmet } from 'react-helmet';
+import { convertMiladiToShamsi, ShowPrice } from 'utils/functions.util';
 import { updateOrder } from 'api/updateOrder';
 
 export const ProtectedOrdersPage = (props) => {
@@ -27,7 +26,7 @@ export const ProtectedOrdersPage = (props) => {
     useEffect(() => {
         if(modalData_order.id) {
             for(let i = 0; i < modalData_order.products.length; i++) {
-                GetProduct(modalData_order.products[i].id).then(res => {
+                GetProduct(modalData_order.products[i].productId).then(res => {
                     setmodalData_product(prev => [...prev, res.data]);
                 })
             }
@@ -42,7 +41,7 @@ export const ProtectedOrdersPage = (props) => {
                     tempModalTableData.push({
                         name: modalData_product[i]['product-name-fa'],
                         price: modalData_product[i].price.amount,
-                        count: modalData_order.products[i].count
+                        count: modalData_order.products[i].quantity
                     })
                 }
                 setmodalDataFiltered_product(tempModalTableData);
@@ -215,7 +214,7 @@ export const ProtectedOrdersPage = (props) => {
                         <span>آدرس : <h3>{modalData_user.country + "، " + modalData_user.state + "، " + modalData_user.city + "، " + modalData_user.address + " ( کد پستی : " + modalData_user.zip + " )"}</h3></span>
                         <span>تلفن : <h3><Navigation link={`tel:${modalData_user.phone}`} text={`${modalData_user.phone}`} external /></h3></span>
                         <span>زمان سفارش : <h3>{convertMiladiToShamsi(new Date(modalData_order.createdAt).getFullYear(), new Date(modalData_order.createdAt).getMonth() + 1, new Date(modalData_order.createdAt).getDate())[0]}</h3></span>
-                        <span>زمان تحویل : <h3>{modalData_order['delivery-date']}</h3></span>
+                        <span>زمان تحویل : <h3>{modalData_order.date}</h3></span>
                     </div>
                     
                     <div className={Styles.productBox}>
@@ -237,7 +236,7 @@ export const ProtectedOrdersPage = (props) => {
                                                     <tr key={index}>
                                                         <td>{product.name}</td>
                                                         <td>{product.count}</td>
-                                                        <td>{ShowPrice(product.price, true)} تومان</td>
+                                                        <td>{ShowPrice(String(product.price), true)} تومان</td>
                                                     </tr>
                                                 )
                                             })
@@ -251,7 +250,7 @@ export const ProtectedOrdersPage = (props) => {
                         }
                         {
                             modalData_product.length > 0 ?
-                            <p>مبلغ کل سبد خرید : {ShowPrice(modalData_order['total-price'], true)} تومان</p>
+                            <p>مبلغ کل سبد خرید : {ShowPrice(String(modalData_order['total-price']), true)} تومان</p>
                             : null
                         }
                     </div>
@@ -288,7 +287,7 @@ export const ProtectedOrdersPage = (props) => {
                             setmodalData_product([]);
 
                         }} />
-                        : <p>زمان تحویل : {modalData_order['delivery-date']}</p>
+                        : <p>زمان تحویل : {modalData_order.date}</p>
                     }
                 
                 </div>
