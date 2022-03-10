@@ -175,3 +175,52 @@ export const loadUserData = () => {
         return undefined;
     }
 }
+
+export function persianNumber(number) {
+    const persian = {0: '۰', 1: '۱', 2: '۲', 3: '۳', 4: '۴', 5: '۵', 6: '۶', 7: '۷', 8: '۸', 9: '۹'};
+    const string = (number + '').split('');
+    const count = string.length;
+    let num;
+    for (let i = 0; i <= count; i++) {
+        num = string[i];
+        if (persian[num]) {
+            string[i] = persian[num];
+        }
+    }
+    return string.join('');
+}
+
+export function englishNumber(number) {
+    const persian = {"۰": '0', "۱": '1', "۲": '2', "۳": '3', "۴": '4', "۵": '5', "۶": '6', "۷": '7', "۸": '8', "۹": '9'};
+    const string = (number + '').split('');
+    const count = string.length;
+    let num;
+    for (let i = 0; i <= count; i++) {
+        num = string[i];
+        if (persian[num]) {
+            string[i] = persian[num];
+        }
+    }
+    return string.join('');
+}
+
+export function loadOrderState() {
+    try {
+        const orderState = localStorage.getItem('Order');
+        if (orderState === null) {
+            return undefined;
+        }
+        return JSON.parse(orderState);
+    } catch (err) {
+        return undefined;
+    }
+}
+
+export function saveOrderState(state) {
+    try {
+        const orderState = JSON.stringify(state);
+        localStorage.setItem('Order', orderState);
+    } catch {
+        // error
+    }
+}
