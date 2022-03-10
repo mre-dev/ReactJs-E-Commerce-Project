@@ -1,0 +1,85 @@
+.container .ordersTable thead th:last-child {
+    width: 1%;
+}
+
+.container .ordersTable tbody tr td img {
+    mix-blend-mode: multiply;
+    height: 5rem;
+}
+
+.container .titleBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem;
+}
+
+.Modal {
+    position: absolute;
+    top: 15rem;
+    left: 30rem;
+    right: 30rem;
+    bottom: 15rem;
+    background-color: #1e3c58;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.Modal .ModalHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-bottom: 0.1rem solid white;
+    padding-bottom: 1rem;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1e3c587a;
+}
+
+.Modal .ModalContent form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 5rem;
+}
+
+.Modal .ModalContent form input[type="file"] {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.Modal .ModalContent form div {
+    gap: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal .ModalContent form div img {
+    width: 5rem;
+    mix-blend-mode: multiply;
+}
