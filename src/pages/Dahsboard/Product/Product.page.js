@@ -1,15 +1,15 @@
+import JoditEditor from "jodit-react";
+import Modal from 'react-modal';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
+import Styles from "./Product.page.module.css";
+import swal from 'sweetalert';
+import { AddProduct, DeleteProducts, GetProduct, GetProducts, UpdateProduct } from 'api/Product.api';
 import { Button, Input, Table } from 'components';
 import { DashboardLayout, Footer, Header } from 'layouts';
-import React, { Fragment, useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import swal from 'sweetalert';
-import Styles from "./Product.page.module.css";
-import { AddProduct, DeleteProducts, GetProduct, GetProducts } from 'api/Product.api';
 import { GetCategories, GetCategory } from 'api/getCategory.api';
-import Modal from 'react-modal';
-import JoditEditor from "jodit-react";
-import { UploadImage } from 'api/UploadImage.api';
+import { Helmet } from 'react-helmet';
 import { ShowPrice } from 'utils/functions.util';
+import { UploadImage } from 'api/UploadImage.api';
 
 export const UserProductPage = (props) => {
 
@@ -22,6 +22,7 @@ export const UserProductPage = (props) => {
     const [editPrice, setEditPrice] = useState(0);
     const [editDiscountPrice, setEditDiscountPrice] = useState(0);
     const [editCount, setEditCount] = useState(1);
+    const [productEditId, setProductEditId] = useState(0);
 
     // Table
     const [tableData, setTableData] = useState({});
@@ -69,6 +70,8 @@ export const UserProductPage = (props) => {
                         setEditMode(true);
                         setShowModal(true);
 
+                        setProductEditId(value.row.original.id);
+
                         GetProduct(value.row.original.id).then(res => {
 
                             setEditPrice(res.data.price.amount);
@@ -77,8 +80,20 @@ export const UserProductPage = (props) => {
 
                             setContentFa(res.data.description.fa);
                             setContentEn(res.data.description.en);
+
+                            const dataTransfer = new DataTransfer();
+                            res.data.images.map((image, index) => {
+                                dataTransfer.items.add(new File([image.image], image.image, { type: 'image/jpeg' }));
+                                if (index === res.data.images.length - 1) {
+                                    //document.getElementById("product-image").files = dataTransfer.files;
+                                }
+                            });
+
+                            
+                            
+                            
                             setFileArray(res.data.images.map(item => {
-                                return process.env.REACT_APP_BASE_URL + "/files/" + item 
+                                return item 
                             }));
 
                             setInputColorList(res.data.colors.map(item => {
@@ -224,7 +239,7 @@ export const UserProductPage = (props) => {
     const [fileArray, setFileArray] = useState([]);
 
     const uploadMultipleFiles = (e) => {
-        setFileObj(e.target.files);   
+        setFileObj(e.target.files);
     }
 
     useEffect(() => {
@@ -304,6 +319,7 @@ export const UserProductPage = (props) => {
         if(editMode == true){
             
             const allFormData = {
+                id: productEditId,
                 "product-name-en": e.target["product-name-en"].value,
                 "product-name-fa": e.target["product-name-fa"].value,
                 "images": fileArray,
@@ -328,6 +344,10 @@ export const UserProductPage = (props) => {
             };
 
             console.log(allFormData);
+
+            UpdateProduct(productEditId, allFormData).then(res => {
+                console.log(res);
+            });
 
         } else {
             //Upload Photos to Server (with Header) One by One and get their response
@@ -472,6 +492,13 @@ export const UserProductPage = (props) => {
                     <Button text='بستن' type='danger' size='small' borderRadius click={() => {
                         setShowModal(false);
                         setEditMode(false);
+                        setFileObj(null);
+                        setFileArray([]);
+                        setContentFa('');
+                        setContentEn('');
+                        setInputColorList([{id: 0}]);
+                        setInputGuaranteeList([{id: 0}]);
+                        setInputPropertyList([{id: 0}]);
                     }}/>
                 </div>
                 
@@ -486,7 +513,12 @@ export const UserProductPage = (props) => {
                                     <label htmlFor="product-name-fa">نام محصول (فارسی) : </label>
                                     {
                                         editMode ?
-                                        <Input type="text" name="product-name-fa" id="product-name-fa" required value={getModalEditData['product-name-fa']}/>
+                                        <Input type="text" name="product-name-fa" id="product-name-fa" required onChange={(e) => {
+                                            setGetModalEditData(prevState => ({
+                                                ...prevState,
+                                                "product-name-fa": e.target.value
+                                                }));
+                                        }} value={getModalEditData['product-name-fa']}/>
                                         :
                                         <Input type="text" name="product-name-fa" id="product-name-fa" required />
                                     }
@@ -495,7 +527,12 @@ export const UserProductPage = (props) => {
                                     <label htmlFor="product-name-en">نام محصول (انگلیسی) : </label>
                                     {
                                         editMode ?
-                                        <Input type="text" name="product-name-en" id="product-name-en" required value={getModalEditData['product-name-en']}/>
+                                        <Input type="text" name="product-name-en" id="product-name-en" required onChange={(e) => {
+                                            setGetModalEditData(prevState => ({
+                                                ...prevState,
+                                                "product-name-en": e.target.value
+                                                }));
+                                        }} value={getModalEditData['product-name-en']}/>
                                         :
                                         <Input type="text" name="product-name-en" id="product-name-en" required />
                                     }
@@ -531,27 +568,36 @@ export const UserProductPage = (props) => {
 
                             <div className={`${Styles.ModalFormRow} ${Styles.imageInputBox}`}>
                                 <div className={Styles.inputBox}>
-                                    <p> ( توجه : تصویر اول به عنوان thumbnail انتخاب می شود)</p>
-                                    <Button text='انتخاب تصاویر' type='success' size='small' borderRadius click={(event) => {
-                                        event.preventDefault();
-                                        // simulate click on file input
-                                        document.getElementById('product-image').click();
-                                    }}/>
-                                    <Input accept="image/jpeg" type="file" name="product-image" id="product-image" onChange={(e) => {
-                                        uploadMultipleFiles(e);
-                                    }} multiple required />
-                                    <p className={Styles.selectedFileCounter}> تعداد تصویر : {fileArray.length || 0} </p>
+                                    {
+                                        !editMode ?
+                                        <Fragment>
+                                            <p> ( توجه : تصویر اول به عنوان thumbnail انتخاب می شود)</p>
+                                            <Button text='انتخاب تصاویر' type='success' size='small' borderRadius click={(event) => {
+                                                event.preventDefault();
+                                                document.getElementById('product-image').click();
+                                            }}/>
+                                            <Input accept="image/jpeg" type="file" name="product-image" id="product-image" onChange={(e) => {
+                                                uploadMultipleFiles(e);
+                                            }} multiple required />
+                                            <p className={Styles.selectedFileCounter}> تعداد تصویر : {fileArray.length || 0} </p>
+                                        </Fragment>
+                                    : null}
                                 </div>
                                 <div className={Styles.multiPreview}>
                                     {(fileArray || []).map(url => (
                                         <div className={Styles.newProductImageBox}>
-                                            {/*remove image from fileArray*/}
                                             <p className={Styles.removeImage} onClick={() => {
                                                 const newFileArray = fileArray.filter(file => file !== url);
                                                 setFileArray(newFileArray);
                                             }}>&times;</p>
 
-                                            <img src={url}/>
+                                            {
+                                                editMode ? 
+                                                <img src={process.env.REACT_APP_BASE_URL + "/files/" + url}/>
+                                                :
+                                                <img src={url}/>
+                                            }
+
                                         </div>
                                     ))}
                                 </div>
@@ -563,15 +609,33 @@ export const UserProductPage = (props) => {
                                     <Fragment>
                                         <div className={Styles.inputBox}>
                                             <label htmlFor="price" > قیمت : </label>
-                                            <Input type="number" name="price" id="price" required value={editPrice}/>
+                                            <Input type="number" name="price" id="price"  onChange={(e) => {
+                                                setGetModalEditData(prevState => ({
+                                                    ...prevState,
+                                                    "price": e.target.value
+                                                    }));
+                                                    setEditPrice(e.target.value);
+                                            }} value={editPrice}/>
                                         </div>
                                         <div className={Styles.inputBox}>
                                             <label htmlFor="discount">تخفیف : </label>
-                                            <Input type="number" name="discount" id="discount" required value={editDiscountPrice}/>
+                                            <Input type="number" name="discount" id="discount" required onChange={(e) => {
+                                                setGetModalEditData(prevState => ({
+                                                    ...prevState,
+                                                    "discount": e.target.value
+                                                    }));
+                                                    setEditDiscountPrice(e.target.value);
+                                            }} value={editDiscountPrice}/>
                                         </div>
                                         <div className={Styles.inputBox}>
                                             <label htmlFor="quantity">موجودی : </label>
-                                            <Input type="number" name="quantity" id="quantity" required value={editCount} />
+                                            <Input type="number" name="quantity" id="quantity" required onChange={(e) => {
+                                                setGetModalEditData(prevState => ({
+                                                    ...prevState,
+                                                    "quantity": e.target.value
+                                                    }));
+                                                    setEditCount(e.target.value);
+                                            }} value={editCount} />
                                         </div>
                                     </Fragment>
                                 :
