@@ -1,8 +1,9 @@
 import { ShoppingReducer } from "./shoppingReducer";
 import { combineReducers } from "redux";
-import { loadBasketState, loadUserData } from 'utils/functions.util';
+import { loadBasketState, loadOrderState, loadUserData } from 'utils/functions.util';
 import { productSort } from "./productSortReducer";
 import { userLogin } from "./userLoginReducer";
+import { orderReducer } from "./orderReducer";
 
 export const allReducer = combineReducers({
     userLogin( state = loadUserData(), action ) {
@@ -13,5 +14,8 @@ export const allReducer = combineReducers({
     },
     shoppingReducer( state = loadBasketState(), action ) {
         return ShoppingReducer( state, action );
+    },
+    orderReducer( state = loadOrderState(), action ) {
+        return orderReducer( state, action );
     }
 });

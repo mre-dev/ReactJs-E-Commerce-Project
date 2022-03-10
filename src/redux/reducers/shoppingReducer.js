@@ -4,7 +4,8 @@ import {
     ADJUST_QUANTITY,
     LOAD_CURRENT_ITEM,
     GET_BASKET_LENGTH,
-    GET_ITEM_FROM_CART
+    GET_ITEM_FROM_CART,
+    CLEAR_CART
 } from 'redux/types';
 
 const initialShopState = {
@@ -85,6 +86,14 @@ const initialShopState = {
             }
         break;
 
+
+        case CLEAR_CART:
+            return {
+                ...state,
+                card: []
+            }
+        break;
+        
         
         default:
             return state

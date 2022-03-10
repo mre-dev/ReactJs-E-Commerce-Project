@@ -18,5 +18,12 @@ export {
     ADJUST_QUANTITY,
     LOAD_CURRENT_ITEM,
     GET_BASKET_LENGTH,
-    GET_ITEM_FROM_CART
+    GET_ITEM_FROM_CART,
+    CLEAR_CART
 } from "./shoppingTypes";
+
+export {
+    CREATE_ORDER,
+    GET_ORDERS,
+    DELETE_ORDER
+} from "./orderTypes";

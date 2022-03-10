@@ -4,7 +4,8 @@ import {
     ADJUST_QUANTITY,
     LOAD_CURRENT_ITEM,
     GET_BASKET_LENGTH,
-    GET_ITEM_FROM_CART
+    GET_ITEM_FROM_CART,
+    CLEAR_CART
 } from 'redux/types';
 
 export const addToCart = (productId, qty = 1, colorId = 0, GarntyId = 0) => {
@@ -57,5 +58,11 @@ export const getItemFromCart = (productId) => {
         payload: {
             id: productId
         }
+    }
+}
+
+export const clearCart = () => {
+    return {
+        type: CLEAR_CART
     }
 }

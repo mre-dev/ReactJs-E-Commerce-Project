@@ -15,5 +15,12 @@ export {
     adjustQuantity,
     loadCurrentItem,
     getBasketLength,
-    getItemFromCart
+    getItemFromCart,
+    clearCart
 } from './shoppingActions';
+
+export {
+    createOrder,
+    getOrders,
+    deleteOrder
+} from './orderActions';
