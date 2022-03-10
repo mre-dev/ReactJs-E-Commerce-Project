@@ -13,7 +13,9 @@ export const Button = (props) => {
             ${props.shake ?  Styles.btn__shake : ''}
         `}
         disabled={props.disabled}
-        onClick={props.click}>
+        onClick={props.click}
+        id={props.id}
+        type={props.btnType}>
         {props.leftIcon}
         {props.text}
         {props.righIcon}
@@ -32,4 +34,6 @@ Button.propTypes = {
     righIcon: PropTypes.element,
     disabled: PropTypes.bool,
     shake: PropTypes.bool,
+    id: PropTypes.string,
+    btnType: PropTypes.oneOf(['button', 'submit', 'reset' ])
 };
