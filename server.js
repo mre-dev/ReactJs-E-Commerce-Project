@@ -172,12 +172,6 @@ server.post([
   });
 });
 
-
-/* for use in vercel */
-server.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 // Use default router (CRUDs of db.json)
 server.use(router);
 
