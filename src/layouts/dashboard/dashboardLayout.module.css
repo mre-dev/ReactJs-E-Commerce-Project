@@ -13,6 +13,7 @@
     padding: 1rem;
     overflow: hidden auto;
     height: calc( 100vh - 13.6rem);
+    box-shadow: 0 0 0.1rem 0.1rem lightgrey;
 }
 
 .DashboardLayout .row .sideBar a {
@@ -50,4 +51,5 @@
     margin: 1rem;
     border-radius: 1rem;
     padding: 1rem;
+    box-shadow: 0 0 0.1rem 0.1rem lightgrey;
 }
