@@ -1,0 +1,48 @@
+.paymentFailure , .paymentSuccess{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.paymentFailure svg {
+    font-size: 10rem;
+    color: orangered;
+    animation: pulse1 2s infinite;
+    border-radius: 50%;
+}
+
+.paymentSuccess svg {
+    font-size: 10rem;
+    color: #28a745;
+    animation: pulse2 2s infinite;
+    border-radius: 50%;
+}
+
+@keyframes pulse1 {
+    0% {
+      box-shadow: 0 0 0 0 rgba(251, 0, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(160, 55, 55, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+      box-shadow: 0 0 0 0 rgba(22, 251, 1, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(160, 55, 55, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
