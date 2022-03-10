@@ -1,14 +1,15 @@
-import Modal from 'react-modal';
-import React, { useEffect, useState } from 'react';
-import Styles from "./ProtectedOrders.page.module.css";
-import swal from 'sweetalert';
 import { Button, Input, Navigation, Table } from 'components';
 import { DashboardLayout, Footer, Header } from 'layouts';
-import { GetOrder, GetOrders } from 'api/getOrder.api';
-import { GetProduct } from 'api/Product.api';
-import { GetUserData, GetUserFullName } from 'api/getUserData.api';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import Styles from "./ProtectedOrders.page.module.css";
+import { GetOrder, GetOrders } from 'api/getOrder.api';
 import { convertMiladiToShamsi, ShowPrice } from 'utils/functions.util';
+import { GetUserData, GetUserFullName } from 'api/getUserData.api';
+import swal from 'sweetalert';
+import Modal from 'react-modal';
+import { GetMapByLatLng } from 'api/getMap';
+import { GetProduct } from 'api/Product.api';
 import { updateOrder } from 'api/updateOrder';
 
 export const ProtectedOrdersPage = (props) => {
@@ -24,6 +25,7 @@ export const ProtectedOrdersPage = (props) => {
     const [modalDataFiltered_product, setmodalDataFiltered_product] = useState([]);
 
     useEffect(() => {
+        console.log(modalData_order)
         if(modalData_order.id) {
             for(let i = 0; i < modalData_order.products.length; i++) {
                 GetProduct(modalData_order.products[i].productId).then(res => {
@@ -41,7 +43,7 @@ export const ProtectedOrdersPage = (props) => {
                     tempModalTableData.push({
                         name: modalData_product[i]['product-name-fa'],
                         price: modalData_product[i].price.amount,
-                        count: modalData_order.products[i].quantity
+                        count: modalData_order.products[i].quantity,
                     })
                 }
                 setmodalDataFiltered_product(tempModalTableData);
@@ -90,10 +92,30 @@ export const ProtectedOrdersPage = (props) => {
         }
     ];
 
+    const userOrderProductColumns = [
+        {
+            Header: 'نام محصول',
+            accessor: 'name',
+            Filter: true
+        },
+        {
+            Header: 'تعداد',
+            accessor: 'count',
+            Filter: true
+        },
+        {
+            Header: 'قیمت',
+            accessor: 'price',
+            Filter: true
+        }
+    ];
+
+    //ok
     useEffect(() => {
         getAllData();
     }, []);
 
+    //ok
     function getAllData() {
         try {
             GetOrders().then(async res => {
@@ -123,6 +145,7 @@ export const ProtectedOrdersPage = (props) => {
         }
     }
 
+    //ok
     async function filterData(status) {
         let newData = [];
         for (let i = 0; i < allData.length; i++) {
@@ -133,6 +156,7 @@ export const ProtectedOrdersPage = (props) => {
         setTableData(newData);
     }
 
+    //ok
     useEffect(() => {
         filterData("pending");
     }, [allData]);
@@ -214,7 +238,7 @@ export const ProtectedOrdersPage = (props) => {
                         <span>آدرس : <h3>{modalData_user.country + "، " + modalData_user.state + "، " + modalData_user.city + "، " + modalData_user.address + " ( کد پستی : " + modalData_user.zip + " )"}</h3></span>
                         <span>تلفن : <h3><Navigation link={`tel:${modalData_user.phone}`} text={`${modalData_user.phone}`} external /></h3></span>
                         <span>زمان سفارش : <h3>{convertMiladiToShamsi(new Date(modalData_order.createdAt).getFullYear(), new Date(modalData_order.createdAt).getMonth() + 1, new Date(modalData_order.createdAt).getDate())[0]}</h3></span>
-                        <span>زمان تحویل : <h3>{modalData_order.date}</h3></span>
+                        <span>زمان تحویل : <h3>{modalData_order['delivery-date']}</h3></span>
                     </div>
                     
                     <div className={Styles.productBox}>
@@ -236,7 +260,7 @@ export const ProtectedOrdersPage = (props) => {
                                                     <tr key={index}>
                                                         <td>{product.name}</td>
                                                         <td>{product.count}</td>
-                                                        <td>{ShowPrice(String(product.price), true)} تومان</td>
+                                                        <td>{product.price} تومان</td>
                                                     </tr>
                                                 )
                                             })
@@ -250,7 +274,7 @@ export const ProtectedOrdersPage = (props) => {
                         }
                         {
                             modalData_product.length > 0 ?
-                            <p>مبلغ کل سبد خرید : {ShowPrice(String(modalData_order['total-price']), true)} تومان</p>
+                            <p>مبلغ کل سبد خرید : {modalData_order['total-price']} تومان</p>
                             : null
                         }
                     </div>
@@ -287,7 +311,7 @@ export const ProtectedOrdersPage = (props) => {
                             setmodalData_product([]);
 
                         }} />
-                        : <p>زمان تحویل : {modalData_order.date}</p>
+                        : <p>زمان تحویل : {modalData_order['delivery-date']}</p>
                     }
                 
                 </div>
