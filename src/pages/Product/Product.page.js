@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 import { Autoplay, Pagination, EffectCards } from 'swiper';
 import { Button, Input, Navigation, SwiperSlider } from 'components';
 import { Footer, Header } from 'layouts';
-import { GetProduct, GetProducts, UpdateProduct } from 'api/Product.api.js';
+import { GetProduct, UpdateProduct } from 'api/Product.api.js';
 import { GetUserFullName } from 'api/getUserData.api';
 import { Helmet } from 'react-helmet';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -21,7 +21,6 @@ export const ProductPage = (props) => {
     const params = useParams();
     const nav = useNavigate();
     const productId = params.productId;
-    const productName = "محصول شماره " + productId;
 
     const [productInformation, setProductInformation] = useState({});
     const [productRawInformation, setProductRawInformation] = useState({});
