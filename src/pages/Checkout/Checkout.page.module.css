@@ -1,0 +1,133 @@
+.loginBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loginBox div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+}
+
+.checkoutPage {
+    width: 80%;
+    background-color: white;
+    margin: 2.5rem auto;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 0.1rem 0.1rem lightgrey;
+}
+
+.checkoutPage form input {
+    background-color: white;
+}
+
+.checkoutPage form input:read-only {
+    background-color: #e7e7e7;
+}
+
+.checkoutPage form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.checkoutPage form .row:nth-child(1),
+.checkoutPage form .row:nth-child(2),
+.checkoutPage form .row:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    width: 100%;
+}
+
+.checkoutPage form .row .col {
+    width: 100%;
+}
+
+.checkoutPage form .row .col label {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.checkoutPage form textarea {
+    background-color: #e7e7e7;
+    width: 100%;
+    height: 10rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    color: #333;
+    outline: none;
+    text-align: center;
+}
+
+.checkoutPage .checkoutPage__sendToDefault {
+    border-bottom: 0.1rem solid darkgray;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 5rem;
+}
+
+.checkoutPage form .row:nth-child(1) .col div,
+.checkoutPage form .row:nth-child(2) .col div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.custom_input {
+    width: 100%;
+    height: 4rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    color: #333;
+    outline: none;
+    text-align: center;
+}
+
+.checkoutPage form .row:nth-child(3) button {
+    margin: 0 auto;
+    margin-top: 2.5rem;
+}
+
+.emptyBasket {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
